@@ -1,11 +1,16 @@
 import LineChartGraph from "./LineChart";
 import Notifications from "./Notifications";
 import Zone_Density from "./zone_density";
+import TruckMap from "./TruckMap";
+import Navbar from "./Navbar";
 
 function Dashboard() {
   return (
-    <div className="p-4 md:p-10 gap-5 bg-[#f8fcfa] flex flex-col md:flex-row">
-      
+    <>
+      <div className="fixed top-0 left-0 w-full z-50">
+      <Navbar/>
+      </div>
+    <div className="p-4 md:p-10 gap-5 bg-[#f8fcfa] flex flex-col md:flex-row mt-20">
       <div className="w-full md:w-7/12 flex flex-col gap-6">
       
         <div className="bg-gradient-to-r from-[#0a3d2c] to-[#2a5c43] text-white p-6 border border-[#2a7d2f] rounded-3xl">
@@ -33,10 +38,10 @@ function Dashboard() {
 
   <div className="flex flex-wrap gap-4 justify-center">
     {[
-      { img: "weed.png", title: "Start New Session", subtitle: "Begin Weed Detection", color: "border-[#2a7d2f]" },
-      { img: "weed.png", title: "Emergency Stop", subtitle: "Immediate halt", color: "border-red-700 text-red-700" },
-      { img: "weed.png", title: "Resume Last Session", subtitle: "Zone", color: "border-[#2a7d2f]" },
-      { img: "weed.png", title: "Export Report", subtitle: "Download data", color: "border-[#2a7d2f]" },
+      { img: "play.png", title: "Start New Session", subtitle: "Begin Weed Detection", color: "border-[#2a7d2f]" },
+      { img: "pause-button.png", title: "Emergency Stop", subtitle: "Immediate halt", color: "border-red-700 text-red-700" },
+      { img: "end.png", title: "Resume Last Session", subtitle: "Zone", color: "border-[#2a7d2f]" },
+      { img: "file.png", title: "Export Report", subtitle: "Download data", color: "border-[#2a7d2f]" },
     ].map((btn, i) => (
       <button
         key={i}
@@ -63,12 +68,12 @@ w-9/20 max-sm:w-full cursor-pointer`}
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            {["Laser System", "GPS Tracking", "Battery Logo"].map((system, i) => (
+            {[{img: "laser-gun.png", title: "Laser System"},{img: "gps.png", title: "GPS Tracking"},{img: "car-battery.png", title: "Battery Level"}].map((system, i) => (
               <div key={i} className="flex flex-col md:flex-row justify-between border-2 border-green-700 p-4 rounded-lg gap-2">
                 <div className="flex gap-2 items-center">
-                  <img src="weed.png" className="h-7 w-7" alt={system} />
+                  <img src={system.img} className="h-7 w-7" alt={system} />
                   <div>
-                    <p>{system}</p>
+                    <p>{system.title}</p>
                     <p>Operating manually</p>
                   </div>
                 </div>
@@ -81,9 +86,13 @@ w-9/20 max-sm:w-full cursor-pointer`}
           </div>
         </div>
 
-        <div>
-          <p>Hourly Performance</p>
+        <div className="border border-[#2a7d2f] rounded-3xl p-6">
+          <p className="mb-2">Hourly Performance</p>
           <LineChartGraph />
+        </div>
+         <div className="border border-[#2a7d2f] rounded-3xl p-6">
+          <p className="mb-3">Real time Tracking</p>
+          <TruckMap/>
         </div>
       </div>
 
@@ -92,6 +101,7 @@ w-9/20 max-sm:w-full cursor-pointer`}
         <Zone_Density/>
       </div>
     </div>
+    </>
   );
 }
 

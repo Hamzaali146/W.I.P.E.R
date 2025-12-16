@@ -1,5 +1,14 @@
 import { Box, Typography, Chip, Stack } from "@mui/material";
-import { BarChart } from "@mui/x-charts/BarChart";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  ResponsiveContainer,
+  Cell,
+  Tooltip,
+} from "recharts";
 
 const dataset = [
   { zone: "Zone A", value: 85 },
@@ -37,29 +46,22 @@ export default function WeedDensityChart() {
         </Typography>
       </Box>
 
-      <BarChart
-        dataset={dataset}
-        xAxis={[
-          {
-            scaleType: "band",
-            dataKey: "zone",
-          },
-        ]}
-        yAxis={[{ min: 0, max: 100 }]}
-        series={[
-          {
-            dataKey: "value",
+      <Box sx={{ width: "100%", height: 300 }}>
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={dataset} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+            <CartesianGrid strokeDasharray="4 4" />
+            <XAxis dataKey="zone" />
+            <YAxis domain={[0, 100]} />
+            <Tooltip />
+            <Bar dataKey="value" radius={[8, 8, 0, 0]}>
+              {dataset.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={getColor(entry.value)} />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </Box>
 
-            color: (params) => getColor(params.value),
-          },
-        ]}
-        height={300}
-        sx={{
-          ".MuiChartsGrid-line": {
-            strokeDasharray: "4 4",
-          },
-        }}
-      />
       <Stack direction="row" spacing={2} justifyContent="center" mt={3} flexWrap="wrap">
         <Chip label="Low (0-40)" sx={{ bgcolor: "#22c55e", color: "#fff" }} />
         <Chip label="Medium (41-60)" sx={{ bgcolor: "#facc15" }} />

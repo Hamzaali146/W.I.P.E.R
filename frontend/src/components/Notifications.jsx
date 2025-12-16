@@ -59,7 +59,7 @@ const Notifications = () => {
   };
 
   return (
-    <div className="p-4 bg-white rounded-lg border border-green-200 w-full  ">
+    <div className="p-4 rounded-lg border-2 border-[#cce3d4] w-full  ">
       <div className="flex justify-between items-center mb-4">
         <h2 className="font-semibold text-lg flex items-center gap-2">
           <img className="w-10 h-10" src="bell.png" alt="bell" /> Alerts & Notifications
