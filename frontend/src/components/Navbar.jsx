@@ -14,10 +14,10 @@ export default function Navbar() {
             <img className="h-7 w-7" src="mainlogo.png" alt="mainlogo" />
             <div>
               <h1 className="text-white font-semibold text-lg leading-none">
-                WeedBot
+                W.I.P.E.R
               </h1>
               <p className="text-green-200 text-xs">
-                Precision Laser Weed Control
+                Weed Identification, Prediction and Eradication Robot
               </p>
             </div>
           </div>
