@@ -1,3 +1,11 @@
- # W.I.P.E.R
 
-- Weed Identification, Prediction and Eradication Robot
+  #  App
+
+
+
+  ## Running the code
+
+  Run `npm i` to install the dependencies.
+
+  Run `npm run dev` to start the development server.
+  
