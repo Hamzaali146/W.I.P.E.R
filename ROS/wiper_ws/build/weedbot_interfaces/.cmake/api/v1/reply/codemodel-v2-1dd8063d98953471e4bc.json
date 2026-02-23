@@ -1,0 +1,242 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-d282d889ab96627d0c5b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				},
+				{
+					"build" : "weedbot_interfaces__py",
+					"jsonFile" : "directory-weedbot_interfaces__py-1a949865065f5e51c48d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/hamza/wiper_ws/build/weedbot_interfaces/weedbot_interfaces__py",
+					"targetIndexes" : 
+					[
+						5
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "weedbot_interfaces",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_weedbot_interfaces_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_weedbot_interfaces_egg-ce2144b6037b04eeeab8.json",
+					"name" : "ament_cmake_python_build_weedbot_interfaces_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_symlink_weedbot_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_symlink_weedbot_interfaces-23d0ae4efaea7a8b892b.json",
+					"name" : "ament_cmake_python_symlink_weedbot_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-c2ce38b7da764c6ebad4.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "weedbot_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-weedbot_interfaces-89067fd1c1018a96f611.json",
+					"name" : "weedbot_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "weedbot_interfaces__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-weedbot_interfaces__cpp-7a1f59c4e7c3486133c6.json",
+					"name" : "weedbot_interfaces__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "weedbot_interfaces__py::@6cfe101cd3009431fdd3",
+					"jsonFile" : "target-weedbot_interfaces__py-7505d5af987dc8e5d777.json",
+					"name" : "weedbot_interfaces__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "weedbot_interfaces__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-weedbot_interfaces__rosidl_generator_c-2fc55e29f88f234c7d5d.json",
+					"name" : "weedbot_interfaces__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "weedbot_interfaces__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-weedbot_interfaces__rosidl_generator_py-6e9675eb657601d257c2.json",
+					"name" : "weedbot_interfaces__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "weedbot_interfaces__rosidl_generator_type_description::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-weedbot_interfaces__rosidl_generator_type_description-fbe75a0272201d39be54.json",
+					"name" : "weedbot_interfaces__rosidl_generator_type_description",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "weedbot_interfaces__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-weedbot_interfaces__rosidl_typesupport_c-63eac86e3ca406508e2b.json",
+					"name" : "weedbot_interfaces__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "weedbot_interfaces__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-weedbot_interfaces__rosidl_typesupport_cpp-aaadfeb6402ac1013f95.json",
+					"name" : "weedbot_interfaces__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "weedbot_interfaces__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-weedbot_interfaces__rosidl_typesupport_fastrtps_c-4e09372c87260061e9a4.json",
+					"name" : "weedbot_interfaces__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "weedbot_interfaces__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-weedbot_interfaces__rosidl_typesupport_fastrtps_cpp-b79ec8b4d2964a252a20.json",
+					"name" : "weedbot_interfaces__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "weedbot_interfaces__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-weedbot_interfaces__rosidl_typesupport_introspection_c-0ce648102d92a9a73749.json",
+					"name" : "weedbot_interfaces__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "weedbot_interfaces__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-weedbot_interfaces__rosidl_typesupport_introspection_cpp-fd7294790a7a54ff63d7.json",
+					"name" : "weedbot_interfaces__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "weedbot_interfaces_s__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-weedbot_interfaces_s__rosidl_typesupport_c-34dd1fed914ed1d3a151.json",
+					"name" : "weedbot_interfaces_s__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "weedbot_interfaces_s__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-weedbot_interfaces_s__rosidl_typesupport_fastrtps_c-788f746009c18ea2b443.json",
+					"name" : "weedbot_interfaces_s__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "weedbot_interfaces_s__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-weedbot_interfaces_s__rosidl_typesupport_introspection_c-6c2a57affdd9164fd1df.json",
+					"name" : "weedbot_interfaces_s__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "weedbot_interfaces_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-weedbot_interfaces_uninstall-c08764aacb052819caa9.json",
+					"name" : "weedbot_interfaces_uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/hamza/wiper_ws/build/weedbot_interfaces",
+		"source" : "/home/hamza/wiper_ws/src/weedbot_interfaces"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

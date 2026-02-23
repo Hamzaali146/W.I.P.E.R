@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: weedbot-control
+Version: 0.0.0
+Summary: basically this pkg will interact with robots mounted on tractor with our software.
+Maintainer: hamza
+Maintainer-email: hamzaaly105@gmail.com
+License: TODO: License declaration
+Provides-Extra: test

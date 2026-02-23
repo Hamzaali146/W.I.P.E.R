@@ -1,0 +1,7 @@
+{
+  "package_name": "weedbot_interfaces",
+  "non_idl_tuples": [
+    "/home/hamza/wiper_ws/src/weedbot_interfaces:msg/WeedDetection.msg",
+    "/home/hamza/wiper_ws/src/weedbot_interfaces:msg/WeedArray.msg"
+  ]
+}
