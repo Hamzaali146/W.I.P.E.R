@@ -4,18 +4,18 @@ FastAPI Backend for Weedbot Vision System
 Provides REST API endpoints to interact with ROS 2 vision system
 """
 
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException, UploadFile, File
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 from typing import List, Optional
 import asyncio
 import json
-import base64
 import cv2
-import numpy as np
 from datetime import datetime
 import threading
+import time
+from collections import deque
 
 # ROS 2 imports
 import rclpy
@@ -23,7 +23,7 @@ from rclpy.node import Node
 from sensor_msgs.msg import Image
 from std_msgs.msg import String
 from cv_bridge import CvBridge
-from weedbot_interfaces.msg import WeedDetection, WeedArray
+from weedbot_interfaces.msg import WeedArray
 
 # Initialize FastAPI
 app = FastAPI(
@@ -43,6 +43,8 @@ app.add_middleware(
 
 # Global variables
 ros_bridge = None
+ros_thread = None
+fastapi_loop = None
 active_websockets = []
 
 
@@ -106,12 +108,16 @@ class ROSBridge(Node):
         super().__init__('fastapi_ros_bridge')
         
         self.bridge = CvBridge()
+        self.state_lock = threading.Lock()
         self.latest_image = None
         self.latest_viz_image = None
         self.latest_detections = None
-        self.detection_history = []
+        self.detection_history = deque(maxlen=200)
         self.total_detections = 0
+        self.last_detection_time = None
         self.start_time = datetime.now()
+        self.last_broadcast_time = 0.0
+        self.broadcast_interval_sec = 0.1
         
         # Subscribers
         self.image_sub = self.create_subscription(
@@ -147,68 +153,99 @@ class ROSBridge(Node):
     def image_callback(self, msg):
         """Store latest raw camera image"""
         try:
-            self.latest_image = self.bridge.imgmsg_to_cv2(msg, "bgr8")
+            image = self.bridge.imgmsg_to_cv2(msg, "bgr8")
+            with self.state_lock:
+                self.latest_image = image
         except Exception as e:
             self.get_logger().error(f"Image conversion error: {e}")
     
     def viz_callback(self, msg):
         """Store latest visualization image"""
         try:
-            self.latest_viz_image = self.bridge.imgmsg_to_cv2(msg, "bgr8")
+            image = self.bridge.imgmsg_to_cv2(msg, "bgr8")
+            with self.state_lock:
+                self.latest_viz_image = image
         except Exception as e:
             self.get_logger().error(f"Viz conversion error: {e}")
     
     def detection_callback(self, msg):
         """Process weed detections"""
-        self.latest_detections = msg
-        self.total_detections += msg.total_weeds
-        
-        # Store in history (keep last 100)
+        timestamp = datetime.now().isoformat()
         detection_data = {
-            'timestamp': datetime.now().isoformat(),
-            'total_weeds': msg.total_weeds,
+            'type': 'detection',
+            'timestamp': timestamp,
+            'total_weeds': int(msg.total_weeds),
+            'inference_time_ms': float(msg.inference_time_ms),
             'detections': []
         }
         
         for i, det in enumerate(msg.detections):
+            bbox_x = float(det.bbox_x[0]) if det.bbox_x else 0.0
+            bbox_y = float(det.bbox_y[0]) if det.bbox_y else 0.0
+            bbox_w = float(det.bbox_w[0]) if det.bbox_w else 0.0
+            bbox_h = float(det.bbox_h[0]) if det.bbox_h else 0.0
             detection_data['detections'].append({
                 'id': i,
-                'confidence': det.confidences[0] if det.confidences else 0.0,
-                'class_id': det.class_ids[0] if det.class_ids else 0,
-                'real_world_x': det.real_world_x,
-                'real_world_y': det.real_world_y,
-                'real_world_z': det.real_world_z
+                'confidence': float(det.confidences[0]) if det.confidences else 0.0,
+                'class_id': int(det.class_ids[0]) if det.class_ids else 0,
+                'bbox_x': bbox_x,
+                'bbox_y': bbox_y,
+                'bbox_w': bbox_w,
+                'bbox_h': bbox_h,
+                'center_x': bbox_x + (bbox_w / 2.0),
+                'center_y': bbox_y + (bbox_h / 2.0),
+                'real_world_x': float(det.real_world_x),
+                'real_world_y': float(det.real_world_y),
+                'real_world_z': float(det.real_world_z)
             })
         
-        self.detection_history.append(detection_data)
-        if len(self.detection_history) > 100:
-            self.detection_history.pop(0)
-        
-        # Broadcast to WebSocket clients
-        asyncio.create_task(self.broadcast_detection(detection_data))
+        with self.state_lock:
+            self.latest_detections = msg
+            self.total_detections += int(msg.total_weeds)
+            self.last_detection_time = timestamp
+            self.detection_history.append(detection_data)
+
+        # Bridge ROS thread -> FastAPI event loop safely
+        now = time.monotonic()
+        if now - self.last_broadcast_time < self.broadcast_interval_sec:
+            return
+        self.last_broadcast_time = now
+
+        if fastapi_loop and fastapi_loop.is_running() and active_websockets:
+            asyncio.run_coroutine_threadsafe(
+                self.broadcast_detection(detection_data),
+                fastapi_loop
+            )
     
     async def broadcast_detection(self, data):
         """Send detection to all connected WebSocket clients"""
         disconnected = []
-        for ws in active_websockets:
+        for ws in list(active_websockets):
             try:
                 await ws.send_json(data)
-            except:
+            except Exception:
                 disconnected.append(ws)
         
         # Remove disconnected clients
         for ws in disconnected:
-            active_websockets.remove(ws)
+            if ws in active_websockets:
+                active_websockets.remove(ws)
     
     def get_latest_image_bytes(self, use_visualization=True):
         """Get latest image as JPEG bytes"""
-        img = self.latest_viz_image if use_visualization else self.latest_image
-        
+        with self.state_lock:
+            if use_visualization:
+                img = self.latest_viz_image if self.latest_viz_image is not None else self.latest_image
+            else:
+                img = self.latest_image if self.latest_image is not None else self.latest_viz_image
+
         if img is None:
             return None
         
         # Encode as JPEG
-        _, buffer = cv2.imencode('.jpg', img)
+        success, buffer = cv2.imencode('.jpg', img)
+        if not success:
+            return None
         return buffer.tobytes()
     
     def fire_laser(self, x: float, y: float, duration_ms: int, power: float):
@@ -235,7 +272,8 @@ def ros_spin_thread():
     """Run ROS 2 in background thread"""
     global ros_bridge
     
-    rclpy.init()
+    if not rclpy.ok():
+        rclpy.init()
     ros_bridge = ROSBridge()
     
     try:
@@ -243,8 +281,10 @@ def ros_spin_thread():
     except KeyboardInterrupt:
         pass
     finally:
-        ros_bridge.destroy_node()
-        rclpy.shutdown()
+        if ros_bridge is not None:
+            ros_bridge.destroy_node()
+        if rclpy.ok():
+            rclpy.shutdown()
 
 
 # ==================== FastAPI Startup/Shutdown ====================
@@ -252,16 +292,30 @@ def ros_spin_thread():
 @app.on_event("startup")
 async def startup_event():
     """Initialize ROS 2 bridge on startup"""
-    thread = threading.Thread(target=ros_spin_thread, daemon=True)
-    thread.start()
+    global ros_thread, fastapi_loop
+
+    fastapi_loop = asyncio.get_running_loop()
+    ros_thread = threading.Thread(target=ros_spin_thread, daemon=True, name="ros2-spin")
+    ros_thread.start()
     await asyncio.sleep(2)  # Give ROS time to initialize
 
 
 @app.on_event("shutdown")
 async def shutdown_event():
     """Cleanup on shutdown"""
-    if ros_bridge:
-        ros_bridge.destroy_node()
+    global fastapi_loop
+    fastapi_loop = None
+
+    # Close any connected websocket clients
+    for ws in list(active_websockets):
+        try:
+            await ws.close()
+        except Exception:
+            pass
+    active_websockets.clear()
+
+    if rclpy.ok():
+        rclpy.shutdown()
 
 
 # ==================== REST API Endpoints ====================
@@ -274,7 +328,8 @@ async def root():
         "version": "1.0.0",
         "status": "operational",
         "endpoints": {
-            "detections": "/api/detections",
+            "detections_latest": "/api/detections/latest",
+            "detections_history": "/api/detections/history",
             "video_feed": "/api/video/stream",
             "system_status": "/api/system/status",
             "laser_fire": "/api/laser/fire"
@@ -285,10 +340,14 @@ async def root():
 @app.get("/api/detections/latest", response_model=WeedArrayResponse)
 async def get_latest_detections():
     """Get latest weed detections"""
-    if not ros_bridge or not ros_bridge.latest_detections:
+    if not ros_bridge:
+        raise HTTPException(status_code=503, detail="ROS bridge not initialized")
+
+    with ros_bridge.state_lock:
+        msg = ros_bridge.latest_detections
+
+    if msg is None:
         raise HTTPException(status_code=404, detail="No detections available")
-    
-    msg = ros_bridge.latest_detections
     
     detections = []
     for i, det in enumerate(msg.detections):
@@ -319,10 +378,15 @@ async def get_detection_history(limit: int = 50):
     """Get detection history"""
     if not ros_bridge:
         raise HTTPException(status_code=503, detail="ROS bridge not initialized")
+
+    limit = max(1, min(limit, 500))
+    with ros_bridge.state_lock:
+        full_history = list(ros_bridge.detection_history)
+        history = full_history[-limit:]
     
     return {
-        "total_records": len(ros_bridge.detection_history),
-        "history": ros_bridge.detection_history[-limit:]
+        "total_records": len(full_history),
+        "history": history
     }
 
 
@@ -333,16 +397,17 @@ async def get_system_status():
         raise HTTPException(status_code=503, detail="ROS bridge not initialized")
     
     uptime = (datetime.now() - ros_bridge.start_time).total_seconds()
-    last_detection = None
-    
-    if ros_bridge.detection_history:
-        last_detection = ros_bridge.detection_history[-1]['timestamp']
+    with ros_bridge.state_lock:
+        camera_active = ros_bridge.latest_image is not None
+        vision_active = ros_bridge.latest_viz_image is not None or ros_bridge.latest_image is not None
+        total_detections = ros_bridge.total_detections
+        last_detection = ros_bridge.last_detection_time
     
     return SystemStatus(
-        camera_active=ros_bridge.latest_image is not None,
-        vision_active=ros_bridge.latest_viz_image is not None,
+        camera_active=camera_active,
+        vision_active=vision_active,
         laser_active=True,  # TODO: Add actual laser status
-        total_detections=ros_bridge.total_detections,
+        total_detections=total_detections,
         uptime_seconds=uptime,
         last_detection_time=last_detection
     )
@@ -354,7 +419,7 @@ async def video_stream():
     
     async def generate_frames():
         while True:
-            if ros_bridge and ros_bridge.latest_viz_image is not None:
+            if ros_bridge:
                 frame_bytes = ros_bridge.get_latest_image_bytes(use_visualization=True)
                 
                 if frame_bytes:
@@ -372,10 +437,12 @@ async def video_stream():
 @app.get("/api/video/snapshot")
 async def get_snapshot():
     """Get single frame snapshot"""
-    if not ros_bridge or ros_bridge.latest_viz_image is None:
-        raise HTTPException(status_code=404, detail="No image available")
-    
+    if not ros_bridge:
+        raise HTTPException(status_code=503, detail="ROS bridge not initialized")
+
     frame_bytes = ros_bridge.get_latest_image_bytes(use_visualization=True)
+    if frame_bytes is None:
+        raise HTTPException(status_code=404, detail="No image available")
     
     return StreamingResponse(
         iter([frame_bytes]),
@@ -417,10 +484,16 @@ async def fire_laser(command: LaserCommand):
 @app.post("/api/laser/fire-at-weed/{weed_id}")
 async def fire_laser_at_weed(weed_id: int):
     """Fire laser at detected weed by ID"""
-    if not ros_bridge or not ros_bridge.latest_detections:
+    if not ros_bridge:
+        raise HTTPException(status_code=503, detail="ROS bridge not initialized")
+
+    with ros_bridge.state_lock:
+        latest_detections = ros_bridge.latest_detections
+
+    if latest_detections is None:
         raise HTTPException(status_code=404, detail="No detections available")
     
-    detections = ros_bridge.latest_detections.detections
+    detections = latest_detections.detections
     
     if weed_id >= len(detections):
         raise HTTPException(status_code=404, detail="Weed ID not found")
@@ -456,11 +529,14 @@ async def websocket_detections(websocket: WebSocket):
     try:
         while True:
             # Keep connection alive
-            await asyncio.sleep(1)
-            await websocket.send_json({"type": "ping"})
+            await asyncio.sleep(10)
+            await websocket.send_json({"type": "ping", "timestamp": datetime.now().isoformat()})
             
     except WebSocketDisconnect:
-        active_websockets.remove(websocket)
+        pass
+    finally:
+        if websocket in active_websockets:
+            active_websockets.remove(websocket)
 
 
 # ==================== Statistics Endpoints ====================
@@ -471,8 +547,9 @@ async def get_statistics():
     if not ros_bridge:
         raise HTTPException(status_code=503, detail="ROS bridge not initialized")
     
-    total_frames = len(ros_bridge.detection_history)
-    total_weeds = ros_bridge.total_detections
+    with ros_bridge.state_lock:
+        total_frames = len(ros_bridge.detection_history)
+        total_weeds = ros_bridge.total_detections
     avg_weeds_per_frame = total_weeds / total_frames if total_frames > 0 else 0
     
     return {
