@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from "react";
-import { Card } from "./ui/card";
 import {
   BarChart,
   Bar,
@@ -11,6 +10,8 @@ import {
   Legend,
 } from "recharts";
 
+import { Card } from "./ui/card";
+
 const dummyWeeklyTrends = [
   { week: "Week 1", efficiency: 95.2, weeds: 250 },
   { week: "Week 2", efficiency: 96.8, weeds: 230 },
@@ -19,7 +20,6 @@ const dummyWeeklyTrends = [
 ];
 
 export function PerformanceComparison({ data }) {
-  // If parent passes data later, it will use it, otherwise dummy data
   const [weeklyTrends, setWeeklyTrends] = useState(
     Array.isArray(data) && data.length ? data : dummyWeeklyTrends
   );
@@ -47,12 +47,12 @@ export function PerformanceComparison({ data }) {
     const current = weeklyTrends[weeklyTrends.length - 1] || {
       weeds: 0,
       efficiency: 0,
-      week: "—",
+      week: "-",
     };
     const previous = weeklyTrends[weeklyTrends.length - 2] || {
       weeds: 0,
       efficiency: 0,
-      week: "—",
+      week: "-",
     };
 
     return {
@@ -63,67 +63,55 @@ export function PerformanceComparison({ data }) {
   }, [weeklyTrends]);
 
   return (
-    <Card className="p-6 bg-gradient-to-br from-white to-emerald-50/30 border-2 border-[#2a7d2f]/30 shadow-lg">
+    <Card className="p-6 surface-card">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-[#0a3d2c]">Weekly Performance</h2>
+        <h2 className="section-title">Weekly Performance</h2>
       </div>
 
-      {/* Summary */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        <div className="p-4 bg-white rounded-xl border-2 border-[#2a7d2f]/20 shadow-sm">
+        <div className="p-4 metric-tile-light chip-cyan">
           <div className="flex items-center justify-between mb-2">
-            <p className="text-sm text-[#2a5c43]">Weeds Eliminated</p>
+            <p className="text-sm text-muted-foreground">Weeds Eliminated</p>
 
             <div
               className={`flex items-center gap-1 text-sm ${
                 weedsChange.isNeutral
-                  ? "text-[#2a5c43]"
+                  ? "text-muted-foreground"
                   : weedsChange.isPositive
-                  ? "text-[#2a7d2f]"
-                  : "text-orange-500"
+                    ? "text-primary"
+                    : "text-orange-500"
               }`}
             >
               <span>
                 {weedsChange.isNeutral
-                  ? "≈ 0.0%"
+                  ? "~ 0.0%"
                   : `${weedsChange.isPositive ? "+" : "-"}${weedsChange.value}%`}
               </span>
             </div>
           </div>
 
-          <p className="text-[#2a7d2f] text-2xl">
-            {Number(currentWeek.weeds || 0).toLocaleString()}
-          </p>
-
-          <p className="text-xs text-[#2a5c43] mt-1">
-            Compared to {previousWeek.week}
-          </p>
+          <p className="text-primary text-2xl">{Number(currentWeek.weeds || 0).toLocaleString()}</p>
+          <p className="text-xs text-muted-foreground mt-1">Compared to {previousWeek.week}</p>
         </div>
       </div>
 
-      {/* Chart */}
-      <ResponsiveContainer width="100%" height={200}>
+      <ResponsiveContainer width="100%" height={220}>
         <BarChart data={weeklyTrends}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#2a7d2f" opacity={0.2} />
-          <XAxis dataKey="week" stroke="#2a5c43" />
-          <YAxis yAxisId="left" stroke="#2a5c43" />
-          <YAxis yAxisId="right" orientation="right" stroke="#2a5c43" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#3f5e5438" />
+          <XAxis dataKey="week" stroke="#4e655c" />
+          <YAxis yAxisId="left" stroke="#4e655c" />
+          <YAxis yAxisId="right" orientation="right" stroke="#4e655c" domain={[90, 100]} />
           <Tooltip
             contentStyle={{
-              backgroundColor: "white",
-              border: "2px solid #2a7d2f",
-              borderRadius: "0.75rem",
+              backgroundColor: "rgba(255, 255, 255, 0.94)",
+              border: "1px solid rgba(19, 35, 26, 0.14)",
+              borderRadius: "0.95rem",
               padding: "12px",
             }}
           />
           <Legend />
-          <Bar
-            yAxisId="left"
-            dataKey="weeds"
-            fill="#3b82f6"
-            name="Weeds Eliminated"
-            radius={[8, 8, 0, 0]}
-          />
+          <Bar yAxisId="left" dataKey="weeds" fill="#0f766e" name="Weeds Eliminated" radius={[8, 8, 0, 0]} />
+          <Bar yAxisId="right" dataKey="efficiency" fill="#f97316" name="Efficiency %" radius={[8, 8, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
     </Card>

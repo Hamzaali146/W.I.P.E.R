@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import { MapPin } from "lucide-react";
+
 import { Card } from "./ui/card";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { MapPin } from "lucide-react";
 
 const dummyFields = [
   {
@@ -39,12 +40,8 @@ const dummyFields = [
 ];
 
 export function FieldsOverview({ data }) {
-  // ✅ Later you can pass backend data via props
-  const [fields, setFields] = useState(
-    Array.isArray(data) && data.length ? data : dummyFields
-  );
+  const [fields, setFields] = useState(Array.isArray(data) && data.length ? data : dummyFields);
 
-  // If parent passes updated backend data later
   useEffect(() => {
     if (Array.isArray(data) && data.length) {
       setFields(data);
@@ -52,30 +49,23 @@ export function FieldsOverview({ data }) {
   }, [data]);
 
   return (
-    <Card className="p-6 bg-gradient-to-br from-white to-emerald-50/30 border-2 border-[#2a7d2f]/30 shadow-lg">
-      <h2 className="mb-6 text-[#0a3d2c]">Fields Overview</h2>
+    <Card className="p-6 surface-card">
+      <h2 className="mb-6 section-title">Fields Overview</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {fields.map((field) => (
-          <Card
-            key={field.id}
-            className="overflow-hidden border-2 border-[#2a7d2f]/20 hover:border-[#2a7d2f] transition-all hover:shadow-xl"
-          >
+          <Card key={field.id} className="overflow-hidden list-row">
             <div className="relative h-40">
-              <ImageWithFallback
-                src={field.image}
-                alt={field.name}
-                className="w-full h-full object-cover"
-              />
+              <ImageWithFallback src={field.image} alt={field.name} className="w-full h-full object-cover" />
             </div>
 
-            <div className="p-4 bg-white">
+            <div className="p-4">
               <div className="mb-2">
-                <h3 className="text-[#0a3d2c]">{field.name}</h3>
-                <p className="text-[#2a5c43]">{field.crop}</p>
+                <h3 className="text-foreground">{field.name}</h3>
+                <p className="text-muted-foreground">{field.crop}</p>
               </div>
 
-              <div className="flex items-center gap-1 text-sm text-[#2a5c43] mt-3">
+              <div className="flex items-center gap-1 text-sm text-muted-foreground mt-3">
                 <MapPin className="w-4 h-4" />
                 <span>{field.area}</span>
               </div>

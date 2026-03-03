@@ -27,7 +27,6 @@ export function EfficiencyMetrics({ data }) {
     }
   }, [data]);
 
-
   const loadHourlyData = async () => {
     // const res = await fetch("/your-api");
     // const json = await res.json();
@@ -38,13 +37,14 @@ export function EfficiencyMetrics({ data }) {
 
   return (
     <div className="space-y-6">
-      <Card className="p-6 bg-gradient-to-br from-white to-emerald-50/30 border-2 border-[#2a7d2f]/30 shadow-lg">
+      <Card className="p-6 surface-card">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-[#0a3d2c]">Hourly Performance</h2>
+          <h2 className="section-title">Hourly Performance</h2>
 
           <button
             onClick={loadHourlyData}
-            className="text-sm text-[#2a7d2f] hover:text-[#0a3d2c] transition-colors px-3 py-1 rounded-lg hover:bg-[#2a7d2f]/10"
+            className="text-sm px-3 py-1 rounded-lg transition-colors chip-cyan"
+            style={{ color: "#0f766e" }}
           >
             Reload
           </button>
@@ -52,26 +52,39 @@ export function EfficiencyMetrics({ data }) {
 
         <ResponsiveContainer width="100%" height={250}>
           <LineChart data={hourlyData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#2a7d2f" opacity={0.2} />
-            <XAxis dataKey="time" stroke="#2a5c43" />
-            <YAxis stroke="#2a5c43" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#3f5e5438" />
+            <XAxis dataKey="time" stroke="#4e655c" />
+            <YAxis yAxisId="left" stroke="#4e655c" />
+            <YAxis yAxisId="right" orientation="right" stroke="#4e655c" domain={[90, 100]} />
             <Tooltip
               contentStyle={{
-                backgroundColor: "white",
-                border: "2px solid #2a7d2f",
-                borderRadius: "0.75rem",
+                backgroundColor: "rgba(255, 255, 255, 0.94)",
+                border: "1px solid rgba(19, 35, 26, 0.14)",
+                borderRadius: "0.95rem",
                 padding: "12px",
               }}
             />
 
             <Line
               type="monotone"
+              yAxisId="left"
               dataKey="weedsPerHour"
-              stroke="#2a7d2f"
+              stroke="#0f766e"
               strokeWidth={3}
               name="Weeds/Hour"
-              dot={{ fill: "#2a7d2f", r: 4 }}
-              activeDot={{ r: 6 }}
+              dot={{ fill: "#f97316", r: 4 }}
+              activeDot={{ r: 6, fill: "#0f766e" }}
+            />
+            <Line
+              type="monotone"
+              yAxisId="right"
+              dataKey="efficiency"
+              stroke="#f97316"
+              strokeWidth={2.5}
+              strokeDasharray="6 4"
+              name="Efficiency %"
+              dot={{ fill: "#22d3ee", r: 3.5 }}
+              activeDot={{ r: 5, fill: "#f97316" }}
             />
           </LineChart>
         </ResponsiveContainer>

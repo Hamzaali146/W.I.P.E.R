@@ -23,11 +23,35 @@ export default function TruckMap() {
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_KEY,
   });
 
-  if (!isLoaded) return <p>Loading...</p>;
+  if (!isLoaded) {
+    return (
+      <div
+        className="metric-tile-light flex items-center justify-center text-sm text-muted-foreground"
+        style={{ height: "320px" }}
+      >
+        Loading live map...
+      </div>
+    );
+  }
+
+  const mapContainerStyle = {
+    width: "100%",
+    height: "min(58vh, 360px)",
+    borderRadius: "16px",
+  };
+
+  const mapOptions = {
+    disableDefaultUI: true,
+    zoomControl: true,
+    streetViewControl: false,
+    mapTypeControl: false,
+    fullscreenControl: false,
+  };
 
   return (
     <GoogleMap
-      mapContainerStyle={{ width: "100%", height: "500px" }}
+      mapContainerStyle={mapContainerStyle}
+      options={mapOptions}
       center={position || { lat: 24.8607, lng: 67.0011 }}
       zoom={15}
     >
