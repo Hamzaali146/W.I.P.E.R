@@ -6,7 +6,6 @@ import { LiveDeviceStatus } from "./components/LiveDeviceStatus";
 import { SessionHistoryEnhanced } from "./components/SessionHistoryEnhanced";
 import { EfficiencyMetrics } from "./components/EfficiencyMetrics";
 import { FieldsOverview } from "./components/FieldsOverview";
-// import { InteractiveZoneMap } from "./components/InteractiveZoneMap";
 import { FieldCoverageMap } from "./components/FieldCoverageMap";
 import { AlertsPanel } from "./components/AlertsPanel";
 import { PerformanceComparison } from "./components/PerformanceComparison";
@@ -15,29 +14,26 @@ import { QuickActions } from "./components/QuickActions";
 import { Menu, Bell, Target, Sparkles } from "lucide-react";
 import { Button } from "./components/ui/button";
 import { Badge } from "./components/ui/badge";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "./components/ui/dropdown-menu";
 
 function buildWebSocketUrl(apiBaseUrl) {
   return `${apiBaseUrl.replace(/^http/i, "ws")}/ws/detections`;
 }
 
 export default function App() {
-  const [notificationCount] = useState(2);
   const [systemStatus, setSystemStatus] = useState(null);
   const [summaryStats, setSummaryStats] = useState(null);
   const [latestDetections, setLatestDetections] = useState([]);
+  const [alerts, setAlerts] = useState([]);
+  const unreadCount = useMemo(
+    () => alerts.filter((a) => !a.read).length,
+    [alerts],
+  );
   const [latestInferenceMs, setLatestInferenceMs] = useState(null);
   const [wsStatus, setWsStatus] = useState("connecting");
 
   const apiBaseUrl = useMemo(() => {
-    const configuredUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+    const configuredUrl =
+      import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
     return configuredUrl.replace(/\/+$/, "");
   }, []);
 
@@ -66,6 +62,29 @@ export default function App() {
     return () => {
       isMounted = false;
       clearInterval(intervalId);
+    };
+  }, [apiBaseUrl]);
+
+  // For Alerts
+  useEffect(() => {
+    let mounted = true;
+
+    const fetchAlerts = async () => {
+      try {
+        const res = await fetch(`${apiBaseUrl}/api/alerts?limit=7`);
+        if (!res.ok) return;
+        const data = await res.json();
+        if (mounted) setAlerts(Array.isArray(data.alerts) ? data.alerts : []);
+      } catch {
+        // ignore
+      }
+    };
+
+    fetchAlerts();
+    const t = setInterval(fetchAlerts, 3000);
+    return () => {
+      mounted = false;
+      clearInterval(t);
     };
   }, [apiBaseUrl]);
 
@@ -120,7 +139,9 @@ export default function App() {
           }
 
           if (payload.type === "detection") {
-            setLatestDetections(Array.isArray(payload.detections) ? payload.detections : []);
+            setLatestDetections(
+              Array.isArray(payload.detections) ? payload.detections : [],
+            );
             if (typeof payload.inference_time_ms === "number") {
               setLatestInferenceMs(payload.inference_time_ms);
             }
@@ -173,7 +194,9 @@ export default function App() {
       detectionRate: `${weedsPerFrame} weeds/frame`,
       accuracy: "N/A",
       falsePositives: "N/A",
-      fps: latestInferenceMs ? Math.max(1, Math.round(1000 / latestInferenceMs)) : 0,
+      fps: latestInferenceMs
+        ? Math.max(1, Math.round(1000 / latestInferenceMs))
+        : 0,
     };
   }, [summaryStats, latestInferenceMs]);
 
@@ -193,11 +216,32 @@ export default function App() {
       battery: "N/A",
       connection: wsStatus,
       laserTemp: "N/A",
-      cameraStatus: systemStatus?.camera_active || systemStatus?.vision_active ? "Active" : "Inactive",
+      GPS:"N/A",
+      cameraStatus:
+        systemStatus?.camera_active || systemStatus?.vision_active
+          ? "Active"
+          : "Inactive",
       isLive: wsStatus === "connected",
     }),
-    [summaryStats, systemStatus, wsStatus]
+    [summaryStats, systemStatus, wsStatus],
   );
+
+  const markAlertRead = async (id) => {
+    setAlerts((prev) =>
+      prev.map((a) => (a.id === id ? { ...a, read: true } : a)),
+    );
+    try {
+      await fetch(`${apiBaseUrl}/api/alerts/${id}/read`, { method: "POST" });
+    } catch {
+    }
+  };
+
+  const markAllAlertsRead = async () => {
+    setAlerts((prev) => prev.map((a) => ({ ...a, read: true })));
+    try {
+      await fetch(`${apiBaseUrl}/api/alerts/read-all`, { method: "POST" });
+    } catch {}
+  };
 
   return (
     <div className="min-h-screen app-shell">
@@ -221,61 +265,38 @@ export default function App() {
 
               <div>
                 <h1 className="app-title">W.I.P.E.R Control Hub</h1>
-                <p className="app-subtitle">Weed Identification, Prediction and Eradication Robot</p>
+                <p className="app-subtitle">
+                  Weed Identification, Prediction and Eradication Robot
+                </p>
               </div>
             </div>
 
             <div className="flex items-center gap-2">
               <Badge
                 className={`header-chip hidden sm:flex ${
-                  wsStatus === "connected" ? "header-chip--cool" : "header-chip--warm"
+                  wsStatus === "connected"
+                    ? "header-chip--cool"
+                    : "header-chip--warm"
                 }`}
               >
                 <span
                   className={`w-2 h-2 rounded-full animate-pulse ${
-                    wsStatus === "connected" ? "bg-emerald-300" : "bg-orange-300"
+                    wsStatus === "connected"
+                      ? "bg-emerald-300"
+                      : "bg-orange-300"
                   }`}
                 />
                 {wsStatus === "connected" ? "Live Link" : "Reconnecting"}
               </Badge>
 
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="text-white hover:bg-white/20 rounded-xl relative"
-                  >
-                    <Bell className="w-5 h-5" />
-                    {notificationCount > 0 && (
-                      <span className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
-                        {notificationCount}
-                      </span>
-                    )}
-                  </Button>
-                </DropdownMenuTrigger>
-
-                <DropdownMenuContent className="w-80">
-                  <DropdownMenuLabel>Notifications ({notificationCount} new)</DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem className="flex flex-col items-start py-3">
-                    <span className="text-sm">Device Status Update</span>
-                    <span className="text-xs text-muted-foreground">
-                      Battery level at 87%, optimal performance
-                    </span>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem className="flex flex-col items-start py-3">
-                    <span className="text-sm">Field Coverage Alert</span>
-                    <span className="text-xs text-muted-foreground">Zone A3 nearing completion</span>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem className="flex flex-col items-start py-3">
-                    <span className="text-sm">Weekly Report Ready</span>
-                    <span className="text-xs text-muted-foreground">
-                      Performance metrics available
-                    </span>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+              <div className="relative w-10 h-10 flex items-center justify-center rounded-xl text-white hover:bg-white/20">
+                <Bell className="w-5 h-5" />
+                {unreadCount > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
+                    {unreadCount}
+                  </span>
+                )}
+              </div>
             </div>
           </div>
 
@@ -293,7 +314,10 @@ export default function App() {
       </header>
 
       <main className="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
-        <Tabs defaultValue="dashboard" className="space-y-4 sm:space-y-6 app-enter">
+        <Tabs
+          defaultValue="dashboard"
+          className="space-y-4 sm:space-y-6 app-enter"
+        >
           <TabsList className="modern-tabs-list grid w-full max-w-3xl grid-cols-5 h-10 sm:h-12 text-xs sm:text-sm">
             <TabsTrigger value="dashboard" className="modern-tab-trigger">
               Dashboard
@@ -319,7 +343,11 @@ export default function App() {
                 <EfficiencyMetrics />
               </div>
               <div className="space-y-4 sm:space-y-6">
-                <AlertsPanel />
+                <AlertsPanel
+                  alerts={alerts}
+                  onMarkRead={markAlertRead}
+                  onMarkAllRead={markAllAlertsRead}
+                />
                 <FieldCoverageMap />
               </div>
             </div>
@@ -337,13 +365,20 @@ export default function App() {
                 <LiveDeviceStatus data={liveDeviceData} />
               </div>
               <div className="space-y-4 sm:space-y-6">
-                <AlertsPanel />
+                <AlertsPanel
+                  alerts={alerts}
+                  onMarkRead={markAlertRead}
+                  onMarkAllRead={markAllAlertsRead}
+                />
                 <FieldCoverageMap />
               </div>
             </div>
           </TabsContent>
 
-          <TabsContent value="analytics" className="space-y-4 sm:space-y-6 stagger-children">
+          <TabsContent
+            value="analytics"
+            className="space-y-4 sm:space-y-6 stagger-children"
+          >
             <EfficiencyMetrics />
             <PerformanceComparison />
           </TabsContent>

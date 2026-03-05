@@ -46,6 +46,52 @@ ros_bridge = None
 ros_thread = None
 fastapi_loop = None
 active_websockets = []
+ALERTS_MAX = 7
+alerts_store = deque(maxlen=ALERTS_MAX)
+alerts_lock = threading.Lock()
+alert_id_counter = 0
+
+# ========================== Alerts Store ==========================
+def add_alert(alert_type: str, title: str, message: str):
+
+    global alert_id_counter
+    now = datetime.now().isoformat()
+
+    with alerts_lock:
+        #Try to find an existing alert with same (type, title)
+        existing_idx = None
+        for i, a in enumerate(alerts_store):
+            if a.get("type") == alert_type and a.get("title") == title:
+                existing_idx = i
+                break
+
+        if existing_idx is not None:
+            # Update existing alert
+            existing = alerts_store[existing_idx]
+            existing["message"] = message
+            existing["timestamp"] = now
+            existing["read"] = False  # make it visible again
+
+            # Move it to the end (newest)
+            try:
+                alerts_store.remove(existing)
+            except ValueError:
+                pass
+            alerts_store.append(existing)
+            return existing["id"]
+
+        #Otherwise create a new one
+        alert_id_counter += 1
+        new_alert = {
+            "id": alert_id_counter,
+            "type": alert_type,
+            "title": title,
+            "message": message,
+            "timestamp": now,
+            "read": False
+        }
+        alerts_store.append(new_alert)
+        return new_alert["id"]
 
 
 # ==================== Pydantic Models ====================
@@ -298,8 +344,9 @@ async def startup_event():
     ros_thread = threading.Thread(target=ros_spin_thread, daemon=True, name="ros2-spin")
     ros_thread.start()
     await asyncio.sleep(2)  # Give ROS time to initialize
-
-
+    # add_alert("info", "Backend Started", "FastAPI is running and ready.") # just to check the alert API        
+    # add_alert("critical", "Laser Temperature", "Laser temperature is too high.") # just to check the alert API            
+       
 @app.on_event("shutdown")
 async def shutdown_event():
     """Cleanup on shutdown"""
@@ -411,6 +458,38 @@ async def get_system_status():
         uptime_seconds=uptime,
         last_detection_time=last_detection
     )
+
+@app.get("/api/alerts")
+async def get_alerts(limit: int = 7):
+    limit = max(1, min(limit, ALERTS_MAX))
+    with alerts_lock:
+        data = list(alerts_store)[-limit:]
+    data = list(reversed(data))  # newest first
+    return {"alerts": data, "limit": limit}
+
+
+@app.post("/api/alerts/{alert_id}/read")
+async def mark_alert_read(alert_id: int):
+    with alerts_lock:
+        found = False
+        for a in alerts_store:
+            if a["id"] == alert_id:
+                a["read"] = True
+                found = True
+                break
+
+    if not found:
+        raise HTTPException(status_code=404, detail="Alert not found")
+
+    return {"status": "ok", "alert_id": alert_id}
+
+
+@app.post("/api/alerts/read-all")
+async def mark_all_alerts_read():
+    with alerts_lock:
+        for a in alerts_store:
+            a["read"] = True
+    return {"status": "ok"}
 
 
 @app.get("/api/video/stream")
