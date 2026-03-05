@@ -1,22 +1,12 @@
 import { useEffect, useState } from "react";
-import { Battery, Wifi, Thermometer, Zap, Camera } from "lucide-react";
+import { Battery, Wifi, Thermometer, Zap, Camera, MapPin } from "lucide-react";
 
 import { Card } from "./ui/card";
 import { Badge } from "./ui/badge";
 
 export function LiveDeviceStatus({ data }) {
-  const defaultData = {
-    weedCount: 119,
-    areaCovered: "450 sq feet",
-    battery: "87%",
-    connection: "Strong",
-    laserTemp: "42 C",
-    cameraStatus: "Active",
-    isLive: true,
-  };
-
   const hasBackendData = Boolean(data);
-  const device = data || defaultData;
+  const device = data;
   const [weedCount, setWeedCount] = useState(device.weedCount || 0);
 
   useEffect(() => {
@@ -89,6 +79,14 @@ export function LiveDeviceStatus({ data }) {
             <span className="text-sm text-foreground">Laser Temp</span>
           </div>
           <p className="text-foreground">{device.laserTemp}</p>
+        </div>
+
+        <div className="p-4 metric-tile-light chip-cyan">
+          <div className="flex items-center gap-2 mb-1">
+            <MapPin className="w-4 h-4 text-orange-500" />
+            <span className="text-sm text-foreground">GPS Tracking</span>
+          </div>
+          <p className="text-foreground">{device.GPS}</p>
         </div>
 
         <div className="p-4 metric-tile-light chip-cyan">

@@ -24,38 +24,38 @@ export function QuickActions({
     efficiency: "94.2%",
   };
 
-  const defaultSystemStatus = {
-    overallLabel: "All Systems Operational",
-    items: [
-      {
-        key: "laser",
-        title: "Laser System",
-        subtitle: "Operating normally",
-        icon: <Zap className="w-5 h-5 text-white" />,
-        iconBg: "linear-gradient(135deg, #0f766e, #10b981)",
-        badgeText: "Active",
-      },
-      {
-        key: "gps",
-        title: "GPS Tracking",
-        subtitle: "Signal strength: Strong",
-        icon: <MapPin className="w-5 h-5 text-white" />,
-        iconBg: "linear-gradient(135deg, #385d75, #2b7c9e)",
-        badgeText: "Active",
-      },
-      {
-        key: "battery",
-        title: "Battery Level",
-        subtitle: "87% remaining",
-        icon: <Battery className="w-5 h-5 text-white" />,
-        iconBg: "linear-gradient(135deg, #f97316, #fb923c)",
-        badgeText: "Good",
-      },
-    ],
-  };
+  // const defaultSystemStatus = {
+  //   overallLabel: "All Systems Operational",
+  //   items: [
+  //     {
+  //       key: "laser",
+  //       title: "Laser System",
+  //       subtitle: "Operating normally",
+  //       icon: <Zap className="w-5 h-5 text-white" />,
+  //       iconBg: "linear-gradient(135deg, #0f766e, #10b981)",
+  //       badgeText: "Active",
+  //     },
+  //     {
+  //       key: "gps",
+  //       title: "GPS Tracking",
+  //       subtitle: "Signal strength: Strong",
+  //       icon: <MapPin className="w-5 h-5 text-white" />,
+  //       iconBg: "linear-gradient(135deg, #385d75, #2b7c9e)",
+  //       badgeText: "Active",
+  //     },
+  //     {
+  //       key: "battery",
+  //       title: "Battery Level",
+  //       subtitle: "87% remaining",
+  //       icon: <Battery className="w-5 h-5 text-white" />,
+  //       iconBg: "linear-gradient(135deg, #f97316, #fb923c)",
+  //       badgeText: "Good",
+  //     },
+  //   ],
+  // };
 
   const s = summary || defaultSummary;
-  const status = systemStatus || defaultSystemStatus;
+  // const status = systemStatus || defaultSystemStatus;
 
   const handleStartSession = () => {
     if (onStart) return onStart();
@@ -134,7 +134,7 @@ export function QuickActions({
         </div>
       </Card>
 
-      <Card className="p-6 surface-card">
+      {/* <Card className="p-6 surface-card">
         <div className="flex items-center justify-between mb-4">
           <h3 className="section-title">System Status</h3>
           <Badge className="status-pill">
@@ -166,7 +166,7 @@ export function QuickActions({
             </div>
           ))}
         </div>
-      </Card>
+      </Card> */}
     </div>
   );
 }
