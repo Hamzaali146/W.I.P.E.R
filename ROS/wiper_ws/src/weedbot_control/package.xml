@@ -2,14 +2,19 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>weedbot_control</name>
-  <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="hamza@todo.todo">hamza</maintainer>
-  <license>TODO: License declaration</license>
+  <version>1.0.0</version>
+  <description>Control node for galvo + laser hardware driven by vision detections.</description>
+  <maintainer email="hamzaaly105@gmail.com">hamza</maintainer>
+  <license>MIT</license>
 
   <depend>rclpy</depend>
-  <depend>sensor_msgs</depend>
-  <depend>geometry_msgs</depend>
+  <depend>rcl_interfaces</depend>
+  <depend>std_msgs</depend>
+  <depend>weedbot_interfaces</depend>
+
+  <exec_depend>python3-serial</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
