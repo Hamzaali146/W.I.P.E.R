@@ -1,0 +1,13 @@
+train: ./train/images
+val: ./test/images
+
+nc: 7
+
+names:
+  - Herb Paris
+  - bitter gourd
+  - small weed
+  - grass class
+  - sponge gourd
+  - horseweed
+  - okra
