@@ -89,16 +89,16 @@ export function LiveCameraFeed({
         />
 
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-orange-500/10" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
           <svg className="absolute inset-0 w-full h-full opacity-50">
-            <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#22d3ee" strokeWidth="1.5" />
-            <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#22d3ee" strokeWidth="1.5" />
+            <line x1="50%" y1="0" x2="50%" y2="100%" stroke="hsl(174, 78%, 26%)" strokeWidth="1.5" />
+            <line x1="0" y1="50%" x2="100%" y2="50%" stroke="hsl(174, 78%, 26%)" strokeWidth="1.5" />
           </svg>
 
           {activeDetections.map((det) => (
             <div
               key={det.id}
-              className="absolute border-2 border-orange-400 animate-pulse shadow-lg"
+              className="absolute border-2 border-accent animate-pulse shadow-lg"
               style={{
                 top: det.top,
                 left: det.left,
@@ -106,7 +106,7 @@ export function LiveCameraFeed({
                 height: det.height,
               }}
             >
-              <div className="absolute -top-6 left-0 bg-orange-500 text-white px-2 py-0.5 text-xs rounded-md shadow-md">
+              <div className="absolute -top-6 left-0 bg-accent text-white px-2 py-0.5 text-xs rounded-md shadow-md">
                 {det.label}
               </div>
             </div>
@@ -120,7 +120,7 @@ export function LiveCameraFeed({
 
           <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
             <div className="flex items-center gap-2 camera-hud text-white px-4 py-2">
-              <Crosshair className="w-4 h-4 text-emerald-300" />
+              <Crosshair className="w-4 h-4 text-primary-foreground" />
               <span className="text-sm">AI Detection Active</span>
             </div>
 

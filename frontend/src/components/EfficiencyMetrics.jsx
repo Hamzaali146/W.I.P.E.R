@@ -43,8 +43,7 @@ export function EfficiencyMetrics({ data }) {
 
           <button
             onClick={loadHourlyData}
-            className="text-sm px-3 py-1 rounded-lg transition-colors chip-cyan"
-            style={{ color: "#0f766e" }}
+            className="text-sm px-3 py-1 rounded-lg transition-colors chip-cyan text-primary"
           >
             Reload
           </button>
@@ -52,10 +51,10 @@ export function EfficiencyMetrics({ data }) {
 
         <ResponsiveContainer width="100%" height={250}>
           <LineChart data={hourlyData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#3f5e5438" />
-            <XAxis dataKey="time" stroke="#4e655c" />
-            <YAxis yAxisId="left" stroke="#4e655c" />
-            <YAxis yAxisId="right" orientation="right" stroke="#4e655c" domain={[90, 100]} />
+            <CartesianGrid strokeDasharray="3 3" stroke="hsl(150, 30%, 85%)" />
+            <XAxis dataKey="time" stroke="hsl(148, 13%, 35%)" />
+            <YAxis yAxisId="left" stroke="hsl(148, 13%, 35%)" />
+            <YAxis yAxisId="right" orientation="right" stroke="hsl(148, 13%, 35%)" domain={[90, 100]} />
             <Tooltip
               contentStyle={{
                 backgroundColor: "rgba(255, 255, 255, 0.94)",
@@ -69,22 +68,22 @@ export function EfficiencyMetrics({ data }) {
               type="monotone"
               yAxisId="left"
               dataKey="weedsPerHour"
-              stroke="#0f766e"
+              stroke="hsl(174, 78%, 26%)"
               strokeWidth={3}
               name="Weeds/Hour"
-              dot={{ fill: "#f97316", r: 4 }}
-              activeDot={{ r: 6, fill: "#0f766e" }}
+              dot={{ fill: "hsl(25, 95%, 53%)", r: 4 }}
+              activeDot={{ r: 6, fill: "hsl(174, 78%, 26%)" }}
             />
             <Line
               type="monotone"
               yAxisId="right"
               dataKey="efficiency"
-              stroke="#f97316"
+              stroke="hsl(25, 95%, 53%)"
               strokeWidth={2.5}
               strokeDasharray="6 4"
               name="Efficiency %"
-              dot={{ fill: "#22d3ee", r: 3.5 }}
-              activeDot={{ r: 5, fill: "#f97316" }}
+              dot={{ fill: "hsl(174, 78%, 26%)", r: 3.5 }}
+              activeDot={{ r: 5, fill: "hsl(25, 95%, 53%)" }}
             />
           </LineChart>
         </ResponsiveContainer>

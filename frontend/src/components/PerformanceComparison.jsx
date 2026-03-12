@@ -97,10 +97,10 @@ export function PerformanceComparison({ data }) {
 
       <ResponsiveContainer width="100%" height={220}>
         <BarChart data={weeklyTrends}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#3f5e5438" />
-          <XAxis dataKey="week" stroke="#4e655c" />
-          <YAxis yAxisId="left" stroke="#4e655c" />
-          <YAxis yAxisId="right" orientation="right" stroke="#4e655c" domain={[90, 100]} />
+          <CartesianGrid strokeDasharray="3 3" stroke="hsl(150, 30%, 85%)" />
+          <XAxis dataKey="week" stroke="hsl(148, 13%, 35%)" />
+          <YAxis yAxisId="left" stroke="hsl(148, 13%, 35%)" />
+          <YAxis yAxisId="right" orientation="right" stroke="hsl(148, 13%, 35%)" domain={[90, 100]} />
           <Tooltip
             contentStyle={{
               backgroundColor: "rgba(255, 255, 255, 0.94)",
@@ -110,8 +110,8 @@ export function PerformanceComparison({ data }) {
             }}
           />
           <Legend />
-          <Bar yAxisId="left" dataKey="weeds" fill="#0f766e" name="Weeds Eliminated" radius={[8, 8, 0, 0]} />
-          <Bar yAxisId="right" dataKey="efficiency" fill="#f97316" name="Efficiency %" radius={[8, 8, 0, 0]} />
+          <Bar yAxisId="left" dataKey="weeds" fill="hsl(174, 78%, 26%)" name="Weeds Eliminated" radius={[8, 8, 0, 0]} />
+          <Bar yAxisId="right" dataKey="efficiency" fill="hsl(25, 95%, 53%)" name="Efficiency %" radius={[8, 8, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
     </Card>

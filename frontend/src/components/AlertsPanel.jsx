@@ -60,8 +60,7 @@ export function AlertsPanel({ alerts = [], onMarkRead, onMarkAllRead }) {
         {unreadCount > 0 && (
           <button
             onClick={onMarkAllRead}
-            className="text-sm transition-colors px-3 py-1 rounded-lg chip-cyan"
-            style={{ color: "#0f766e" }}
+            className="text-sm transition-colors px-3 py-1 rounded-lg chip-cyan text-primary"
           >
             Mark all as read
           </button>

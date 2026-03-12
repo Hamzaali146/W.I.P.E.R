@@ -3,22 +3,22 @@ import { Sprout, Cloud, CheckCircle2, TrendingUp } from "lucide-react";
 
 function StatCard({ title, value, icon, trend, trendUp }) {
   return (
-    <Card className="p-6 bg-gradient-to-br from-white to-emerald-50/30 border-2 border-[#2a7d2f]/30 shadow-lg hover:shadow-xl transition-shadow">
+    <Card className="p-6 surface-card">
       <div className="flex items-start justify-between">
         <div className="flex-1">
-          <p className="text-[#2a5c43]">{title}</p>
-          <h3 className="mt-2 text-[#0a3d2c]">{value}</h3>
+          <p className="text-muted-foreground">{title}</p>
+          <h3 className="mt-2 text-foreground">{value}</h3>
 
           {trend ? (
             <div className="flex items-center gap-1 mt-2">
               <TrendingUp
                 className={`w-4 h-4 ${
-                  trendUp ? "text-[#2a7d2f]" : "text-red-600 rotate-180"
+                  trendUp ? "text-primary" : "text-destructive rotate-180"
                 }`}
               />
               <span
                 className={`text-sm ${
-                  trendUp ? "text-[#2a7d2f]" : "text-red-600"
+                  trendUp ? "text-primary" : "text-destructive"
                 }`}
               >
                 {trend}
@@ -27,7 +27,7 @@ function StatCard({ title, value, icon, trend, trendUp }) {
           ) : null}
         </div>
 
-        <div className="p-3 bg-gradient-to-br from-[#2a7d2f] to-[#0a3d2c] rounded-xl shadow-md">
+        <div className="p-3 elevated-card rounded-xl shadow-md">
           {icon}
         </div>
       </div>

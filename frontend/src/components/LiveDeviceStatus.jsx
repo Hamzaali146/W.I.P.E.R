@@ -34,7 +34,7 @@ export function LiveDeviceStatus({ data }) {
 
             {device.isLive && (
               <Badge className="status-pill">
-                <span className="w-2 h-2 bg-emerald-500 rounded-full mr-1 animate-pulse"></span>
+                <span className="w-2 h-2 bg-primary rounded-full mr-1 animate-pulse"></span>
                 Live
               </Badge>
             )}
@@ -45,14 +45,14 @@ export function LiveDeviceStatus({ data }) {
 
       <div className="mb-6 p-6 elevated-card">
         <div className="text-center">
-          <p className="text-sm text-emerald-100 mb-2">Total Weeds Eliminated Today</p>
+          <p className="text-sm text-primary-foreground/80 mb-2">Total Weeds Eliminated Today</p>
 
           <div className="flex items-center justify-center gap-3">
-            <Zap className="w-10 h-10 text-emerald-200 float-subtle" />
+            <Zap className="w-10 h-10 text-primary-foreground/70 float-subtle" />
             <h1 className="text-white text-5xl tracking-tight">{weedCount.toLocaleString()}</h1>
           </div>
 
-          <div className="mt-4 text-sm text-emerald-100">{device.areaCovered}</div>
+          <div className="mt-4 text-sm text-primary-foreground/80">{device.areaCovered}</div>
         </div>
       </div>
 
@@ -75,7 +75,7 @@ export function LiveDeviceStatus({ data }) {
 
         <div className="p-4 metric-tile-light chip-orange">
           <div className="flex items-center gap-2 mb-1">
-            <Thermometer className="w-4 h-4 text-orange-500" />
+            <Thermometer className="w-4 h-4 text-accent" />
             <span className="text-sm text-foreground">Laser Temp</span>
           </div>
           <p className="text-foreground">{device.laserTemp}</p>
@@ -83,7 +83,7 @@ export function LiveDeviceStatus({ data }) {
 
         <div className="p-4 metric-tile-light chip-cyan">
           <div className="flex items-center gap-2 mb-1">
-            <MapPin className="w-4 h-4 text-orange-500" />
+            <MapPin className="w-4 h-4 text-accent" />
             <span className="text-sm text-foreground">GPS Tracking</span>
           </div>
           <p className="text-foreground">{device.GPS}</p>
@@ -91,7 +91,7 @@ export function LiveDeviceStatus({ data }) {
 
         <div className="p-4 metric-tile-light chip-cyan">
           <div className="flex items-center gap-2 mb-1">
-            <Camera className="w-4 h-4 text-blue-600" />
+            <Camera className="w-4 h-4 text-primary" />
             <span className="text-sm text-foreground">Camera</span>
           </div>
           <p className="text-primary">{device.cameraStatus}</p>

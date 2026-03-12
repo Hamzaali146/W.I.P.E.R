@@ -76,26 +76,26 @@ export function QuickActions({
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 stagger-list">
           <div className="text-center p-4 metric-tile">
-            <Zap className="w-6 h-6 mx-auto mb-2 text-emerald-200 float-subtle" />
-            <p className="text-sm text-emerald-100 mb-1">Weeds Eliminated</p>
+            <Zap className="w-6 h-6 mx-auto mb-2 text-primary-foreground/70 float-subtle" />
+            <p className="text-sm text-primary-foreground/80 mb-1">Weeds Eliminated</p>
             <p className="text-white">{s.weedsEliminated}</p>
           </div>
 
           <div className="text-center p-4 metric-tile">
-            <MapPin className="w-6 h-6 mx-auto mb-2 text-cyan-200 float-subtle" />
-            <p className="text-sm text-emerald-100 mb-1">Area Covered</p>
+            <MapPin className="w-6 h-6 mx-auto mb-2 text-primary-foreground/70 float-subtle" />
+            <p className="text-sm text-primary-foreground/80 mb-1">Area Covered</p>
             <p className="text-white">{s.areaCovered}</p>
           </div>
 
           <div className="text-center p-4 metric-tile">
-            <Clock className="w-6 h-6 mx-auto mb-2 text-orange-200 float-subtle" />
-            <p className="text-sm text-emerald-100 mb-1">Active Time</p>
+            <Clock className="w-6 h-6 mx-auto mb-2 text-accent/80 float-subtle" />
+            <p className="text-sm text-primary-foreground/80 mb-1">Active Time</p>
             <p className="text-white">{s.activeTime}</p>
           </div>
 
           <div className="text-center p-4 metric-tile">
-            <TrendingUp className="w-6 h-6 mx-auto mb-2 text-emerald-200" />
-            <p className="text-sm text-emerald-100 mb-1">Efficiency</p>
+            <TrendingUp className="w-6 h-6 mx-auto mb-2 text-primary-foreground/70" />
+            <p className="text-sm text-primary-foreground/80 mb-1">Efficiency</p>
             <p className="text-white">{s.efficiency}</p>
           </div>
         </div>
