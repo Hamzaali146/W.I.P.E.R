@@ -11,7 +11,7 @@ import { AlertsPanel } from "./AlertsPanel";
 import { PerformanceComparison } from "./PerformanceComparison";
 import { QuickActions } from "./QuickActions";
 
-import { Menu, Bell, Target, Sparkles } from "lucide-react";
+import { Menu, Bell, Target, Sparkles, LogOut } from "lucide-react";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 
@@ -19,7 +19,7 @@ function buildWebSocketUrl(apiBaseUrl) {
   return `${apiBaseUrl.replace(/^http/i, "ws")}/ws/detections`;
 }
 
-export default function App() {
+export default function Dashboard({user,onLogout,isAdmin}) {
   const [systemStatus, setSystemStatus] = useState(null);
   const [summaryStats, setSummaryStats] = useState(null);
   const [latestDetections, setLatestDetections] = useState([]);
@@ -247,8 +247,8 @@ export default function App() {
     <div className="dashboard-theme">
     <div className="min-h-screen app-shell">
       <header className="sticky top-0 z-10 app-header app-enter">
-        <div className="header-orb header-orb--one" />
-        <div className="header-orb header-orb--two" />
+        <div className="header-orb header-orb--one pointer-events-none" />
+<div className="header-orb header-orb--two pointer-events-none" />
         <div className="container mx-auto px-4 py-5 space-y-3">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-3">
@@ -298,6 +298,16 @@ export default function App() {
                   </span>
                 )}
               </div>
+              <button
+   onClick={() => {
+    console.log("Button clicked, onLogout is:", onLogout);
+    onLogout();
+  }}
+  className="flex items-center gap-2 text-white bg-red-500 rounded-xl px-4 py-2 text-sm font-medium cursor-pointer"
+>
+  <LogOut className="w-4 h-4" />
+  Logout
+</button>
             </div>
           </div>
 
@@ -315,83 +325,80 @@ export default function App() {
       </header>
 
       <main className="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
-        <Tabs
-          defaultValue="dashboard"
-          className="space-y-4 sm:space-y-6 app-enter"
-        >
-          <TabsList className="modern-tabs-list grid w-full max-w-3xl grid-cols-5 h-10 sm:h-12 text-xs sm:text-sm">
-            <TabsTrigger value="dashboard" className="modern-tab-trigger">
-              Dashboard
-            </TabsTrigger>
-            <TabsTrigger value="live" className="modern-tab-trigger">
-              Live
-            </TabsTrigger>
-            <TabsTrigger value="analytics" className="modern-tab-trigger">
-              Analytics
-            </TabsTrigger>
-            <TabsTrigger value="fields" className="modern-tab-trigger">
-              Fields
-            </TabsTrigger>
-            <TabsTrigger value="history" className="modern-tab-trigger">
-              History
-            </TabsTrigger>
-          </TabsList>
+       <Tabs
+       faultValue={isAdmin ? "analytics" : "dashboard"}
+  className="space-y-4 sm:space-y-6 app-enter"
+>
+  <TabsList className={`modern-tabs-list grid w-full max-w-3xl h-10 sm:h-12 text-xs sm:text-sm ${isAdmin ? 'grid-cols-3' : 'grid-cols-3'}`}>
+    {isAdmin ? (
+      <>
+        <TabsTrigger value="analytics" className="modern-tab-trigger">Analytics</TabsTrigger>
+        <TabsTrigger value="fields" className="modern-tab-trigger">Fields</TabsTrigger>
+        <TabsTrigger value="history" className="modern-tab-trigger">History</TabsTrigger>
+      </>
+    ) : (
+      <>
+        <TabsTrigger value="dashboard" className="modern-tab-trigger">Dashboard</TabsTrigger>
+        <TabsTrigger value="live" className="modern-tab-trigger">Live</TabsTrigger>
+        <TabsTrigger value="fields" className="modern-tab-trigger">Fields</TabsTrigger>
+      </>
+    )}
+  </TabsList>
 
-          <TabsContent value="dashboard" className="space-y-4 sm:space-y-6">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 stagger-children">
-              <div className="lg:col-span-2 space-y-4 sm:space-y-6">
-                <QuickActions />
-                <EfficiencyMetrics />
-              </div>
-              <div className="space-y-4 sm:space-y-6">
-                <AlertsPanel
-                  alerts={alerts}
-                  onMarkRead={markAlertRead}
-                  onMarkAllRead={markAllAlertsRead}
-                />
-                <FieldCoverageMap />
-              </div>
-            </div>
-          </TabsContent>
+  {/* Shared tab content for Fields */}
+  <TabsContent value="fields" className="space-y-4 sm:space-y-6">
+    <FieldsOverview />
+  </TabsContent>
 
-          <TabsContent value="live" className="space-y-4 sm:space-y-6">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 stagger-children">
-              <div className="lg:col-span-2 space-y-4 sm:space-y-6">
-                <LiveCameraFeed
-                  streamUrl={streamUrl}
-                  detections={latestDetections}
-                  stats={cameraStats}
-                  modelInfo={modelInfo}
-                />
-                <LiveDeviceStatus data={liveDeviceData} />
-              </div>
-              <div className="space-y-4 sm:space-y-6">
-                <AlertsPanel
-                  alerts={alerts}
-                  onMarkRead={markAlertRead}
-                  onMarkAllRead={markAllAlertsRead}
-                />
-                <FieldCoverageMap />
-              </div>
-            </div>
-          </TabsContent>
+  {/* Admin-only tabs */}
+  {isAdmin && (
+    <>
+      <TabsContent value="analytics" className="space-y-4 sm:space-y-6 stagger-children">
+        <EfficiencyMetrics />
+        <PerformanceComparison />
+      </TabsContent>
+      <TabsContent value="history" className="space-y-4 sm:space-y-6">
+        <SessionHistoryEnhanced />
+      </TabsContent>
+    </>
+  )}
 
-          <TabsContent
-            value="analytics"
-            className="space-y-4 sm:space-y-6 stagger-children"
-          >
+  {/* Regular user-only tabs */}
+  {!isAdmin && (
+    <>
+      <TabsContent value="dashboard" className="space-y-4 sm:space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 stagger-children">
+          <div className="lg:col-span-2 space-y-4 sm:space-y-6">
+            <QuickActions />
             <EfficiencyMetrics />
-            <PerformanceComparison />
-          </TabsContent>
+          </div>
+          <div className="space-y-4 sm:space-y-6">
+            <AlertsPanel alerts={alerts} onMarkRead={markAlertRead} onMarkAllRead={markAllAlertsRead} />
+            <FieldCoverageMap />
+          </div>
+        </div>
+      </TabsContent>
 
-          <TabsContent value="fields" className="space-y-4 sm:space-y-6">
-            <FieldsOverview />
-          </TabsContent>
-
-          <TabsContent value="history" className="space-y-4 sm:space-y-6">
-            <SessionHistoryEnhanced />
-          </TabsContent>
-        </Tabs>
+      <TabsContent value="live" className="space-y-4 sm:space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 stagger-children">
+          <div className="lg:col-span-2 space-y-4 sm:space-y-6">
+            <LiveCameraFeed
+              streamUrl={streamUrl}
+              detections={latestDetections}
+              stats={cameraStats}
+              modelInfo={modelInfo}
+            />
+            <LiveDeviceStatus data={liveDeviceData} />
+          </div>
+          <div className="space-y-4 sm:space-y-6">
+            <AlertsPanel alerts={alerts} onMarkRead={markAlertRead} onMarkAllRead={markAllAlertsRead} />
+            <FieldCoverageMap />
+          </div>
+        </div>
+      </TabsContent>
+    </>
+  )}
+</Tabs>
       </main>
     </div>
     </div>
