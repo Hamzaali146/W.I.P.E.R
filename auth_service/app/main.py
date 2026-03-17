@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.database import engine
 from app.routes.auth_routes import router as auth_router
-from app.routes.protected_routes import router as protected_router
+# from app.routes.protected_routes import router as protected_router
 
 app = FastAPI(
     title="Authentication Service",
@@ -27,7 +27,7 @@ app.add_middleware(
 )
 
 app.include_router(auth_router)
-app.include_router(protected_router)
+# app.include_router(protected_router)
 
 
 @app.get("/")

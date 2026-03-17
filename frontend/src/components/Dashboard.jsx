@@ -326,12 +326,14 @@ export default function Dashboard({user,onLogout,isAdmin}) {
 
       <main className="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
        <Tabs
-       faultValue={isAdmin ? "analytics" : "dashboard"}
+       defaultValue="dashboard"
   className="space-y-4 sm:space-y-6 app-enter"
 >
-  <TabsList className={`modern-tabs-list grid w-full max-w-3xl h-10 sm:h-12 text-xs sm:text-sm ${isAdmin ? 'grid-cols-3' : 'grid-cols-3'}`}>
+  <TabsList className={`modern-tabs-list grid w-full max-w-3xl h-10 sm:h-12 text-xs sm:text-sm ${isAdmin ? 'grid-cols-4' : 'grid-cols-4'}`}>
     {isAdmin ? (
       <>
+        
+        <TabsTrigger value="dashboard" className="modern-tab-trigger">Dashboard</TabsTrigger>
         <TabsTrigger value="analytics" className="modern-tab-trigger">Analytics</TabsTrigger>
         <TabsTrigger value="fields" className="modern-tab-trigger">Fields</TabsTrigger>
         <TabsTrigger value="history" className="modern-tab-trigger">History</TabsTrigger>
@@ -353,6 +355,18 @@ export default function Dashboard({user,onLogout,isAdmin}) {
   {/* Admin-only tabs */}
   {isAdmin && (
     <>
+     <TabsContent value="dashboard" className="space-y-4 sm:space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 stagger-children">
+          <div className="lg:col-span-2 space-y-4 sm:space-y-6">
+            <QuickActions />
+            <EfficiencyMetrics />
+          </div>
+          <div className="space-y-4 sm:space-y-6">
+            <AlertsPanel alerts={alerts} onMarkRead={markAlertRead} onMarkAllRead={markAllAlertsRead} />
+            <FieldCoverageMap />
+          </div>
+        </div>
+      </TabsContent>
       <TabsContent value="analytics" className="space-y-4 sm:space-y-6 stagger-children">
         <EfficiencyMetrics />
         <PerformanceComparison />
