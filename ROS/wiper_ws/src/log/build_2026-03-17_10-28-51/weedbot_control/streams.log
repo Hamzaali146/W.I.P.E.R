@@ -1,0 +1,32 @@
+[3.071s] Invoking command in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/build/weedbot_control': AMENT_PREFIX_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_interfaces:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/build/weedbot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_control/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/build/weedbot_control/build --no-deps symlink_data
+[3.806s] running develop
+[4.301s] running egg_info
+[4.301s] creating weedbot_control.egg-info
+[4.339s] writing weedbot_control.egg-info/PKG-INFO
+[4.340s] writing dependency_links to weedbot_control.egg-info/dependency_links.txt
+[4.341s] writing entry points to weedbot_control.egg-info/entry_points.txt
+[4.341s] writing requirements to weedbot_control.egg-info/requires.txt
+[4.343s] writing top-level names to weedbot_control.egg-info/top_level.txt
+[4.343s] writing manifest file 'weedbot_control.egg-info/SOURCES.txt'
+[4.433s] reading manifest file 'weedbot_control.egg-info/SOURCES.txt'
+[4.435s] writing manifest file 'weedbot_control.egg-info/SOURCES.txt'
+[4.494s] running build_ext
+[4.494s] Creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_control/lib/python3.12/site-packages/weedbot-control.egg-link (link to .)
+[4.495s] Installing control_node script to /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_control/lib/weedbot_control
+[4.496s] 
+[4.497s] Installed /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/build/weedbot_control
+[4.497s] running symlink_data
+[4.498s] creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_control/share/ament_index
+[4.498s] creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_control/share/ament_index/resource_index
+[4.499s] creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_control/share/ament_index/resource_index/packages
+[4.500s] symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/build/weedbot_control/resource/weedbot_control -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_control/share/ament_index/resource_index/packages
+[4.501s] symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/build/weedbot_control/package.xml -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_control/share/weedbot_control
+[4.501s] creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_control/share/weedbot_control/launch
+[4.502s] symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/build/weedbot_control/launch/control_launch.py -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_control/share/weedbot_control/launch
+[4.503s] creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_control/share/weedbot_control/config
+[4.504s] symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/build/weedbot_control/config/control_params.yaml -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_control/share/weedbot_control/config
+[4.505s] creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_control/share/weedbot_control/firmware
+[4.506s] symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/build/weedbot_control/firmware/stm32_laser_controller_reference.c -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_control/share/weedbot_control/firmware
+[4.507s] symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/build/weedbot_control/README.md -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_control/share/weedbot_control
+[4.508s] symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/build/weedbot_control/protocol.md -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_control/share/weedbot_control
+[4.574s] Invoked command in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/build/weedbot_control' returned '0': AMENT_PREFIX_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_interfaces:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/build/weedbot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_control/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/install/weedbot_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/build/weedbot_control/build --no-deps symlink_data

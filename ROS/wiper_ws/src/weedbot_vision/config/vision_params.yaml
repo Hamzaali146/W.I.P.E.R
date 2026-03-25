@@ -1,7 +1,7 @@
 /weedbot_vision_node:
   ros__parameters:
     camera_topic: '/camera/image_raw'
-    model_path: '/home/hamza/wiper_ws/src/weedbot_vision/models/weights.pt'
+    model_path: '/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/weedbot_vision/models/weights.pt'
     confidence_threshold: 0.15
     iou_threshold: 0.4
     input_size: 640
@@ -24,7 +24,7 @@
     flip_vertical: false
     reconnect_interval: 5.0
     frame_rate: 30.0
-    camera_source: "https://192.168.100.215:8080/video"
+    camera_source: "https://192.168.18.13:8080/video"
 
 
 /detection_monitor:

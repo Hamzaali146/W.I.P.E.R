@@ -1,0 +1,25 @@
+[1.834s] Invoking command in '/home/fatima/W.I.P.E.R/gps_ws/src/nmea_navsat_driver-ros2': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/nmea_navsat_driver build --build-base /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build install --record /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/install.log --single-version-externally-managed install_data
+[2.387s] running egg_info
+[2.419s] writing ../../build/nmea_navsat_driver/nmea_navsat_driver.egg-info/PKG-INFO
+[2.420s] writing dependency_links to ../../build/nmea_navsat_driver/nmea_navsat_driver.egg-info/dependency_links.txt
+[2.420s] writing entry points to ../../build/nmea_navsat_driver/nmea_navsat_driver.egg-info/entry_points.txt
+[2.421s] writing requirements to ../../build/nmea_navsat_driver/nmea_navsat_driver.egg-info/requires.txt
+[2.421s] writing top-level names to ../../build/nmea_navsat_driver/nmea_navsat_driver.egg-info/top_level.txt
+[2.512s] reading manifest file '../../build/nmea_navsat_driver/nmea_navsat_driver.egg-info/SOURCES.txt'
+[2.514s] writing manifest file '../../build/nmea_navsat_driver/nmea_navsat_driver.egg-info/SOURCES.txt'
+[2.515s] running build
+[2.515s] running build_py
+[2.517s] running install
+[2.534s] running install_lib
+[2.578s] running install_data
+[2.579s] running install_egg_info
+[2.612s] removing '/home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/nmea_navsat_driver-2.0.1-py3.12.egg-info' (and everything under it)
+[2.613s] Copying ../../build/nmea_navsat_driver/nmea_navsat_driver.egg-info to /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/nmea_navsat_driver-2.0.1-py3.12.egg-info
+[2.616s] running install_scripts
+[2.885s] Installing nmea_serial_driver script to /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/nmea_navsat_driver
+[2.886s] Installing nmea_socket_driver script to /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/nmea_navsat_driver
+[2.886s] Installing nmea_tcpclient_driver script to /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/nmea_navsat_driver
+[2.887s] Installing nmea_topic_driver script to /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/nmea_navsat_driver
+[2.887s] Installing nmea_topic_serial_reader script to /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/nmea_navsat_driver
+[2.888s] writing list of installed files to '/home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/install.log'
+[2.933s] Invoked command in '/home/fatima/W.I.P.E.R/gps_ws/src/nmea_navsat_driver-ros2' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/nmea_navsat_driver build --build-base /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build install --record /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/install.log --single-version-externally-managed install_data

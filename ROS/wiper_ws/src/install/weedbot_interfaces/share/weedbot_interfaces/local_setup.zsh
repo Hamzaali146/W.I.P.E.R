@@ -1,0 +1,1 @@
+/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/build/weedbot_interfaces/ament_cmake_environment_hooks/local_setup.zsh
