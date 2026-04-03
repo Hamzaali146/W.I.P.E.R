@@ -1,1 +1,0 @@
-/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/build/weedbot_interfaces/ament_cmake_core/weedbot_interfacesConfig-version.cmake

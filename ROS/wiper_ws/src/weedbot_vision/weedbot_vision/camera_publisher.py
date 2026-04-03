@@ -1,3 +1,5 @@
+# Separate Vision Service --- This file not in use right now
+
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node

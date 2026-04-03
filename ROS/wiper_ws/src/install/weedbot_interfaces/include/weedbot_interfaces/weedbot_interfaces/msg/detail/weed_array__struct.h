@@ -1,1 +1,0 @@
-/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/build/weedbot_interfaces/rosidl_generator_c/weedbot_interfaces/msg/detail/weed_array__struct.h

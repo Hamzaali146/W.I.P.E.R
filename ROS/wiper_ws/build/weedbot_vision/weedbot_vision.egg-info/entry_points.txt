@@ -1,0 +1,2 @@
+[console_scripts]
+bridge = weedbot_vision.bridge:main

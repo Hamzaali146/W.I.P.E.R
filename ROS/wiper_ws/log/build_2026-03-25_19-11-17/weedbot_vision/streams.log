@@ -1,0 +1,29 @@
+[3.265s] Invoking command in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision': AMENT_PREFIX_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/build --no-deps symlink_data
+[4.004s] running develop
+[4.453s] running egg_info
+[4.453s] creating weedbot_vision.egg-info
+[4.488s] writing weedbot_vision.egg-info/PKG-INFO
+[4.492s] writing dependency_links to weedbot_vision.egg-info/dependency_links.txt
+[4.493s] writing entry points to weedbot_vision.egg-info/entry_points.txt
+[4.494s] writing requirements to weedbot_vision.egg-info/requires.txt
+[4.494s] writing top-level names to weedbot_vision.egg-info/top_level.txt
+[4.494s] writing manifest file 'weedbot_vision.egg-info/SOURCES.txt'
+[4.565s] reading manifest file 'weedbot_vision.egg-info/SOURCES.txt'
+[4.566s] writing manifest file 'weedbot_vision.egg-info/SOURCES.txt'
+[4.607s] running build_ext
+[4.607s] Creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages/weedbot-vision.egg-link (link to .)
+[4.609s] Installing bridge script to /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/weedbot_vision
+[4.610s] 
+[4.610s] Installed /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision
+[4.611s] running symlink_data
+[4.612s] creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/ament_index
+[4.612s] creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/ament_index/resource_index
+[4.613s] creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/ament_index/resource_index/packages
+[4.613s] symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/resource/weedbot_vision -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/ament_index/resource_index/packages
+[4.613s] symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/package.xml -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision
+[4.614s] creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/launch
+[4.614s] symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/launch/vision_launch.py -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/launch
+[4.615s] symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/launch/calibration.launch.py -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/launch
+[4.616s] creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/config
+[4.617s] symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/config/vision_params.yaml -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/config
+[4.671s] Invoked command in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision' returned '0': AMENT_PREFIX_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/build --no-deps symlink_data
