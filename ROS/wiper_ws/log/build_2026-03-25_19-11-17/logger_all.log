@@ -1,0 +1,360 @@
+[0.543s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.543s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7bf830595ca0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7bf830595280>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7bf830595280>>, mixin_verb=('build',))
+[0.608s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.608s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.608s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.608s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.608s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.608s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.608s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/fatima/W.I.P.E.R/ROS/wiper_ws'
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.659s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.659s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.659s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.659s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.660s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.660s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.660s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.660s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.660s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.661s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.661s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.661s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.661s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.662s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.662s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.662s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.662s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.662s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.662s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.663s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.663s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.663s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.663s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.663s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.663s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.663s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.663s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.663s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.664s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api) by extensions ['ignore', 'ignore_ament_install']
+[0.664s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api) by extension 'ignore'
+[0.664s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api) by extension 'ignore_ament_install'
+[0.664s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api) by extensions ['colcon_pkg']
+[0.664s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api) by extension 'colcon_pkg'
+[0.664s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api) by extensions ['colcon_meta']
+[0.664s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api) by extension 'colcon_meta'
+[0.665s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api) by extensions ['ros']
+[0.665s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api) by extension 'ros'
+[0.665s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api) by extensions ['cmake', 'python']
+[0.665s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api) by extension 'cmake'
+[0.665s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api) by extension 'python'
+[0.665s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api) by extensions ['python_setup_py']
+[0.665s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api) by extension 'python_setup_py'
+[0.665s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/__pycache__) by extensions ['ignore', 'ignore_ament_install']
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/__pycache__) by extension 'ignore'
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/__pycache__) by extension 'ignore_ament_install'
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/__pycache__) by extensions ['colcon_pkg']
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/__pycache__) by extension 'colcon_pkg'
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/__pycache__) by extensions ['colcon_meta']
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/__pycache__) by extension 'colcon_meta'
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/__pycache__) by extensions ['ros']
+[0.666s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/__pycache__) by extension 'ros'
+[0.667s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/__pycache__) by extensions ['cmake', 'python']
+[0.667s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/__pycache__) by extension 'cmake'
+[0.667s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/__pycache__) by extension 'python'
+[0.667s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/__pycache__) by extensions ['python_setup_py']
+[0.667s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/__pycache__) by extension 'python_setup_py'
+[0.667s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/build) by extensions ['ignore', 'ignore_ament_install']
+[0.667s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/build) by extension 'ignore'
+[0.667s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/build) ignored
+[0.668s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/install) by extensions ['ignore', 'ignore_ament_install']
+[0.668s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/install) by extension 'ignore'
+[0.668s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/install) ignored
+[0.668s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/log) by extensions ['ignore', 'ignore_ament_install']
+[0.668s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/log) by extension 'ignore'
+[0.668s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_api/log) ignored
+[0.669s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_control) by extensions ['ignore', 'ignore_ament_install']
+[0.669s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_control) by extension 'ignore'
+[0.669s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_control) by extension 'ignore_ament_install'
+[0.669s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_control) by extensions ['colcon_pkg']
+[0.669s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_control) by extension 'colcon_pkg'
+[0.669s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_control) by extensions ['colcon_meta']
+[0.669s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_control) by extension 'colcon_meta'
+[0.669s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_control) by extensions ['ros']
+[0.670s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_control) by extension 'ros'
+[0.674s] DEBUG:colcon.colcon_core.package_identification:Package 'src/weedbot_control' with type 'ros.ament_python' and name 'weedbot_control'
+[0.675s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.675s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_interfaces) by extension 'ignore'
+[0.675s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_interfaces) by extension 'ignore_ament_install'
+[0.675s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_interfaces) by extensions ['colcon_pkg']
+[0.675s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_interfaces) by extension 'colcon_pkg'
+[0.676s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_interfaces) by extensions ['colcon_meta']
+[0.676s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_interfaces) by extension 'colcon_meta'
+[0.676s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_interfaces) by extensions ['ros']
+[0.676s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_interfaces) by extension 'ros'
+[0.677s] DEBUG:colcon.colcon_core.package_identification:Package 'src/weedbot_interfaces' with type 'ros.ament_cmake' and name 'weedbot_interfaces'
+[0.677s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_simulation) by extensions ['ignore', 'ignore_ament_install']
+[0.677s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_simulation) by extension 'ignore'
+[0.678s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_simulation) by extension 'ignore_ament_install'
+[0.678s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_simulation) by extensions ['colcon_pkg']
+[0.678s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_simulation) by extension 'colcon_pkg'
+[0.678s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_simulation) by extensions ['colcon_meta']
+[0.678s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_simulation) by extension 'colcon_meta'
+[0.678s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_simulation) by extensions ['ros']
+[0.679s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_simulation) by extension 'ros'
+[0.681s] DEBUG:colcon.colcon_core.package_identification:Package 'src/weedbot_simulation' with type 'ros.ament_python' and name 'weedbot_simulation'
+[0.681s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_vision) by extensions ['ignore', 'ignore_ament_install']
+[0.681s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_vision) by extension 'ignore'
+[0.681s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_vision) by extension 'ignore_ament_install'
+[0.681s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_vision) by extensions ['colcon_pkg']
+[0.681s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_vision) by extension 'colcon_pkg'
+[0.681s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_vision) by extensions ['colcon_meta']
+[0.681s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_vision) by extension 'colcon_meta'
+[0.682s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_vision) by extensions ['ros']
+[0.682s] Level 1:colcon.colcon_core.package_identification:_identify(src/weedbot_vision) by extension 'ros'
+[0.683s] DEBUG:colcon.colcon_core.package_identification:Package 'src/weedbot_vision' with type 'ros.ament_python' and name 'weedbot_vision'
+[0.683s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.683s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.683s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.683s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.683s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.720s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.720s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.723s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 3 installed packages in /home/fatima/FYP_WIPER/wiper_ws/install
+[0.725s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 289 installed packages in /opt/ros/jazzy
+[0.728s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.799s] Level 5:colcon.colcon_core.verb:set package 'weedbot_interfaces' build argument 'cmake_args' from command line to 'None'
+[0.799s] Level 5:colcon.colcon_core.verb:set package 'weedbot_interfaces' build argument 'cmake_target' from command line to 'None'
+[0.800s] Level 5:colcon.colcon_core.verb:set package 'weedbot_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.800s] Level 5:colcon.colcon_core.verb:set package 'weedbot_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[0.800s] Level 5:colcon.colcon_core.verb:set package 'weedbot_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.800s] Level 5:colcon.colcon_core.verb:set package 'weedbot_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.800s] Level 5:colcon.colcon_core.verb:set package 'weedbot_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.800s] Level 5:colcon.colcon_core.verb:set package 'weedbot_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.800s] Level 5:colcon.colcon_core.verb:set package 'weedbot_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.800s] DEBUG:colcon.colcon_core.verb:Building package 'weedbot_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces', 'merge_install': False, 'path': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/weedbot_interfaces', 'symlink_install': True, 'test_result_base': None}
+[0.800s] Level 5:colcon.colcon_core.verb:set package 'weedbot_simulation' build argument 'cmake_args' from command line to 'None'
+[0.800s] Level 5:colcon.colcon_core.verb:set package 'weedbot_simulation' build argument 'cmake_target' from command line to 'None'
+[0.800s] Level 5:colcon.colcon_core.verb:set package 'weedbot_simulation' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.801s] Level 5:colcon.colcon_core.verb:set package 'weedbot_simulation' build argument 'cmake_clean_cache' from command line to 'False'
+[0.801s] Level 5:colcon.colcon_core.verb:set package 'weedbot_simulation' build argument 'cmake_clean_first' from command line to 'False'
+[0.801s] Level 5:colcon.colcon_core.verb:set package 'weedbot_simulation' build argument 'cmake_force_configure' from command line to 'False'
+[0.801s] Level 5:colcon.colcon_core.verb:set package 'weedbot_simulation' build argument 'ament_cmake_args' from command line to 'None'
+[0.801s] Level 5:colcon.colcon_core.verb:set package 'weedbot_simulation' build argument 'catkin_cmake_args' from command line to 'None'
+[0.801s] Level 5:colcon.colcon_core.verb:set package 'weedbot_simulation' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.801s] DEBUG:colcon.colcon_core.verb:Building package 'weedbot_simulation' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation', 'merge_install': False, 'path': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/weedbot_simulation', 'symlink_install': True, 'test_result_base': None}
+[0.801s] Level 5:colcon.colcon_core.verb:set package 'weedbot_control' build argument 'cmake_args' from command line to 'None'
+[0.801s] Level 5:colcon.colcon_core.verb:set package 'weedbot_control' build argument 'cmake_target' from command line to 'None'
+[0.801s] Level 5:colcon.colcon_core.verb:set package 'weedbot_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.801s] Level 5:colcon.colcon_core.verb:set package 'weedbot_control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.801s] Level 5:colcon.colcon_core.verb:set package 'weedbot_control' build argument 'cmake_clean_first' from command line to 'False'
+[0.801s] Level 5:colcon.colcon_core.verb:set package 'weedbot_control' build argument 'cmake_force_configure' from command line to 'False'
+[0.802s] Level 5:colcon.colcon_core.verb:set package 'weedbot_control' build argument 'ament_cmake_args' from command line to 'None'
+[0.802s] Level 5:colcon.colcon_core.verb:set package 'weedbot_control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.802s] Level 5:colcon.colcon_core.verb:set package 'weedbot_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.802s] DEBUG:colcon.colcon_core.verb:Building package 'weedbot_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control', 'merge_install': False, 'path': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/weedbot_control', 'symlink_install': True, 'test_result_base': None}
+[0.802s] Level 5:colcon.colcon_core.verb:set package 'weedbot_vision' build argument 'cmake_args' from command line to 'None'
+[0.802s] Level 5:colcon.colcon_core.verb:set package 'weedbot_vision' build argument 'cmake_target' from command line to 'None'
+[0.802s] Level 5:colcon.colcon_core.verb:set package 'weedbot_vision' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.802s] Level 5:colcon.colcon_core.verb:set package 'weedbot_vision' build argument 'cmake_clean_cache' from command line to 'False'
+[0.802s] Level 5:colcon.colcon_core.verb:set package 'weedbot_vision' build argument 'cmake_clean_first' from command line to 'False'
+[0.802s] Level 5:colcon.colcon_core.verb:set package 'weedbot_vision' build argument 'cmake_force_configure' from command line to 'False'
+[0.802s] Level 5:colcon.colcon_core.verb:set package 'weedbot_vision' build argument 'ament_cmake_args' from command line to 'None'
+[0.803s] Level 5:colcon.colcon_core.verb:set package 'weedbot_vision' build argument 'catkin_cmake_args' from command line to 'None'
+[0.803s] Level 5:colcon.colcon_core.verb:set package 'weedbot_vision' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.803s] DEBUG:colcon.colcon_core.verb:Building package 'weedbot_vision' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision', 'merge_install': False, 'path': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/weedbot_vision', 'symlink_install': True, 'test_result_base': None}
+[0.803s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.804s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.805s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/weedbot_interfaces' with build type 'ament_cmake'
+[0.805s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/weedbot_interfaces'
+[0.810s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.810s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.810s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.818s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/weedbot_simulation' with build type 'ament_python'
+[0.819s] Level 1:colcon.colcon_core.shell:create_environment_hook('weedbot_simulation', 'ament_prefix_path')
+[0.819s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/hook/ament_prefix_path.ps1'
+[0.823s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/hook/ament_prefix_path.dsv'
+[0.824s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/hook/ament_prefix_path.sh'
+[0.825s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.825s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.854s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fatima/FYP_WIPER/wiper_ws/install/weedbot_vision:/home/fatima/FYP_WIPER/wiper_ws/install/weedbot_control:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/weedbot_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces
+[1.368s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/weedbot_simulation'
+[1.369s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.369s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.725s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/build --no-deps symlink_data
+[4.217s] Level 1:colcon.colcon_core.shell:create_environment_hook('weedbot_simulation', 'pythonpath_develop')
+[4.217s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/share/weedbot_simulation/hook/pythonpath_develop.ps1'
+[4.219s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/build --no-deps symlink_data
+[4.221s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/share/weedbot_simulation/hook/pythonpath_develop.dsv'
+[4.221s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/share/weedbot_simulation/hook/pythonpath_develop.sh'
+[4.226s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation' for CMake module files
+[4.227s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation' for CMake config files
+[4.229s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib'
+[4.230s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/bin'
+[4.230s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/pkgconfig/weedbot_simulation.pc'
+[4.231s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages'
+[4.231s] Level 1:colcon.colcon_core.shell:create_environment_hook('weedbot_simulation', 'pythonpath')
+[4.231s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/hook/pythonpath.ps1'
+[4.233s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/hook/pythonpath.dsv'
+[4.235s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/hook/pythonpath.sh'
+[4.237s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/bin'
+[4.237s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(weedbot_simulation)
+[4.238s] INFO:colcon.colcon_core.shell:Creating package script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/package.ps1'
+[4.240s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/package.dsv'
+[4.242s] INFO:colcon.colcon_core.shell:Creating package script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/package.sh'
+[4.245s] INFO:colcon.colcon_core.shell:Creating package script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/package.bash'
+[4.247s] INFO:colcon.colcon_core.shell:Creating package script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/package.zsh'
+[4.248s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/colcon-core/packages/weedbot_simulation)
+[15.085s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fatima/FYP_WIPER/wiper_ws/install/weedbot_vision:/home/fatima/FYP_WIPER/wiper_ws/install/weedbot_control:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/fatima/W.I.P.E.R/ROS/wiper_ws/src/weedbot_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces
+[15.090s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fatima/FYP_WIPER/wiper_ws/install/weedbot_vision:/home/fatima/FYP_WIPER/wiper_ws/install/weedbot_control:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces -- -j8 -l8
+[28.608s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fatima/FYP_WIPER/wiper_ws/install/weedbot_vision:/home/fatima/FYP_WIPER/wiper_ws/install/weedbot_control:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces -- -j8 -l8
+[28.633s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fatima/FYP_WIPER/wiper_ws/install/weedbot_vision:/home/fatima/FYP_WIPER/wiper_ws/install/weedbot_control:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces
+[30.430s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(weedbot_interfaces)
+[30.431s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces' for CMake module files
+[30.433s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/fatima/FYP_WIPER/wiper_ws/install/weedbot_vision:/home/fatima/FYP_WIPER/wiper_ws/install/weedbot_control:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces
+[30.434s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces' for CMake config files
+[30.435s] Level 1:colcon.colcon_core.shell:create_environment_hook('weedbot_interfaces', 'cmake_prefix_path')
+[30.435s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/hook/cmake_prefix_path.ps1'
+[30.436s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/hook/cmake_prefix_path.dsv'
+[30.436s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/hook/cmake_prefix_path.sh'
+[30.437s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib'
+[30.438s] Level 1:colcon.colcon_core.shell:create_environment_hook('weedbot_interfaces', 'ld_library_path_lib')
+[30.438s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/hook/ld_library_path_lib.ps1'
+[30.438s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/hook/ld_library_path_lib.dsv'
+[30.439s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/hook/ld_library_path_lib.sh'
+[30.439s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/bin'
+[30.439s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/pkgconfig/weedbot_interfaces.pc'
+[30.440s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages'
+[30.440s] Level 1:colcon.colcon_core.shell:create_environment_hook('weedbot_interfaces', 'pythonpath')
+[30.440s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/hook/pythonpath.ps1'
+[30.441s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/hook/pythonpath.dsv'
+[30.441s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/hook/pythonpath.sh'
+[30.442s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/bin'
+[30.443s] INFO:colcon.colcon_core.shell:Creating package script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/package.ps1'
+[30.443s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/package.dsv'
+[30.444s] INFO:colcon.colcon_core.shell:Creating package script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/package.sh'
+[30.445s] INFO:colcon.colcon_core.shell:Creating package script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/package.bash'
+[30.446s] INFO:colcon.colcon_core.shell:Creating package script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/package.zsh'
+[30.446s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/colcon-core/packages/weedbot_interfaces)
+[30.448s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(weedbot_interfaces)
+[30.448s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces' for CMake module files
+[30.450s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces' for CMake config files
+[30.452s] Level 1:colcon.colcon_core.shell:create_environment_hook('weedbot_interfaces', 'cmake_prefix_path')
+[30.453s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/hook/cmake_prefix_path.ps1'
+[30.454s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/hook/cmake_prefix_path.dsv'
+[30.455s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/hook/cmake_prefix_path.sh'
+[30.459s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib'
+[30.459s] Level 1:colcon.colcon_core.shell:create_environment_hook('weedbot_interfaces', 'ld_library_path_lib')
+[30.460s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/hook/ld_library_path_lib.ps1'
+[30.463s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/hook/ld_library_path_lib.dsv'
+[30.464s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/hook/ld_library_path_lib.sh'
+[30.465s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/bin'
+[30.466s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/pkgconfig/weedbot_interfaces.pc'
+[30.466s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages'
+[30.467s] Level 1:colcon.colcon_core.shell:create_environment_hook('weedbot_interfaces', 'pythonpath')
+[30.467s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/hook/pythonpath.ps1'
+[30.468s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/hook/pythonpath.dsv'
+[30.469s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/hook/pythonpath.sh'
+[30.471s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/bin'
+[30.472s] INFO:colcon.colcon_core.shell:Creating package script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/package.ps1'
+[30.473s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/package.dsv'
+[30.475s] INFO:colcon.colcon_core.shell:Creating package script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/package.sh'
+[30.477s] INFO:colcon.colcon_core.shell:Creating package script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/package.bash'
+[30.478s] INFO:colcon.colcon_core.shell:Creating package script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/package.zsh'
+[30.478s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/colcon-core/packages/weedbot_interfaces)
+[30.479s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/weedbot_control' with build type 'ament_python'
+[30.479s] Level 1:colcon.colcon_core.shell:create_environment_hook('weedbot_control', 'ament_prefix_path')
+[30.480s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control/hook/ament_prefix_path.ps1'
+[30.485s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control/hook/ament_prefix_path.dsv'
+[30.486s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control/hook/ament_prefix_path.sh'
+[30.487s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[30.487s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[30.497s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/weedbot_vision' with build type 'ament_python'
+[30.501s] Level 1:colcon.colcon_core.shell:create_environment_hook('weedbot_vision', 'ament_prefix_path')
+[30.502s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/hook/ament_prefix_path.ps1'
+[30.509s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/hook/ament_prefix_path.dsv'
+[30.510s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/hook/ament_prefix_path.sh'
+[30.512s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[30.512s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[31.425s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/weedbot_control'
+[31.425s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[31.426s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[31.946s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/weedbot_vision'
+[31.946s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[31.946s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[33.303s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control': AMENT_PREFIX_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/build --no-deps symlink_data
+[33.766s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision': AMENT_PREFIX_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/build --no-deps symlink_data
+[34.740s] Level 1:colcon.colcon_core.shell:create_environment_hook('weedbot_control', 'pythonpath_develop')
+[34.741s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/share/weedbot_control/hook/pythonpath_develop.ps1'
+[34.742s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control' returned '0': AMENT_PREFIX_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/build --no-deps symlink_data
+[34.743s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/share/weedbot_control/hook/pythonpath_develop.dsv'
+[34.744s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/share/weedbot_control/hook/pythonpath_develop.sh'
+[34.745s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control' for CMake module files
+[34.746s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control' for CMake config files
+[34.746s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib'
+[34.747s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/bin'
+[34.747s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/pkgconfig/weedbot_control.pc'
+[34.747s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages'
+[34.747s] Level 1:colcon.colcon_core.shell:create_environment_hook('weedbot_control', 'pythonpath')
+[34.748s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control/hook/pythonpath.ps1'
+[34.749s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control/hook/pythonpath.dsv'
+[34.749s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control/hook/pythonpath.sh'
+[34.751s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/bin'
+[34.751s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(weedbot_control)
+[34.751s] INFO:colcon.colcon_core.shell:Creating package script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control/package.ps1'
+[34.752s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control/package.dsv'
+[34.753s] INFO:colcon.colcon_core.shell:Creating package script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control/package.sh'
+[34.754s] INFO:colcon.colcon_core.shell:Creating package script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control/package.bash'
+[34.755s] INFO:colcon.colcon_core.shell:Creating package script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control/package.zsh'
+[34.755s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/colcon-core/packages/weedbot_control)
+[35.170s] Level 1:colcon.colcon_core.shell:create_environment_hook('weedbot_vision', 'pythonpath_develop')
+[35.171s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision' returned '0': AMENT_PREFIX_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/build --no-deps symlink_data
+[35.172s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/share/weedbot_vision/hook/pythonpath_develop.ps1'
+[35.175s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/share/weedbot_vision/hook/pythonpath_develop.dsv'
+[35.175s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/share/weedbot_vision/hook/pythonpath_develop.sh'
+[35.176s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision' for CMake module files
+[35.177s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision' for CMake config files
+[35.178s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib'
+[35.178s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/bin'
+[35.178s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/pkgconfig/weedbot_vision.pc'
+[35.179s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages'
+[35.179s] Level 1:colcon.colcon_core.shell:create_environment_hook('weedbot_vision', 'pythonpath')
+[35.179s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/hook/pythonpath.ps1'
+[35.181s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/hook/pythonpath.dsv'
+[35.182s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/hook/pythonpath.sh'
+[35.184s] Level 1:colcon.colcon_core.environment:checking '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/bin'
+[35.184s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(weedbot_vision)
+[35.185s] INFO:colcon.colcon_core.shell:Creating package script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/package.ps1'
+[35.186s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/package.dsv'
+[35.189s] INFO:colcon.colcon_core.shell:Creating package script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/package.sh'
+[35.190s] INFO:colcon.colcon_core.shell:Creating package script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/package.bash'
+[35.191s] INFO:colcon.colcon_core.shell:Creating package script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/package.zsh'
+[35.191s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/colcon-core/packages/weedbot_vision)
+[35.195s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[35.197s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[35.197s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[35.197s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[35.377s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[35.377s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[35.377s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[35.378s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[35.380s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[35.381s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[35.381s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/local_setup.ps1'
+[35.383s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/_local_setup_util_ps1.py'
+[35.387s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/setup.ps1'
+[35.389s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/local_setup.sh'
+[35.399s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/_local_setup_util_sh.py'
+[35.401s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/setup.sh'
+[35.403s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/local_setup.bash'
+[35.409s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/setup.bash'
+[35.412s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/local_setup.zsh'
+[35.413s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/setup.zsh'

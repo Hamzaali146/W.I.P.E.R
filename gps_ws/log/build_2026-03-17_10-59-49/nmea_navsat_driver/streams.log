@@ -1,0 +1,75 @@
+[3.219s] Invoking command in '/home/fatima/W.I.P.E.R/gps_ws/src/nmea_navsat_driver-ros2': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/nmea_navsat_driver build --build-base /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build install --record /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/install.log --single-version-externally-managed install_data
+[3.915s] running egg_info
+[3.916s] creating ../../build/nmea_navsat_driver/nmea_navsat_driver.egg-info
+[3.981s] writing ../../build/nmea_navsat_driver/nmea_navsat_driver.egg-info/PKG-INFO
+[3.982s] writing dependency_links to ../../build/nmea_navsat_driver/nmea_navsat_driver.egg-info/dependency_links.txt
+[3.982s] writing entry points to ../../build/nmea_navsat_driver/nmea_navsat_driver.egg-info/entry_points.txt
+[3.983s] writing requirements to ../../build/nmea_navsat_driver/nmea_navsat_driver.egg-info/requires.txt
+[3.983s] writing top-level names to ../../build/nmea_navsat_driver/nmea_navsat_driver.egg-info/top_level.txt
+[3.984s] writing manifest file '../../build/nmea_navsat_driver/nmea_navsat_driver.egg-info/SOURCES.txt'
+[4.179s] reading manifest file '../../build/nmea_navsat_driver/nmea_navsat_driver.egg-info/SOURCES.txt'
+[4.181s] writing manifest file '../../build/nmea_navsat_driver/nmea_navsat_driver.egg-info/SOURCES.txt'
+[4.182s] running build
+[4.183s] running build_py
+[4.183s] creating /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build
+[4.186s] creating /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib
+[4.187s] creating /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver
+[4.188s] copying src/libnmea_navsat_driver/__init__.py -> /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver
+[4.188s] copying src/libnmea_navsat_driver/driver.py -> /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver
+[4.189s] copying src/libnmea_navsat_driver/parser.py -> /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver
+[4.190s] copying src/libnmea_navsat_driver/checksum_utils.py -> /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver
+[4.190s] creating /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver/nodes
+[4.193s] copying src/libnmea_navsat_driver/nodes/__init__.py -> /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver/nodes
+[4.193s] copying src/libnmea_navsat_driver/nodes/nmea_tcpclient_driver.py -> /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver/nodes
+[4.194s] copying src/libnmea_navsat_driver/nodes/nmea_topic_driver.py -> /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver/nodes
+[4.194s] copying src/libnmea_navsat_driver/nodes/nmea_serial_driver.py -> /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver/nodes
+[4.195s] copying src/libnmea_navsat_driver/nodes/nmea_topic_serial_reader.py -> /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver/nodes
+[4.195s] copying src/libnmea_navsat_driver/nodes/nmea_socket_driver.py -> /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver/nodes
+[4.197s] running install
+[4.209s] running install_lib
+[4.266s] creating /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver
+[4.267s] copying /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver/__init__.py -> /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver
+[4.268s] copying /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver/driver.py -> /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver
+[4.268s] creating /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver/nodes
+[4.270s] copying /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver/nodes/__init__.py -> /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver/nodes
+[4.272s] copying /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver/nodes/nmea_tcpclient_driver.py -> /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver/nodes
+[4.273s] copying /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver/nodes/nmea_topic_driver.py -> /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver/nodes
+[4.273s] copying /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver/nodes/nmea_serial_driver.py -> /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver/nodes
+[4.274s] copying /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver/nodes/nmea_topic_serial_reader.py -> /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver/nodes
+[4.275s] copying /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver/nodes/nmea_socket_driver.py -> /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver/nodes
+[4.275s] copying /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver/parser.py -> /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver
+[4.275s] copying /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build/lib/libnmea_navsat_driver/checksum_utils.py -> /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver
+[4.277s] byte-compiling /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver/__init__.py to __init__.cpython-312.pyc
+[4.279s] byte-compiling /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver/driver.py to driver.cpython-312.pyc
+[4.283s] byte-compiling /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver/nodes/__init__.py to __init__.cpython-312.pyc
+[4.285s] byte-compiling /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver/nodes/nmea_tcpclient_driver.py to nmea_tcpclient_driver.cpython-312.pyc
+[4.287s] byte-compiling /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver/nodes/nmea_topic_driver.py to nmea_topic_driver.cpython-312.pyc
+[4.288s] byte-compiling /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver/nodes/nmea_serial_driver.py to nmea_serial_driver.cpython-312.pyc
+[4.290s] byte-compiling /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver/nodes/nmea_topic_serial_reader.py to nmea_topic_serial_reader.cpython-312.pyc
+[4.291s] byte-compiling /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver/nodes/nmea_socket_driver.py to nmea_socket_driver.cpython-312.pyc
+[4.293s] byte-compiling /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver/parser.py to parser.cpython-312.pyc
+[4.296s] byte-compiling /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/libnmea_navsat_driver/checksum_utils.py to checksum_utils.cpython-312.pyc
+[4.299s] running install_data
+[4.299s] creating /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/share/ament_index
+[4.300s] creating /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/share/ament_index/resource_index
+[4.302s] creating /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/share/ament_index/resource_index/packages
+[4.304s] copying resource/nmea_navsat_driver -> /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/share/ament_index/resource_index/packages
+[4.305s] copying package.xml -> /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/share/nmea_navsat_driver
+[4.306s] creating /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/share/nmea_navsat_driver/launch
+[4.307s] copying launch/nmea_tcpclient_driver.launch.py -> /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/share/nmea_navsat_driver/launch
+[4.307s] copying launch/nmea_socket_driver.launch.py -> /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/share/nmea_navsat_driver/launch
+[4.308s] copying launch/nmea_serial_driver.launch.py -> /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/share/nmea_navsat_driver/launch
+[4.309s] creating /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/share/nmea_navsat_driver/config
+[4.310s] copying config/nmea_socket_driver.yaml -> /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/share/nmea_navsat_driver/config
+[4.311s] copying config/nmea_serial_driver.yaml -> /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/share/nmea_navsat_driver/config
+[4.312s] copying config/nmea_tcpclient_driver.yaml -> /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/share/nmea_navsat_driver/config
+[4.312s] running install_egg_info
+[4.365s] Copying ../../build/nmea_navsat_driver/nmea_navsat_driver.egg-info to /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages/nmea_navsat_driver-2.0.1-py3.12.egg-info
+[4.368s] running install_scripts
+[4.765s] Installing nmea_serial_driver script to /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/nmea_navsat_driver
+[4.766s] Installing nmea_socket_driver script to /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/nmea_navsat_driver
+[4.766s] Installing nmea_tcpclient_driver script to /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/nmea_navsat_driver
+[4.768s] Installing nmea_topic_driver script to /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/nmea_navsat_driver
+[4.768s] Installing nmea_topic_serial_reader script to /home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/nmea_navsat_driver
+[4.770s] writing list of installed files to '/home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/install.log'
+[4.833s] Invoked command in '/home/fatima/W.I.P.E.R/gps_ws/src/nmea_navsat_driver-ros2' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fatima/W.I.P.E.R/gps_ws/install/nmea_navsat_driver/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/nmea_navsat_driver build --build-base /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/build install --record /home/fatima/W.I.P.E.R/gps_ws/build/nmea_navsat_driver/install.log --single-version-externally-managed install_data

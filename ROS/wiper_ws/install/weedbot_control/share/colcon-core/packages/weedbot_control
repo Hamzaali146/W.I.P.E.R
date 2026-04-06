@@ -1,1 +1,1 @@
-geometry_msgs:rclpy:sensor_msgs
+launch:launch_ros:python3-serial:rcl_interfaces:rclpy:std_msgs:weedbot_interfaces

@@ -1,10 +1,10 @@
 {
   "package_name": "weedbot_interfaces",
-  "output_dir": "/home/hamza/wiper_ws/build/weedbot_interfaces/rosidl_generator_py/weedbot_interfaces",
+  "output_dir": "/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_generator_py/weedbot_interfaces",
   "template_dir": "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource",
   "idl_tuples": [
-    "/home/hamza/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces:msg/WeedDetection.idl",
-    "/home/hamza/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces:msg/WeedArray.idl"
+    "/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces:msg/WeedDetection.idl",
+    "/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces:msg/WeedArray.idl"
   ],
   "ros_interface_dependencies": [
     "std_msgs:/opt/ros/jazzy/share/std_msgs/msg/Bool.idl",
@@ -115,8 +115,8 @@
     "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_msg.py.em",
     "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_srv_pkg_typesupport_entry_point.c.em",
     "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_srv.py.em",
-    "/home/hamza/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces/msg/WeedDetection.idl",
-    "/home/hamza/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces/msg/WeedArray.idl",
+    "/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces/msg/WeedDetection.idl",
+    "/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces/msg/WeedArray.idl",
     "/opt/ros/jazzy/share/std_msgs/msg/Bool.idl",
     "/opt/ros/jazzy/share/std_msgs/msg/Byte.idl",
     "/opt/ros/jazzy/share/std_msgs/msg/ByteMultiArray.idl",

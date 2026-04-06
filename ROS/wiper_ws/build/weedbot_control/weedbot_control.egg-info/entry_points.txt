@@ -1,0 +1,2 @@
+[console_scripts]
+control_node = weedbot_control.control_node:main

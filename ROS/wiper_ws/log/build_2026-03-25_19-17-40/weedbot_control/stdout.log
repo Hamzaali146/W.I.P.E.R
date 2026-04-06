@@ -1,0 +1,15 @@
+running develop
+running egg_info
+writing weedbot_control.egg-info/PKG-INFO
+writing dependency_links to weedbot_control.egg-info/dependency_links.txt
+writing entry points to weedbot_control.egg-info/entry_points.txt
+writing requirements to weedbot_control.egg-info/requires.txt
+writing top-level names to weedbot_control.egg-info/top_level.txt
+reading manifest file 'weedbot_control.egg-info/SOURCES.txt'
+writing manifest file 'weedbot_control.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages/weedbot-control.egg-link (link to .)
+Installing control_node script to /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/weedbot_control
+
+Installed /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control
+running symlink_data

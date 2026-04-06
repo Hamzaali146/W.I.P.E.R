@@ -24,10 +24,11 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'vision_node = weedbot_vision.vision_node:main',
-            'camera_publisher = weedbot_vision.camera_publisher:main',
-            'detection_monitor = weedbot_vision.detection_monitor:main',
-            'camera_calibration = weedbot_vision.camera_calibration:main',
+            'bridge = weedbot_vision.bridge:main',
+            # 'vision_node = weedbot_vision.vision_node:main',
+            # 'camera_publisher = weedbot_vision.camera_publisher:main',
+            # 'detection_monitor = weedbot_vision.detection_monitor:main',
+            # 'camera_calibration = weedbot_vision.camera_calibration:main',
         ],
     },
 )

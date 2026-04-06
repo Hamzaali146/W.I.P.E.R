@@ -1,4 +1,1 @@
-std_msgs/Header header
-WeedDetection[] detections
-int32 total_weeds
-float64 inference_time_ms
+/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/weedbot_interfaces/msg/WeedArray.msg
