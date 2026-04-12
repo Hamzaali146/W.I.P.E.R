@@ -16,6 +16,9 @@ from datetime import datetime
 import threading
 import time
 from collections import deque
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # ROS 2 imports
 import rclpy
@@ -25,7 +28,27 @@ from std_msgs.msg import String
 from cv_bridge import CvBridge
 from weedbot_interfaces.msg import WeedArray
 
-# Initialize FastAPI
+try:
+    from supabase import create_client, Client as SupabaseClient
+    SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
+    SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
+    if SUPABASE_URL and SUPABASE_KEY:
+        supabase: SupabaseClient = create_client(SUPABASE_URL, SUPABASE_KEY)
+        SUPABASE_ENABLED = True
+    else:
+        supabase = None
+        SUPABASE_ENABLED = False
+        print("[DB] WARNING: SUPABASE_URL or SUPABASE_KEY not set. Session will NOT be saved.")
+except ImportError:
+    supabase = None
+    SUPABASE_ENABLED = False
+    print("[DB] WARNING: supabase-py not installed. Run: pip install supabase --break-system-packages")
+
+# Tracks the real start time of a vision session (set on first detection, reset after save)
+session_start_time: Optional[datetime] = None
+
+# ==================== FastAPI App ====================
+
 app = FastAPI(
     title="Weedbot Vision API",
     description="REST API for weedbot vision and laser control system",
@@ -164,6 +187,14 @@ class ROSBridge(Node):
         self.start_time = datetime.now()
         self.last_broadcast_time = 0.0
         self.broadcast_interval_sec = 0.1
+
+        # Session DB tracking
+        # session_saved: prevents saving the same session twice (watchdog + shutdown fallback)
+        self.session_saved = False
+
+        # Watchdog timer: fires every second to check if the vision node is still alive.
+        # Uses count_publishers() — an exact ROS 2 signal — instead of a timeout guess.
+        self.create_timer(1.0, self.watchdog_callback)
         
         # Subscribers
         self.image_sub = self.create_subscription(
@@ -215,7 +246,16 @@ class ROSBridge(Node):
             self.get_logger().error(f"Viz conversion error: {e}")
     
     def detection_callback(self, msg):
-        """Process weed detections"""
+        """Process weed detections from the vision node"""
+        global session_start_time
+
+        # First detection ever received → this is the real session start time.
+        # session_saved is reset to False so a fresh session can be saved later.
+        if session_start_time is None:
+            session_start_time = datetime.now()
+            self.session_saved = False
+            self.get_logger().info(f"[DB] Vision session started at {session_start_time.isoformat()}")
+
         timestamp = datetime.now().isoformat()
         detection_data = {
             'type': 'detection',
@@ -276,7 +316,76 @@ class ROSBridge(Node):
         for ws in disconnected:
             if ws in active_websockets:
                 active_websockets.remove(ws)
-    
+
+    def watchdog_callback(self):
+        """
+        Fires every 1 second via ROS timer.
+
+        Uses count_publishers('/weedbot/detections') to check if the vision
+        node is still alive. This is exact — the moment the vision node is
+        killed, ROS 2 removes its publisher and count drops to 0.
+        No timeout guessing, no false positives from detection gaps.
+
+        If publisher count hits 0 and a session is active, save it immediately.
+        """
+        global session_start_time
+
+        # Nothing to save if no session started or already saved
+        if session_start_time is None or self.session_saved:
+            return
+
+        publisher_count = self.count_publishers('/weedbot/detections')
+
+        if publisher_count == 0:
+            self.get_logger().info(
+                "[DB] Vision node publisher gone — vision node stopped. Saving session."
+            )
+            self.save_session()
+
+    def save_session(self):
+        """
+        Builds the session record and inserts it into Supabase.
+        session_saved flag is set to True first to prevent any double-save
+        (e.g. watchdog fires and then shutdown_event also calls this).
+        After saving, session_start_time is reset to None so the next
+        run of the vision node starts a fresh session.
+        """
+        global session_start_time
+
+        if self.session_saved or session_start_time is None:
+            return
+
+        self.session_saved = True  # lock immediately — prevents double-save
+
+        session_end_time = datetime.now()
+        duration_seconds = (session_end_time - session_start_time).total_seconds()
+
+        with self.state_lock:
+            total_weeds_detected = self.total_detections
+
+        session_record = {
+            "start_time":           session_start_time.strftime("%H:%M:%S"),
+            "end_time":             session_end_time.strftime("%H:%M:%S"),
+            "date":                 session_start_time.strftime("%Y-%m-%d"),
+            "total_weeds_detected": total_weeds_detected,
+            "total_weeds_killed":   0,    # control node not finalized yet
+            "area_covered":         0.0,  # not tracked yet
+            "efficiency":           0.0,  # 0 until weeds_killed is available
+            "duration":             round(duration_seconds, 2),
+        }
+
+        if SUPABASE_ENABLED:
+            try:
+                supabase.table("session").insert(session_record).execute()
+                self.get_logger().info(f"[DB] Session saved: {session_record}")
+            except Exception as e:
+                self.get_logger().error(f"[DB] Failed to save session: {e}")
+        else:
+            self.get_logger().warn("[DB] Supabase not enabled — session not saved.")
+
+        # Reset so the next vision node startup creates a new session
+        session_start_time = None
+
     def get_latest_image_bytes(self, use_visualization=True):
         """Get latest image as JPEG bytes"""
         with self.state_lock:
@@ -344,13 +453,20 @@ async def startup_event():
     ros_thread = threading.Thread(target=ros_spin_thread, daemon=True, name="ros2-spin")
     ros_thread.start()
     await asyncio.sleep(2)  # Give ROS time to initialize
-    # add_alert("info", "Backend Started", "FastAPI is running and ready.") # just to check the alert API        
-    # add_alert("critical", "Laser Temperature", "Laser temperature is too high.") # just to check the alert API            
-       
+    # session_start_time is set on first detection — see detection_callback in ROSBridge
+
+
 @app.on_event("shutdown")
 async def shutdown_event():
     """Cleanup on shutdown"""
     global fastapi_loop
+
+    # Fallback: if FastAPI is killed while the vision node was still running,
+    # the watchdog won't get a chance to fire. Save the session here instead.
+    # session_saved guard ensures this never creates a duplicate row.
+    if ros_bridge is not None and not ros_bridge.session_saved:
+        ros_bridge.save_session()
+
     fastapi_loop = None
 
     # Close any connected websocket clients
