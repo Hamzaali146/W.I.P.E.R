@@ -1,13 +1,6 @@
 package.xml
 setup.cfg
 setup.py
-../../build/weedbot_vision/weedbot_vision.egg-info/PKG-INFO
-../../build/weedbot_vision/weedbot_vision.egg-info/SOURCES.txt
-../../build/weedbot_vision/weedbot_vision.egg-info/dependency_links.txt
-../../build/weedbot_vision/weedbot_vision.egg-info/entry_points.txt
-../../build/weedbot_vision/weedbot_vision.egg-info/requires.txt
-../../build/weedbot_vision/weedbot_vision.egg-info/top_level.txt
-../../build/weedbot_vision/weedbot_vision.egg-info/zip-safe
 config/vision_params.yaml
 launch/calibration.launch.py
 launch/vision_launch.py

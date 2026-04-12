@@ -1,9 +1,9 @@
 {
   "package_name": "weedbot_interfaces",
-  "output_dir": "/home/hamza/wiper_ws/build/weedbot_interfaces/rosidl_generator_type_description/weedbot_interfaces",
+  "output_dir": "/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_generator_type_description/weedbot_interfaces",
   "idl_tuples": [
-    "/home/hamza/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces:msg/WeedDetection.idl",
-    "/home/hamza/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces:msg/WeedArray.idl"
+    "/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces:msg/WeedDetection.idl",
+    "/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces:msg/WeedArray.idl"
   ],
   "include_paths": [
     "std_msgs:/opt/ros/jazzy/share/std_msgs",
