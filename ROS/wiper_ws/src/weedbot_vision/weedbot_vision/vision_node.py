@@ -187,12 +187,15 @@ class VisionNode(Node):
                 from ultralytics import YOLO
                 self.model = YOLO(str(model_path))
                 
-                # NEW: Extract class names from model
+                # Extract class names from model
                 if hasattr(self.model, 'names'):
                     self.class_names = self.model.names
-                    self.get_logger().info(f'Loaded {len(self.class_names)} classes from model')
+                    self.get_logger().info(f'Loaded {len(self.class_names)} class(es) from model: {list(self.class_names.values())}')
+                    if len(self.class_names) == 1:
+                        self.get_logger().info('Single-class mode: Weeds only')
                 else:
                     self.get_logger().warn('Could not extract class names from model')
+                    self.class_names = {0: 'Weed'}
                 
                 # Check device availability
                 import torch
@@ -293,9 +296,12 @@ class VisionNode(Node):
                         # Get confidence and class
                         conf = float(boxes.conf[i].cpu().numpy())
                         cls = int(boxes.cls[i].cpu().numpy())
-                        
-                        # NEW: Get class name
-                        class_name = self.class_names.get(cls, f'class_{cls}')
+
+                        # Only process Weed detections (class 0)
+                        if cls != 0:
+                            continue
+
+                        class_name = self.class_names.get(cls, 'Weed')
                         
                         # Calculate center in pixels
                         center_x_pixel = int((x1 + x2) / 2)
@@ -385,13 +391,13 @@ class VisionNode(Node):
             center_y = det['pixel_y']
             cv2.circle(viz_image, (center_x, center_y), 5, (0, 0, 255), -1)
             
-            # IMPROVED: Label with class name and coordinates
+            # Label with coordinates and confidence
             if self.use_homography:
                 real_x = det['real_world_x']
                 real_y = det['real_world_y']
-                label = f'{class_name} | ({real_x:.2f}, {real_y:.2f})m | {conf:.2f}'
+                label = f'Weed ({real_x:.2f}, {real_y:.2f})m {conf:.2f}'
             else:
-                label = f'{class_name} | {conf:.2f}'
+                label = f'Weed {conf:.2f}'
             
             label_size, _ = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.5, 2)
             
