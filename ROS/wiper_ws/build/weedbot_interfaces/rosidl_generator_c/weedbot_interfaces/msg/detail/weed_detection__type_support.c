@@ -5,9 +5,9 @@
 #include <string.h>
 
 #include "weedbot_interfaces/msg/detail/weed_detection__type_support.h"
-#include "weedbot_interfaces/msg/detail/weed_detection__functions.h"
 #include "rosidl_typesupport_interface/macros.h"
 #include "weedbot_interfaces/msg/detail/weed_detection__struct.h"
+#include "weedbot_interfaces/msg/detail/weed_detection__functions.h"
 
 #ifdef __cplusplus
 extern "C"

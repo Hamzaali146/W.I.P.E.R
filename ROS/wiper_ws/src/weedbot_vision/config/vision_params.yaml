@@ -24,7 +24,7 @@
     flip_vertical: false
     reconnect_interval: 5.0
     frame_rate: 30.0
-    camera_source: "https://192.168.18.13:8080/video"
+    camera_source: "https://192.168.18.9:8080/video"
 
 
 /detection_monitor:

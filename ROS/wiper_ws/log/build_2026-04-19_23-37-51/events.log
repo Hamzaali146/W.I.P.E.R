@@ -1,0 +1,603 @@
+[0.000000] (-) TimerEvent: {}
+[0.000188] (weedbot_interfaces) JobQueued: {'identifier': 'weedbot_interfaces', 'dependencies': OrderedDict()}
+[0.000256] (weedbot_simulation) JobQueued: {'identifier': 'weedbot_simulation', 'dependencies': OrderedDict()}
+[0.000300] (weedbot_control) JobQueued: {'identifier': 'weedbot_control', 'dependencies': OrderedDict({'weedbot_interfaces': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces'})}
+[0.000347] (weedbot_vision) JobQueued: {'identifier': 'weedbot_vision', 'dependencies': OrderedDict({'weedbot_interfaces': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces'})}
+[0.001768] (weedbot_interfaces) JobStarted: {'identifier': 'weedbot_interfaces'}
+[0.009895] (weedbot_simulation) JobStarted: {'identifier': 'weedbot_simulation'}
+[0.024060] (weedbot_interfaces) JobProgress: {'identifier': 'weedbot_interfaces', 'progress': 'cmake'}
+[0.033324] (weedbot_interfaces) Command: {'cmd': ['/usr/bin/cmake', '/home/fatima/W.I.P.E.R/ROS/wiper_ws/src/weedbot_interfaces', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces'], 'cwd': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'fatima', 'GIT_ASKPASS': '/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/extensions/git/dist/askpass.sh', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'WT_PROFILE_ID': '{51855cb2-8cce-5362-8f54-464b92b32386}', 'HOME': '/home/fatima', 'OLDPWD': '/home/fatima/W.I.P.E.R', 'TERM_PROGRAM_VERSION': '1.116.0', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-f8223c5a-cb3d-43df-a61f-b59d97e3f80b.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/node', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'WSL_DISTRO_NAME': 'Ubuntu', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'fatima', 'NAME': 'Code', 'WSL_INTEROP': '/run/WSL/18220_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'CLAUDE_CODE_SSE_PORT': '63857', 'TERM': 'xterm-256color', 'PATH': '/opt/ros/jazzy/bin:/home/fatima/.local/bin:/home/fatima/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/fatima/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/bin/remote-cli:/home/fatima/.local/bin:/home/fatima/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/Python312/Scripts/:/mnt/c/Program Files/Python312/:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/curl-8.5.0_3-win64-mingw/curl-8.5.0_3-win64-mingw/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312/Scripts/:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/840 G6/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Java/jdk-17/bin:/mnt/c/Users/840 G6/AppData/Local/Programs/Eclipse Adoptium/jdk-21.0.5.11-hotspot/bin:/mnt/c/Users/840 G6/.cargo/bin:/mnt/c/Users/840 G6/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/840 G6/AppData/Roaming/npm:/mnt/c/Program Files/Python312/:/mnt/c/Program Files/Python312/Scripts/:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312/Scripts/:/mnt/c/Users/840 G6/.dotnet/tools:/mnt/c/Users/840 G6/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Users/840 G6/Downloads/mongosh-2.4.2-win32-x64/mongosh-2.4.2-win32-x64/bin:/mnt/c/Users/840 G6/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin', 'WT_SESSION': '0b71e498-d4f9-402f-8541-fe3bca8f62c4', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-627d297f7f.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control:/opt/ros/jazzy', 'WSLENV': 'ELECTRON_RUN_AS_NODE/w:WT_SESSION:WT_PROFILE_ID:'}), 'shell': False}
+[0.099671] (-) TimerEvent: {}
+[0.200008] (-) TimerEvent: {}
+[0.300271] (-) TimerEvent: {}
+[0.400644] (-) TimerEvent: {}
+[0.501421] (-) TimerEvent: {}
+[0.585616] (weedbot_interfaces) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.601641] (-) TimerEvent: {}
+[0.702208] (-) TimerEvent: {}
+[0.802763] (-) TimerEvent: {}
+[0.903055] (-) TimerEvent: {}
+[1.003524] (-) TimerEvent: {}
+[1.104047] (-) TimerEvent: {}
+[1.204312] (-) TimerEvent: {}
+[1.304549] (-) TimerEvent: {}
+[1.404843] (-) TimerEvent: {}
+[1.505137] (-) TimerEvent: {}
+[1.605408] (-) TimerEvent: {}
+[1.705816] (-) TimerEvent: {}
+[1.719347] (weedbot_simulation) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/build', '--no-deps', 'symlink_data'], 'cwd': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'fatima', 'GIT_ASKPASS': '/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/extensions/git/dist/askpass.sh', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'WT_PROFILE_ID': '{51855cb2-8cce-5362-8f54-464b92b32386}', 'HOME': '/home/fatima', 'OLDPWD': '/home/fatima/W.I.P.E.R', 'TERM_PROGRAM_VERSION': '1.116.0', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-f8223c5a-cb3d-43df-a61f-b59d97e3f80b.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/node', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'WSL_DISTRO_NAME': 'Ubuntu', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'fatima', 'NAME': 'Code', 'WSL_INTEROP': '/run/WSL/18220_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'CLAUDE_CODE_SSE_PORT': '63857', 'TERM': 'xterm-256color', 'PATH': '/opt/ros/jazzy/bin:/home/fatima/.local/bin:/home/fatima/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/fatima/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/bin/remote-cli:/home/fatima/.local/bin:/home/fatima/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/Python312/Scripts/:/mnt/c/Program Files/Python312/:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/curl-8.5.0_3-win64-mingw/curl-8.5.0_3-win64-mingw/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312/Scripts/:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/840 G6/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Java/jdk-17/bin:/mnt/c/Users/840 G6/AppData/Local/Programs/Eclipse Adoptium/jdk-21.0.5.11-hotspot/bin:/mnt/c/Users/840 G6/.cargo/bin:/mnt/c/Users/840 G6/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/840 G6/AppData/Roaming/npm:/mnt/c/Program Files/Python312/:/mnt/c/Program Files/Python312/Scripts/:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312/Scripts/:/mnt/c/Users/840 G6/.dotnet/tools:/mnt/c/Users/840 G6/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Users/840 G6/Downloads/mongosh-2.4.2-win32-x64/mongosh-2.4.2-win32-x64/bin:/mnt/c/Users/840 G6/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin', 'WT_SESSION': '0b71e498-d4f9-402f-8541-fe3bca8f62c4', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-627d297f7f.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'WSLENV': 'ELECTRON_RUN_AS_NODE/w:WT_SESSION:WT_PROFILE_ID:'}, 'shell': False}
+[1.805991] (-) TimerEvent: {}
+[1.843834] (weedbot_interfaces) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[1.906141] (-) TimerEvent: {}
+[2.006506] (-) TimerEvent: {}
+[2.106855] (-) TimerEvent: {}
+[2.207089] (-) TimerEvent: {}
+[2.266438] (weedbot_simulation) StdoutLine: {'line': b'running develop\n'}
+[2.307261] (-) TimerEvent: {}
+[2.407735] (-) TimerEvent: {}
+[2.508102] (-) TimerEvent: {}
+[2.608421] (-) TimerEvent: {}
+[2.612659] (weedbot_simulation) StdoutLine: {'line': b'running egg_info\n'}
+[2.612868] (weedbot_simulation) StdoutLine: {'line': b'creating weedbot_simulation.egg-info\n'}
+[2.658911] (weedbot_simulation) StdoutLine: {'line': b'writing weedbot_simulation.egg-info/PKG-INFO\n'}
+[2.659723] (weedbot_simulation) StdoutLine: {'line': b'writing dependency_links to weedbot_simulation.egg-info/dependency_links.txt\n'}
+[2.660031] (weedbot_simulation) StdoutLine: {'line': b'writing entry points to weedbot_simulation.egg-info/entry_points.txt\n'}
+[2.660287] (weedbot_simulation) StdoutLine: {'line': b'writing requirements to weedbot_simulation.egg-info/requires.txt\n'}
+[2.660563] (weedbot_simulation) StdoutLine: {'line': b'writing top-level names to weedbot_simulation.egg-info/top_level.txt\n'}
+[2.660874] (weedbot_simulation) StdoutLine: {'line': b"writing manifest file 'weedbot_simulation.egg-info/SOURCES.txt'\n"}
+[2.708490] (-) TimerEvent: {}
+[2.743464] (weedbot_simulation) StdoutLine: {'line': b"reading manifest file 'weedbot_simulation.egg-info/SOURCES.txt'\n"}
+[2.744101] (weedbot_simulation) StdoutLine: {'line': b"writing manifest file 'weedbot_simulation.egg-info/SOURCES.txt'\n"}
+[2.780878] (weedbot_simulation) StdoutLine: {'line': b'running build_ext\n'}
+[2.781215] (weedbot_simulation) StdoutLine: {'line': b'Creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages/weedbot-simulation.egg-link (link to .)\n'}
+[2.782122] (weedbot_simulation) StdoutLine: {'line': b'Installing laser_controller script to /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/weedbot_simulation\n'}
+[2.783148] (weedbot_simulation) StdoutLine: {'line': b'Installing tractor_controller script to /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/weedbot_simulation\n'}
+[2.783445] (weedbot_simulation) StdoutLine: {'line': b'Installing weed_spawner script to /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/weedbot_simulation\n'}
+[2.783832] (weedbot_simulation) StdoutLine: {'line': b'\n'}
+[2.784043] (weedbot_simulation) StdoutLine: {'line': b'Installed /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation\n'}
+[2.784451] (weedbot_simulation) StdoutLine: {'line': b'running symlink_data\n'}
+[2.784539] (weedbot_simulation) StdoutLine: {'line': b'creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/ament_index\n'}
+[2.784704] (weedbot_simulation) StdoutLine: {'line': b'creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/ament_index/resource_index\n'}
+[2.785003] (weedbot_simulation) StdoutLine: {'line': b'creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/ament_index/resource_index/packages\n'}
+[2.785365] (weedbot_simulation) StdoutLine: {'line': b'symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/resource/weedbot_simulation -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/ament_index/resource_index/packages\n'}
+[2.785730] (weedbot_simulation) StdoutLine: {'line': b'symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/package.xml -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation\n'}
+[2.786004] (weedbot_simulation) StdoutLine: {'line': b'creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/launch\n'}
+[2.786346] (weedbot_simulation) StdoutLine: {'line': b'symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/launch/full_system_launch.py -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/launch\n'}
+[2.786848] (weedbot_simulation) StdoutLine: {'line': b'symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/launch/simulation_launch.py -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/launch\n'}
+[2.787152] (weedbot_simulation) StdoutLine: {'line': b'creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/worlds\n'}
+[2.787472] (weedbot_simulation) StdoutLine: {'line': b'symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/worlds/farm_field.world -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/worlds\n'}
+[2.787761] (weedbot_simulation) StdoutLine: {'line': b'creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/urdf\n'}
+[2.788137] (weedbot_simulation) StdoutLine: {'line': b'symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/urdf/tractor.urdf.xacro -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/urdf\n'}
+[2.788618] (weedbot_simulation) StdoutLine: {'line': b'creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/models\n'}
+[2.789136] (weedbot_simulation) StdoutLine: {'line': b'creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/models/weed\n'}
+[2.789804] (weedbot_simulation) StdoutLine: {'line': b'symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/models/weed/model.config -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/models/weed\n'}
+[2.790622] (weedbot_simulation) StdoutLine: {'line': b'symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/models/weed/model.sdf -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/models/weed\n'}
+[2.808700] (-) TimerEvent: {}
+[2.889836] (weedbot_simulation) CommandEnded: {'returncode': 0}
+[2.908928] (-) TimerEvent: {}
+[2.915701] (weedbot_simulation) JobEnded: {'identifier': 'weedbot_simulation', 'rc': 0}
+[3.006666] (weedbot_interfaces) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[3.008976] (-) TimerEvent: {}
+[3.109300] (-) TimerEvent: {}
+[3.209646] (-) TimerEvent: {}
+[3.310045] (-) TimerEvent: {}
+[3.410529] (-) TimerEvent: {}
+[3.510897] (-) TimerEvent: {}
+[3.517851] (weedbot_interfaces) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[3.530598] (weedbot_interfaces) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[3.531033] (weedbot_interfaces) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[3.532100] (weedbot_interfaces) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[3.611042] (-) TimerEvent: {}
+[3.711526] (-) TimerEvent: {}
+[3.716847] (weedbot_interfaces) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[3.811676] (-) TimerEvent: {}
+[3.912096] (-) TimerEvent: {}
+[4.012397] (-) TimerEvent: {}
+[4.112794] (-) TimerEvent: {}
+[4.213289] (-) TimerEvent: {}
+[4.284570] (weedbot_interfaces) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[4.297068] (weedbot_interfaces) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[4.297454] (weedbot_interfaces) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[4.297854] (weedbot_interfaces) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[4.307728] (weedbot_interfaces) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[4.313348] (-) TimerEvent: {}
+[4.413566] (-) TimerEvent: {}
+[4.509525] (weedbot_interfaces) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[4.513686] (-) TimerEvent: {}
+[4.613920] (-) TimerEvent: {}
+[4.617913] (weedbot_interfaces) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[4.674382] (weedbot_interfaces) StdoutLine: {'line': b'-- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)\n'}
+[4.714076] (-) TimerEvent: {}
+[4.814405] (-) TimerEvent: {}
+[4.914876] (-) TimerEvent: {}
+[4.991577] (weedbot_interfaces) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[5.010286] (weedbot_interfaces) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[5.015292] (-) TimerEvent: {}
+[5.042026] (weedbot_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[5.072616] (weedbot_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[5.115393] (-) TimerEvent: {}
+[5.125731] (weedbot_interfaces) StdoutLine: {'line': b'-- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)\n'}
+[5.205607] (weedbot_interfaces) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)\n'}
+[5.215561] (-) TimerEvent: {}
+[5.222368] (weedbot_interfaces) StdoutLine: {'line': b'-- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)\n'}
+[5.315667] (-) TimerEvent: {}
+[5.416042] (-) TimerEvent: {}
+[5.516461] (-) TimerEvent: {}
+[5.616971] (-) TimerEvent: {}
+[5.717255] (-) TimerEvent: {}
+[5.817648] (-) TimerEvent: {}
+[5.918001] (-) TimerEvent: {}
+[6.018610] (-) TimerEvent: {}
+[6.112435] (weedbot_interfaces) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)\n'}
+[6.118677] (-) TimerEvent: {}
+[6.219079] (-) TimerEvent: {}
+[6.319350] (-) TimerEvent: {}
+[6.419661] (-) TimerEvent: {}
+[6.520024] (-) TimerEvent: {}
+[6.620292] (-) TimerEvent: {}
+[6.720620] (-) TimerEvent: {}
+[6.820959] (-) TimerEvent: {}
+[6.921226] (-) TimerEvent: {}
+[7.021453] (-) TimerEvent: {}
+[7.121882] (-) TimerEvent: {}
+[7.222412] (-) TimerEvent: {}
+[7.323003] (-) TimerEvent: {}
+[7.334311] (weedbot_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[7.423219] (-) TimerEvent: {}
+[7.523791] (-) TimerEvent: {}
+[7.624124] (-) TimerEvent: {}
+[7.724382] (-) TimerEvent: {}
+[7.824691] (-) TimerEvent: {}
+[7.830211] (weedbot_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[7.834109] (weedbot_interfaces) StdoutLine: {'line': b'-- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)\n'}
+[7.924864] (-) TimerEvent: {}
+[8.019240] (weedbot_interfaces) StdoutLine: {'line': b'-- Found PythonExtra: /usr/bin/python3  \n'}
+[8.025090] (-) TimerEvent: {}
+[8.125525] (-) TimerEvent: {}
+[8.225843] (-) TimerEvent: {}
+[8.326185] (-) TimerEvent: {}
+[8.426467] (-) TimerEvent: {}
+[8.527492] (-) TimerEvent: {}
+[8.627778] (-) TimerEvent: {}
+[8.728134] (-) TimerEvent: {}
+[8.828768] (-) TimerEvent: {}
+[8.903675] (weedbot_interfaces) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed \n'}
+[8.928898] (-) TimerEvent: {}
+[9.029335] (-) TimerEvent: {}
+[9.091212] (weedbot_interfaces) StdoutLine: {'line': b'-- Configuring done (8.9s)\n'}
+[9.129481] (-) TimerEvent: {}
+[9.229900] (-) TimerEvent: {}
+[9.267670] (weedbot_interfaces) StdoutLine: {'line': b'-- Generating done (0.1s)\n'}
+[9.308700] (weedbot_interfaces) StdoutLine: {'line': b'-- Build files have been written to: /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces\n'}
+[9.330086] (-) TimerEvent: {}
+[9.337955] (weedbot_interfaces) CommandEnded: {'returncode': 0}
+[9.339229] (weedbot_interfaces) JobProgress: {'identifier': 'weedbot_interfaces', 'progress': 'build'}
+[9.341669] (weedbot_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces', '--', '-j8', '-l8'], 'cwd': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'fatima', 'GIT_ASKPASS': '/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/extensions/git/dist/askpass.sh', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'WT_PROFILE_ID': '{51855cb2-8cce-5362-8f54-464b92b32386}', 'HOME': '/home/fatima', 'OLDPWD': '/home/fatima/W.I.P.E.R', 'TERM_PROGRAM_VERSION': '1.116.0', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-f8223c5a-cb3d-43df-a61f-b59d97e3f80b.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/node', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'WSL_DISTRO_NAME': 'Ubuntu', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'fatima', 'NAME': 'Code', 'WSL_INTEROP': '/run/WSL/18220_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'CLAUDE_CODE_SSE_PORT': '63857', 'TERM': 'xterm-256color', 'PATH': '/opt/ros/jazzy/bin:/home/fatima/.local/bin:/home/fatima/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/fatima/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/bin/remote-cli:/home/fatima/.local/bin:/home/fatima/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/Python312/Scripts/:/mnt/c/Program Files/Python312/:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/curl-8.5.0_3-win64-mingw/curl-8.5.0_3-win64-mingw/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312/Scripts/:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/840 G6/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Java/jdk-17/bin:/mnt/c/Users/840 G6/AppData/Local/Programs/Eclipse Adoptium/jdk-21.0.5.11-hotspot/bin:/mnt/c/Users/840 G6/.cargo/bin:/mnt/c/Users/840 G6/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/840 G6/AppData/Roaming/npm:/mnt/c/Program Files/Python312/:/mnt/c/Program Files/Python312/Scripts/:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312/Scripts/:/mnt/c/Users/840 G6/.dotnet/tools:/mnt/c/Users/840 G6/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Users/840 G6/Downloads/mongosh-2.4.2-win32-x64/mongosh-2.4.2-win32-x64/bin:/mnt/c/Users/840 G6/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin', 'WT_SESSION': '0b71e498-d4f9-402f-8541-fe3bca8f62c4', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-627d297f7f.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control:/opt/ros/jazzy', 'WSLENV': 'ELECTRON_RUN_AS_NODE/w:WT_SESSION:WT_PROFILE_ID:'}), 'shell': False}
+[9.430321] (-) TimerEvent: {}
+[9.520184] (weedbot_interfaces) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating type hashes for ROS interfaces\x1b[0m\n'}
+[9.530591] (-) TimerEvent: {}
+[9.540484] (weedbot_interfaces) StdoutLine: {'line': b'[  2%] Built target ament_cmake_python_symlink_weedbot_interfaces\n'}
+[9.630803] (-) TimerEvent: {}
+[9.731351] (-) TimerEvent: {}
+[9.831895] (-) TimerEvent: {}
+[9.932281] (-) TimerEvent: {}
+[10.032586] (-) TimerEvent: {}
+[10.131327] (weedbot_interfaces) StdoutLine: {'line': b'running egg_info\n'}
+[10.132822] (-) TimerEvent: {}
+[10.133489] (weedbot_interfaces) StdoutLine: {'line': b'creating weedbot_interfaces.egg-info\n'}
+[10.197465] (weedbot_interfaces) StdoutLine: {'line': b'writing weedbot_interfaces.egg-info/PKG-INFO\n'}
+[10.198463] (weedbot_interfaces) StdoutLine: {'line': b'writing dependency_links to weedbot_interfaces.egg-info/dependency_links.txt\n'}
+[10.199623] (weedbot_interfaces) StdoutLine: {'line': b'writing top-level names to weedbot_interfaces.egg-info/top_level.txt\n'}
+[10.200051] (weedbot_interfaces) StdoutLine: {'line': b"writing manifest file 'weedbot_interfaces.egg-info/SOURCES.txt'\n"}
+[10.232966] (-) TimerEvent: {}
+[10.270193] (weedbot_interfaces) StdoutLine: {'line': b'[  2%] Built target weedbot_interfaces__rosidl_generator_type_description\n'}
+[10.293082] (weedbot_interfaces) StdoutLine: {'line': b'[  4%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[10.316668] (weedbot_interfaces) StdoutLine: {'line': b'[  6%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[10.333171] (-) TimerEvent: {}
+[10.394897] (weedbot_interfaces) StdoutLine: {'line': b"reading manifest file 'weedbot_interfaces.egg-info/SOURCES.txt'\n"}
+[10.398149] (weedbot_interfaces) StdoutLine: {'line': b"writing manifest file 'weedbot_interfaces.egg-info/SOURCES.txt'\n"}
+[10.433370] (-) TimerEvent: {}
+[10.483816] (weedbot_interfaces) StdoutLine: {'line': b'[  6%] Built target ament_cmake_python_build_weedbot_interfaces_egg\n'}
+[10.533654] (-) TimerEvent: {}
+[10.634210] (-) TimerEvent: {}
+[10.734637] (-) TimerEvent: {}
+[10.835109] (-) TimerEvent: {}
+[10.935799] (-) TimerEvent: {}
+[11.036240] (-) TimerEvent: {}
+[11.136737] (-) TimerEvent: {}
+[11.142215] (weedbot_interfaces) StdoutLine: {'line': b'[  6%] Built target weedbot_interfaces__cpp\n'}
+[11.237372] (-) TimerEvent: {}
+[11.247105] (weedbot_interfaces) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding C object CMakeFiles/weedbot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/weedbot_interfaces/msg/detail/weed_detection__description.c.o\x1b[0m\n'}
+[11.247584] (weedbot_interfaces) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding C object CMakeFiles/weedbot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/weedbot_interfaces/msg/detail/weed_array__type_support.c.o\x1b[0m\n'}
+[11.247879] (weedbot_interfaces) StdoutLine: {'line': b'[ 13%] \x1b[32mBuilding C object CMakeFiles/weedbot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/weedbot_interfaces/msg/detail/weed_detection__functions.c.o\x1b[0m\n'}
+[11.248121] (weedbot_interfaces) StdoutLine: {'line': b'[ 15%] \x1b[32mBuilding C object CMakeFiles/weedbot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/weedbot_interfaces/msg/detail/weed_array__description.c.o\x1b[0m\n'}
+[11.248302] (weedbot_interfaces) StdoutLine: {'line': b'[ 18%] \x1b[32mBuilding C object CMakeFiles/weedbot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/weedbot_interfaces/msg/detail/weed_detection__type_support.c.o\x1b[0m\n'}
+[11.250005] (weedbot_interfaces) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding C object CMakeFiles/weedbot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/weedbot_interfaces/msg/detail/weed_array__functions.c.o\x1b[0m\n'}
+[11.337677] (-) TimerEvent: {}
+[11.438253] (-) TimerEvent: {}
+[11.460910] (weedbot_interfaces) StdoutLine: {'line': b'[ 22%] \x1b[32m\x1b[1mLinking C shared library libweedbot_interfaces__rosidl_generator_c.so\x1b[0m\n'}
+[11.538457] (-) TimerEvent: {}
+[11.639092] (-) TimerEvent: {}
+[11.739497] (-) TimerEvent: {}
+[11.781552] (weedbot_interfaces) StdoutLine: {'line': b'[ 22%] Built target weedbot_interfaces__rosidl_generator_c\n'}
+[11.806267] (weedbot_interfaces) StdoutLine: {'line': b'[ 25%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[11.809296] (weedbot_interfaces) StdoutLine: {'line': b'[ 29%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[11.809751] (weedbot_interfaces) StdoutLine: {'line': b'[ 29%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[11.811416] (weedbot_interfaces) StdoutLine: {'line': b'[ 31%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[11.818123] (weedbot_interfaces) StdoutLine: {'line': b'[ 34%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[11.831746] (weedbot_interfaces) StdoutLine: {'line': b'[ 36%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[11.839616] (-) TimerEvent: {}
+[11.940045] (-) TimerEvent: {}
+[12.040602] (-) TimerEvent: {}
+[12.141057] (-) TimerEvent: {}
+[12.241573] (-) TimerEvent: {}
+[12.342160] (-) TimerEvent: {}
+[12.442698] (-) TimerEvent: {}
+[12.543204] (-) TimerEvent: {}
+[12.643680] (-) TimerEvent: {}
+[12.744151] (-) TimerEvent: {}
+[12.844611] (-) TimerEvent: {}
+[12.945106] (-) TimerEvent: {}
+[13.047773] (-) TimerEvent: {}
+[13.148618] (-) TimerEvent: {}
+[13.251856] (-) TimerEvent: {}
+[13.265831] (weedbot_interfaces) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/weedbot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/weedbot_interfaces/msg/weed_detection__type_support.cpp.o\x1b[0m\n'}
+[13.292740] (weedbot_interfaces) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/weedbot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/weedbot_interfaces/msg/weed_array__type_support.cpp.o\x1b[0m\n'}
+[13.323787] (weedbot_interfaces) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/weedbot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/weedbot_interfaces/msg/weed_array__type_support.cpp.o\x1b[0m\n'}
+[13.326529] (weedbot_interfaces) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding CXX object CMakeFiles/weedbot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/weedbot_interfaces/msg/weed_detection__type_support.cpp.o\x1b[0m\n'}
+[13.352037] (-) TimerEvent: {}
+[13.410117] (weedbot_interfaces) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding C object CMakeFiles/weedbot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/weedbot_interfaces/msg/detail/weed_detection__type_support.c.o\x1b[0m\n'}
+[13.452164] (-) TimerEvent: {}
+[13.462077] (weedbot_interfaces) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/weedbot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/weedbot_interfaces/msg/detail/weed_detection__type_support.cpp.o\x1b[0m\n'}
+[13.552309] (-) TimerEvent: {}
+[13.579742] (weedbot_interfaces) StdoutLine: {'line': b'[ 52%] \x1b[32m\x1b[1mLinking CXX shared library libweedbot_interfaces__rosidl_typesupport_c.so\x1b[0m\n'}
+[13.618156] (weedbot_interfaces) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding CXX object CMakeFiles/weedbot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/weedbot_interfaces/msg/detail/weed_array__type_support.cpp.o\x1b[0m\n'}
+[13.652489] (-) TimerEvent: {}
+[13.702777] (weedbot_interfaces) StdoutLine: {'line': b'[ 56%] \x1b[32mBuilding C object CMakeFiles/weedbot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/weedbot_interfaces/msg/detail/weed_array__type_support.c.o\x1b[0m\n'}
+[13.703256] (weedbot_interfaces) StdoutLine: {'line': b'[ 59%] \x1b[32mBuilding CXX object CMakeFiles/weedbot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/weedbot_interfaces/msg/detail/weed_detection__type_support_c.cpp.o\x1b[0m\n'}
+[13.753618] (-) TimerEvent: {}
+[13.787991] (weedbot_interfaces) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/weedbot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/weedbot_interfaces/msg/detail/dds_fastrtps/weed_detection__type_support.cpp.o\x1b[0m\n'}
+[13.853894] (-) TimerEvent: {}
+[13.909888] (weedbot_interfaces) StdoutLine: {'line': b'[ 63%] \x1b[32m\x1b[1mLinking C shared library libweedbot_interfaces__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[13.955389] (-) TimerEvent: {}
+[14.055915] (-) TimerEvent: {}
+[14.156713] (-) TimerEvent: {}
+[14.258355] (-) TimerEvent: {}
+[14.359447] (-) TimerEvent: {}
+[14.460827] (-) TimerEvent: {}
+[14.555973] (weedbot_interfaces) StdoutLine: {'line': b'[ 63%] Built target weedbot_interfaces__rosidl_typesupport_c\n'}
+[14.562197] (-) TimerEvent: {}
+[14.612446] (weedbot_interfaces) StdoutLine: {'line': b'[ 65%] \x1b[32mBuilding CXX object CMakeFiles/weedbot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/weedbot_interfaces/msg/detail/weed_array__type_support_c.cpp.o\x1b[0m\n'}
+[14.666673] (-) TimerEvent: {}
+[14.767150] (-) TimerEvent: {}
+[14.809827] (weedbot_interfaces) StdoutLine: {'line': b'[ 65%] Built target weedbot_interfaces__rosidl_typesupport_introspection_c\n'}
+[14.867323] (-) TimerEvent: {}
+[14.918842] (weedbot_interfaces) StdoutLine: {'line': b'[ 68%] \x1b[32mBuilding CXX object CMakeFiles/weedbot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/weedbot_interfaces/msg/detail/dds_fastrtps/weed_array__type_support.cpp.o\x1b[0m\n'}
+[14.974602] (-) TimerEvent: {}
+[15.076415] (-) TimerEvent: {}
+[15.194381] (-) TimerEvent: {}
+[15.295018] (-) TimerEvent: {}
+[15.407399] (-) TimerEvent: {}
+[15.466504] (weedbot_interfaces) StdoutLine: {'line': b'[ 70%] \x1b[32m\x1b[1mLinking CXX shared library libweedbot_interfaces__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[15.514474] (-) TimerEvent: {}
+[15.618652] (-) TimerEvent: {}
+[15.719322] (-) TimerEvent: {}
+[15.820095] (-) TimerEvent: {}
+[15.920924] (-) TimerEvent: {}
+[16.028327] (-) TimerEvent: {}
+[16.061838] (weedbot_interfaces) StdoutLine: {'line': b'[ 70%] Built target weedbot_interfaces__rosidl_typesupport_cpp\n'}
+[16.128477] (-) TimerEvent: {}
+[16.228906] (-) TimerEvent: {}
+[16.329420] (-) TimerEvent: {}
+[16.430109] (-) TimerEvent: {}
+[16.531564] (-) TimerEvent: {}
+[16.558833] (weedbot_interfaces) StdoutLine: {'line': b'[ 72%] \x1b[32m\x1b[1mLinking CXX shared library libweedbot_interfaces__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[16.631819] (-) TimerEvent: {}
+[16.732396] (-) TimerEvent: {}
+[16.832835] (-) TimerEvent: {}
+[16.933205] (-) TimerEvent: {}
+[17.019964] (weedbot_interfaces) StdoutLine: {'line': b'[ 75%] \x1b[32m\x1b[1mLinking CXX shared library libweedbot_interfaces__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[17.033378] (-) TimerEvent: {}
+[17.134020] (-) TimerEvent: {}
+[17.139048] (weedbot_interfaces) StdoutLine: {'line': b'[ 75%] Built target weedbot_interfaces__rosidl_typesupport_introspection_cpp\n'}
+[17.234094] (-) TimerEvent: {}
+[17.334679] (-) TimerEvent: {}
+[17.338975] (weedbot_interfaces) StdoutLine: {'line': b'[ 77%] \x1b[32m\x1b[1mLinking CXX shared library libweedbot_interfaces__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[17.395708] (weedbot_interfaces) StdoutLine: {'line': b'[ 77%] Built target weedbot_interfaces__rosidl_typesupport_fastrtps_c\n'}
+[17.434844] (-) TimerEvent: {}
+[17.535439] (-) TimerEvent: {}
+[17.636138] (-) TimerEvent: {}
+[17.731921] (weedbot_interfaces) StdoutLine: {'line': b'[ 77%] Built target weedbot_interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[17.736250] (-) TimerEvent: {}
+[17.766076] (weedbot_interfaces) StdoutLine: {'line': b'[ 77%] Built target weedbot_interfaces\n'}
+[17.797188] (weedbot_interfaces) StdoutLine: {'line': b'[ 79%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[17.836377] (-) TimerEvent: {}
+[17.936753] (-) TimerEvent: {}
+[18.037151] (-) TimerEvent: {}
+[18.137523] (-) TimerEvent: {}
+[18.238005] (-) TimerEvent: {}
+[18.338353] (-) TimerEvent: {}
+[18.438856] (-) TimerEvent: {}
+[18.539421] (-) TimerEvent: {}
+[18.640014] (-) TimerEvent: {}
+[18.731258] (weedbot_interfaces) StdoutLine: {'line': b'[ 79%] Built target weedbot_interfaces__py\n'}
+[18.740153] (-) TimerEvent: {}
+[18.759425] (weedbot_interfaces) StdoutLine: {'line': b'[ 84%] \x1b[32mBuilding C object CMakeFiles/weedbot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/weedbot_interfaces/msg/_weed_array_s.c.o\x1b[0m\n'}
+[18.759796] (weedbot_interfaces) StdoutLine: {'line': b'[ 84%] \x1b[32mBuilding C object CMakeFiles/weedbot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/weedbot_interfaces/msg/_weed_detection_s.c.o\x1b[0m\n'}
+[18.840289] (-) TimerEvent: {}
+[18.940852] (-) TimerEvent: {}
+[19.041405] (-) TimerEvent: {}
+[19.134700] (weedbot_interfaces) StdoutLine: {'line': b'[ 86%] \x1b[32m\x1b[1mLinking C shared library libweedbot_interfaces__rosidl_generator_py.so\x1b[0m\n'}
+[19.141599] (-) TimerEvent: {}
+[19.241953] (-) TimerEvent: {}
+[19.342337] (-) TimerEvent: {}
+[19.442844] (-) TimerEvent: {}
+[19.449039] (weedbot_interfaces) StdoutLine: {'line': b'[ 86%] Built target weedbot_interfaces__rosidl_generator_py\n'}
+[19.491605] (weedbot_interfaces) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/weedbot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/weedbot_interfaces/_weedbot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[19.492076] (weedbot_interfaces) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/weedbot_interfaces_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/weedbot_interfaces/_weedbot_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[19.492521] (weedbot_interfaces) StdoutLine: {'line': b'[ 93%] \x1b[32mBuilding C object CMakeFiles/weedbot_interfaces_s__rosidl_typesupport_c.dir/rosidl_generator_py/weedbot_interfaces/_weedbot_interfaces_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[19.542990] (-) TimerEvent: {}
+[19.643381] (-) TimerEvent: {}
+[19.726280] (weedbot_interfaces) StdoutLine: {'line': b'[ 95%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/weedbot_interfaces/weedbot_interfaces_s__rosidl_typesupport_c.so\x1b[0m\n'}
+[19.734099] (weedbot_interfaces) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/weedbot_interfaces/weedbot_interfaces_s__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[19.739483] (weedbot_interfaces) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/weedbot_interfaces/weedbot_interfaces_s__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[19.743590] (-) TimerEvent: {}
+[19.844030] (-) TimerEvent: {}
+[19.944392] (-) TimerEvent: {}
+[19.952158] (weedbot_interfaces) StdoutLine: {'line': b'[100%] Built target weedbot_interfaces_s__rosidl_typesupport_c\n'}
+[19.955934] (weedbot_interfaces) StdoutLine: {'line': b'[100%] Built target weedbot_interfaces_s__rosidl_typesupport_fastrtps_c\n'}
+[20.024148] (weedbot_interfaces) StdoutLine: {'line': b'[100%] Built target weedbot_interfaces_s__rosidl_typesupport_introspection_c\n'}
+[20.043331] (weedbot_interfaces) CommandEnded: {'returncode': 0}
+[20.044700] (weedbot_interfaces) JobProgress: {'identifier': 'weedbot_interfaces', 'progress': 'install'}
+[20.044736] (-) TimerEvent: {}
+[20.066494] (weedbot_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces'], 'cwd': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'fatima', 'GIT_ASKPASS': '/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/extensions/git/dist/askpass.sh', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'WT_PROFILE_ID': '{51855cb2-8cce-5362-8f54-464b92b32386}', 'HOME': '/home/fatima', 'OLDPWD': '/home/fatima/W.I.P.E.R', 'TERM_PROGRAM_VERSION': '1.116.0', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-f8223c5a-cb3d-43df-a61f-b59d97e3f80b.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/node', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'WSL_DISTRO_NAME': 'Ubuntu', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'fatima', 'NAME': 'Code', 'WSL_INTEROP': '/run/WSL/18220_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'CLAUDE_CODE_SSE_PORT': '63857', 'TERM': 'xterm-256color', 'PATH': '/opt/ros/jazzy/bin:/home/fatima/.local/bin:/home/fatima/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/fatima/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/bin/remote-cli:/home/fatima/.local/bin:/home/fatima/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/Python312/Scripts/:/mnt/c/Program Files/Python312/:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/curl-8.5.0_3-win64-mingw/curl-8.5.0_3-win64-mingw/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312/Scripts/:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/840 G6/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Java/jdk-17/bin:/mnt/c/Users/840 G6/AppData/Local/Programs/Eclipse Adoptium/jdk-21.0.5.11-hotspot/bin:/mnt/c/Users/840 G6/.cargo/bin:/mnt/c/Users/840 G6/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/840 G6/AppData/Roaming/npm:/mnt/c/Program Files/Python312/:/mnt/c/Program Files/Python312/Scripts/:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312/Scripts/:/mnt/c/Users/840 G6/.dotnet/tools:/mnt/c/Users/840 G6/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Users/840 G6/Downloads/mongosh-2.4.2-win32-x64/mongosh-2.4.2-win32-x64/bin:/mnt/c/Users/840 G6/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin', 'WT_SESSION': '0b71e498-d4f9-402f-8541-fe3bca8f62c4', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-627d297f7f.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control:/opt/ros/jazzy', 'WSLENV': 'ELECTRON_RUN_AS_NODE/w:WT_SESSION:WT_PROFILE_ID:'}), 'shell': False}
+[20.081169] (weedbot_interfaces) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[20.081963] (weedbot_interfaces) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[20.085287] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/ament_index/resource_index/rosidl_interfaces/weedbot_interfaces\n'}
+[20.101887] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/msg/WeedDetection.json\n'}
+[20.118212] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/msg/WeedArray.json\n'}
+[20.132427] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__functions.h\n'}
+[20.144835] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__struct.h\n'}
+[20.145266] (-) TimerEvent: {}
+[20.162319] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__type_support.h\n'}
+[20.177899] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__functions.h\n'}
+[20.192607] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__struct.h\n'}
+[20.208933] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__type_support.h\n'}
+[20.221782] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[20.233529] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/weed_array.h\n'}
+[20.245410] (-) TimerEvent: {}
+[20.245869] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/weed_detection.h\n'}
+[20.259291] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/environment/library_path.sh\n'}
+[20.273610] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/environment/library_path.dsv\n'}
+[20.289113] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__rosidl_typesupport_fastrtps_c.h\n'}
+[20.304189] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__rosidl_typesupport_fastrtps_c.h\n'}
+[20.316966] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[20.329789] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__builder.hpp\n'}
+[20.343620] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__struct.hpp\n'}
+[20.345599] (-) TimerEvent: {}
+[20.355822] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__traits.hpp\n'}
+[20.376636] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__type_support.hpp\n'}
+[20.390250] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__builder.hpp\n'}
+[20.405536] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__struct.hpp\n'}
+[20.420371] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__traits.hpp\n'}
+[20.434101] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__type_support.hpp\n'}
+[20.445722] (-) TimerEvent: {}
+[20.446098] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[20.458490] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/weed_array.hpp\n'}
+[20.479151] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/weed_detection.hpp\n'}
+[20.492030] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[20.505292] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[20.521070] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[20.532741] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__rosidl_typesupport_introspection_c.h\n'}
+[20.544543] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__rosidl_typesupport_introspection_c.h\n'}
+[20.545808] (-) TimerEvent: {}
+[20.557488] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[20.575505] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__rosidl_typesupport_introspection_cpp.hpp\n'}
+[20.588109] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__rosidl_typesupport_introspection_cpp.hpp\n'}
+[20.603704] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/environment/pythonpath.sh\n'}
+[20.617016] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/environment/pythonpath.dsv\n'}
+[20.630248] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces-0.0.1-py3.12.egg-info/PKG-INFO\n'}
+[20.644811] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces-0.0.1-py3.12.egg-info/SOURCES.txt\n'}
+[20.645905] (-) TimerEvent: {}
+[20.658526] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces-0.0.1-py3.12.egg-info/dependency_links.txt\n'}
+[20.674747] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces-0.0.1-py3.12.egg-info/top_level.txt\n'}
+[20.693410] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/__init__.py\n'}
+[20.707567] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/_weedbot_interfaces_s.ep.rosidl_typesupport_c.c\n'}
+[20.720525] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/_weedbot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[20.732963] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/_weedbot_interfaces_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[20.744999] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/msg/__init__.py\n'}
+[20.746069] (-) TimerEvent: {}
+[20.758139] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/msg/_weed_array.py\n'}
+[20.770460] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/msg/_weed_array_s.c\n'}
+[20.786397] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/msg/_weed_detection.py\n'}
+[20.800611] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/msg/_weed_detection_s.c\n'}
+[20.814924] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/weedbot_interfaces_s__rosidl_typesupport_c.so\n'}
+[20.829236] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/weedbot_interfaces_s__rosidl_typesupport_fastrtps_c.so\n'}
+[20.841607] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/weedbot_interfaces_s__rosidl_typesupport_introspection_c.so\n'}
+[20.846237] (-) TimerEvent: {}
+[20.853695] (weedbot_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/weedbot_interfaces_s__rosidl_typesupport_fastrtps_c.so\n'}
+[20.854035] (weedbot_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/weedbot_interfaces_s__rosidl_typesupport_introspection_c.so\n'}
+[20.854481] (weedbot_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/weedbot_interfaces_s__rosidl_typesupport_c.so\n'}
+[20.854965] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/msg/WeedDetection.idl\n'}
+[20.876211] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/msg/WeedArray.idl\n'}
+[20.889152] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/msg/WeedDetection.msg\n'}
+[20.904582] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/msg/WeedArray.msg\n'}
+[20.926043] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/ament_index/resource_index/package_run_dependencies/weedbot_interfaces\n'}
+[20.939372] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/ament_index/resource_index/parent_prefix_path/weedbot_interfaces\n'}
+[20.946398] (-) TimerEvent: {}
+[20.951526] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/environment/ament_prefix_path.sh\n'}
+[20.970219] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/environment/ament_prefix_path.dsv\n'}
+[20.987692] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/environment/path.sh\n'}
+[21.001983] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/environment/path.dsv\n'}
+[21.019246] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/local_setup.bash\n'}
+[21.032085] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/local_setup.sh\n'}
+[21.044518] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/local_setup.zsh\n'}
+[21.046649] (-) TimerEvent: {}
+[21.059211] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/local_setup.dsv\n'}
+[21.077067] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/package.dsv\n'}
+[21.092232] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/ament_index/resource_index/packages/weedbot_interfaces\n'}
+[21.107071] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/rosidl_cmake-extras.cmake\n'}
+[21.119070] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[21.131102] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[21.146238] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[21.146637] (-) TimerEvent: {}
+[21.160776] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[21.179122] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[21.192859] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[21.206021] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/weedbot_interfacesConfig.cmake\n'}
+[21.217607] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/weedbot_interfacesConfig-version.cmake\n'}
+[21.232930] (weedbot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/package.xml\n'}
+[21.244954] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_generator_c.so\n'}
+[21.245489] (weedbot_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_generator_c.so" to ""\n'}
+[21.245845] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[21.246213] (weedbot_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[21.246325] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[21.246774] (-) TimerEvent: {}
+[21.247065] (weedbot_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[21.247213] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_introspection_c.so\n'}
+[21.247538] (weedbot_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_introspection_c.so" to ""\n'}
+[21.247814] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_c.so\n'}
+[21.248082] (weedbot_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_c.so" to ""\n'}
+[21.248411] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[21.248927] (weedbot_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[21.249418] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_cpp.so\n'}
+[21.249836] (weedbot_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_cpp.so" to ""\n'}
+[21.325043] (weedbot_interfaces) StdoutLine: {'line': b"Listing '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces'...\n"}
+[21.325246] (weedbot_interfaces) StdoutLine: {'line': b"Compiling '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/__init__.py'...\n"}
+[21.325348] (weedbot_interfaces) StdoutLine: {'line': b"Listing '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/msg'...\n"}
+[21.325428] (weedbot_interfaces) StdoutLine: {'line': b"Compiling '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/msg/__init__.py'...\n"}
+[21.325540] (weedbot_interfaces) StdoutLine: {'line': b"Compiling '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/msg/_weed_array.py'...\n"}
+[21.325622] (weedbot_interfaces) StdoutLine: {'line': b"Compiling '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/msg/_weed_detection.py'...\n"}
+[21.332506] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_generator_py.so\n'}
+[21.332818] (weedbot_interfaces) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_generator_py.so" to ""\n'}
+[21.333051] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/export_weedbot_interfaces__rosidl_generator_cExport.cmake\n'}
+[21.333407] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/export_weedbot_interfaces__rosidl_generator_cExport-noconfig.cmake\n'}
+[21.333597] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/export_weedbot_interfaces__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[21.333821] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/export_weedbot_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[21.334122] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/export_weedbot_interfaces__rosidl_generator_cppExport.cmake\n'}
+[21.334375] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/export_weedbot_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[21.334878] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/export_weedbot_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[21.335129] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/weedbot_interfaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[21.335407] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/weedbot_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[21.335700] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/weedbot_interfaces__rosidl_typesupport_cExport.cmake\n'}
+[21.335919] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/weedbot_interfaces__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[21.336315] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/weedbot_interfaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[21.336580] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/weedbot_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[21.336867] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/weedbot_interfaces__rosidl_typesupport_cppExport.cmake\n'}
+[21.337186] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/weedbot_interfaces__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[21.338274] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/export_weedbot_interfaces__rosidl_generator_pyExport.cmake\n'}
+[21.338707] (weedbot_interfaces) StdoutLine: {'line': b'-- Installing: /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/share/weedbot_interfaces/cmake/export_weedbot_interfaces__rosidl_generator_pyExport-noconfig.cmake\n'}
+[21.340784] (weedbot_interfaces) CommandEnded: {'returncode': 0}
+[21.346932] (-) TimerEvent: {}
+[21.381756] (weedbot_interfaces) JobEnded: {'identifier': 'weedbot_interfaces', 'rc': 0}
+[21.383551] (weedbot_control) JobStarted: {'identifier': 'weedbot_control'}
+[21.395445] (weedbot_vision) JobStarted: {'identifier': 'weedbot_vision'}
+[21.447112] (-) TimerEvent: {}
+[21.547939] (-) TimerEvent: {}
+[21.649846] (-) TimerEvent: {}
+[21.750181] (-) TimerEvent: {}
+[21.850678] (-) TimerEvent: {}
+[22.085845] (-) TimerEvent: {}
+[22.186321] (-) TimerEvent: {}
+[22.286930] (-) TimerEvent: {}
+[22.387303] (-) TimerEvent: {}
+[22.487788] (-) TimerEvent: {}
+[22.588208] (-) TimerEvent: {}
+[22.688711] (-) TimerEvent: {}
+[22.789089] (-) TimerEvent: {}
+[22.889505] (-) TimerEvent: {}
+[22.989802] (-) TimerEvent: {}
+[23.090370] (-) TimerEvent: {}
+[23.190927] (-) TimerEvent: {}
+[23.291483] (-) TimerEvent: {}
+[23.391827] (-) TimerEvent: {}
+[23.492185] (-) TimerEvent: {}
+[23.592446] (-) TimerEvent: {}
+[23.692730] (-) TimerEvent: {}
+[23.793105] (-) TimerEvent: {}
+[23.893604] (-) TimerEvent: {}
+[23.921483] (weedbot_control) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/build', '--no-deps', 'symlink_data'], 'cwd': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'fatima', 'GIT_ASKPASS': '/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/extensions/git/dist/askpass.sh', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'WT_PROFILE_ID': '{51855cb2-8cce-5362-8f54-464b92b32386}', 'HOME': '/home/fatima', 'OLDPWD': '/home/fatima/W.I.P.E.R', 'TERM_PROGRAM_VERSION': '1.116.0', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-f8223c5a-cb3d-43df-a61f-b59d97e3f80b.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/node', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'WSL_DISTRO_NAME': 'Ubuntu', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'fatima', 'NAME': 'Code', 'WSL_INTEROP': '/run/WSL/18220_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'CLAUDE_CODE_SSE_PORT': '63857', 'TERM': 'xterm-256color', 'PATH': '/opt/ros/jazzy/bin:/home/fatima/.local/bin:/home/fatima/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/fatima/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/bin/remote-cli:/home/fatima/.local/bin:/home/fatima/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/Python312/Scripts/:/mnt/c/Program Files/Python312/:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/curl-8.5.0_3-win64-mingw/curl-8.5.0_3-win64-mingw/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312/Scripts/:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/840 G6/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Java/jdk-17/bin:/mnt/c/Users/840 G6/AppData/Local/Programs/Eclipse Adoptium/jdk-21.0.5.11-hotspot/bin:/mnt/c/Users/840 G6/.cargo/bin:/mnt/c/Users/840 G6/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/840 G6/AppData/Roaming/npm:/mnt/c/Program Files/Python312/:/mnt/c/Program Files/Python312/Scripts/:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312/Scripts/:/mnt/c/Users/840 G6/.dotnet/tools:/mnt/c/Users/840 G6/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Users/840 G6/Downloads/mongosh-2.4.2-win32-x64/mongosh-2.4.2-win32-x64/bin:/mnt/c/Users/840 G6/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin', 'WT_SESSION': '0b71e498-d4f9-402f-8541-fe3bca8f62c4', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-627d297f7f.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'WSLENV': 'ELECTRON_RUN_AS_NODE/w:WT_SESSION:WT_PROFILE_ID:'}, 'shell': False}
+[23.993923] (-) TimerEvent: {}
+[24.094594] (-) TimerEvent: {}
+[24.194965] (-) TimerEvent: {}
+[24.252781] (weedbot_vision) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/build', '--no-deps', 'symlink_data'], 'cwd': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'fatima', 'GIT_ASKPASS': '/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/extensions/git/dist/askpass.sh', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'WT_PROFILE_ID': '{51855cb2-8cce-5362-8f54-464b92b32386}', 'HOME': '/home/fatima', 'OLDPWD': '/home/fatima/W.I.P.E.R', 'TERM_PROGRAM_VERSION': '1.116.0', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-f8223c5a-cb3d-43df-a61f-b59d97e3f80b.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/node', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'WSL_DISTRO_NAME': 'Ubuntu', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'fatima', 'NAME': 'Code', 'WSL_INTEROP': '/run/WSL/18220_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'CLAUDE_CODE_SSE_PORT': '63857', 'TERM': 'xterm-256color', 'PATH': '/opt/ros/jazzy/bin:/home/fatima/.local/bin:/home/fatima/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/fatima/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/fatima/.vscode-server/bin/560a9dba96f961efea7b1612916f89e5d5d4d679/bin/remote-cli:/home/fatima/.local/bin:/home/fatima/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/Python312/Scripts/:/mnt/c/Program Files/Python312/:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/curl-8.5.0_3-win64-mingw/curl-8.5.0_3-win64-mingw/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312/Scripts/:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/840 G6/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Java/jdk-17/bin:/mnt/c/Users/840 G6/AppData/Local/Programs/Eclipse Adoptium/jdk-21.0.5.11-hotspot/bin:/mnt/c/Users/840 G6/.cargo/bin:/mnt/c/Users/840 G6/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/840 G6/AppData/Roaming/npm:/mnt/c/Program Files/Python312/:/mnt/c/Program Files/Python312/Scripts/:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312:/mnt/c/Users/840 G6/AppData/Roaming/Python/Python312/Scripts/:/mnt/c/Users/840 G6/.dotnet/tools:/mnt/c/Users/840 G6/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Users/840 G6/Downloads/mongosh-2.4.2-win32-x64/mongosh-2.4.2-win32-x64/bin:/mnt/c/Users/840 G6/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin', 'WT_SESSION': '0b71e498-d4f9-402f-8541-fe3bca8f62c4', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-627d297f7f.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'WSLENV': 'ELECTRON_RUN_AS_NODE/w:WT_SESSION:WT_PROFILE_ID:'}, 'shell': False}
+[24.295085] (-) TimerEvent: {}
+[24.395454] (-) TimerEvent: {}
+[24.495845] (-) TimerEvent: {}
+[24.588734] (weedbot_control) StdoutLine: {'line': b'running develop\n'}
+[24.595957] (-) TimerEvent: {}
+[24.696308] (-) TimerEvent: {}
+[24.796647] (-) TimerEvent: {}
+[24.897277] (-) TimerEvent: {}
+[24.900094] (weedbot_vision) StdoutLine: {'line': b'running develop\n'}
+[24.997461] (-) TimerEvent: {}
+[25.004238] (weedbot_control) StdoutLine: {'line': b'running egg_info\n'}
+[25.004436] (weedbot_control) StdoutLine: {'line': b'creating weedbot_control.egg-info\n'}
+[25.048494] (weedbot_control) StdoutLine: {'line': b'writing weedbot_control.egg-info/PKG-INFO\n'}
+[25.049259] (weedbot_control) StdoutLine: {'line': b'writing dependency_links to weedbot_control.egg-info/dependency_links.txt\n'}
+[25.049558] (weedbot_control) StdoutLine: {'line': b'writing entry points to weedbot_control.egg-info/entry_points.txt\n'}
+[25.049932] (weedbot_control) StdoutLine: {'line': b'writing requirements to weedbot_control.egg-info/requires.txt\n'}
+[25.050141] (weedbot_control) StdoutLine: {'line': b'writing top-level names to weedbot_control.egg-info/top_level.txt\n'}
+[25.050501] (weedbot_control) StdoutLine: {'line': b"writing manifest file 'weedbot_control.egg-info/SOURCES.txt'\n"}
+[25.097627] (-) TimerEvent: {}
+[25.133764] (weedbot_control) StdoutLine: {'line': b"reading manifest file 'weedbot_control.egg-info/SOURCES.txt'\n"}
+[25.134879] (weedbot_control) StdoutLine: {'line': b"writing manifest file 'weedbot_control.egg-info/SOURCES.txt'\n"}
+[25.190378] (weedbot_control) StdoutLine: {'line': b'running build_ext\n'}
+[25.190970] (weedbot_control) StdoutLine: {'line': b'Creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages/weedbot-control.egg-link (link to .)\n'}
+[25.191875] (weedbot_control) StdoutLine: {'line': b'Installing control_node script to /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/weedbot_control\n'}
+[25.193061] (weedbot_control) StdoutLine: {'line': b'\n'}
+[25.193249] (weedbot_control) StdoutLine: {'line': b'Installed /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control\n'}
+[25.193613] (weedbot_control) StdoutLine: {'line': b'running symlink_data\n'}
+[25.194015] (weedbot_control) StdoutLine: {'line': b'creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/ament_index\n'}
+[25.194188] (weedbot_control) StdoutLine: {'line': b'creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/ament_index/resource_index\n'}
+[25.194607] (weedbot_control) StdoutLine: {'line': b'creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/ament_index/resource_index/packages\n'}
+[25.196773] (weedbot_control) StdoutLine: {'line': b'symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/resource/weedbot_control -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/ament_index/resource_index/packages\n'}
+[25.197775] (-) TimerEvent: {}
+[25.198165] (weedbot_control) StdoutLine: {'line': b'symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/package.xml -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control\n'}
+[25.200262] (weedbot_control) StdoutLine: {'line': b'creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control/launch\n'}
+[25.201050] (weedbot_control) StdoutLine: {'line': b'symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/launch/control_launch.py -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control/launch\n'}
+[25.201739] (weedbot_control) StdoutLine: {'line': b'creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control/config\n'}
+[25.202934] (weedbot_control) StdoutLine: {'line': b'symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/config/control_params.yaml -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control/config\n'}
+[25.205673] (weedbot_control) StdoutLine: {'line': b'creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control/firmware\n'}
+[25.208141] (weedbot_control) StdoutLine: {'line': b'symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/firmware/stm32_laser_controller_reference.c -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control/firmware\n'}
+[25.214509] (weedbot_control) StdoutLine: {'line': b'symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/README.md -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control\n'}
+[25.219709] (weedbot_control) StdoutLine: {'line': b'symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/protocol.md -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control\n'}
+[25.298034] (-) TimerEvent: {}
+[25.317912] (weedbot_control) CommandEnded: {'returncode': 0}
+[25.348569] (weedbot_control) JobEnded: {'identifier': 'weedbot_control', 'rc': 0}
+[25.398138] (-) TimerEvent: {}
+[25.405492] (weedbot_vision) StdoutLine: {'line': b'running egg_info\n'}
+[25.406115] (weedbot_vision) StdoutLine: {'line': b'creating weedbot_vision.egg-info\n'}
+[25.483910] (weedbot_vision) StdoutLine: {'line': b'writing weedbot_vision.egg-info/PKG-INFO\n'}
+[25.484718] (weedbot_vision) StdoutLine: {'line': b'writing dependency_links to weedbot_vision.egg-info/dependency_links.txt\n'}
+[25.485196] (weedbot_vision) StdoutLine: {'line': b'writing entry points to weedbot_vision.egg-info/entry_points.txt\n'}
+[25.485563] (weedbot_vision) StdoutLine: {'line': b'writing requirements to weedbot_vision.egg-info/requires.txt\n'}
+[25.486042] (weedbot_vision) StdoutLine: {'line': b'writing top-level names to weedbot_vision.egg-info/top_level.txt\n'}
+[25.486438] (weedbot_vision) StdoutLine: {'line': b"writing manifest file 'weedbot_vision.egg-info/SOURCES.txt'\n"}
+[25.498304] (-) TimerEvent: {}
+[25.598953] (-) TimerEvent: {}
+[25.600694] (weedbot_vision) StdoutLine: {'line': b"reading manifest file 'weedbot_vision.egg-info/SOURCES.txt'\n"}
+[25.601620] (weedbot_vision) StdoutLine: {'line': b"writing manifest file 'weedbot_vision.egg-info/SOURCES.txt'\n"}
+[25.652827] (weedbot_vision) StdoutLine: {'line': b'running build_ext\n'}
+[25.653179] (weedbot_vision) StdoutLine: {'line': b'Creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages/weedbot-vision.egg-link (link to .)\n'}
+[25.654220] (weedbot_vision) StdoutLine: {'line': b'Installing camera_calibration script to /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/weedbot_vision\n'}
+[25.655261] (weedbot_vision) StdoutLine: {'line': b'Installing camera_publisher script to /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/weedbot_vision\n'}
+[25.655716] (weedbot_vision) StdoutLine: {'line': b'Installing detection_monitor script to /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/weedbot_vision\n'}
+[25.656118] (weedbot_vision) StdoutLine: {'line': b'Installing vision_node script to /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/weedbot_vision\n'}
+[25.656639] (weedbot_vision) StdoutLine: {'line': b'\n'}
+[25.656969] (weedbot_vision) StdoutLine: {'line': b'Installed /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision\n'}
+[25.657453] (weedbot_vision) StdoutLine: {'line': b'running symlink_data\n'}
+[25.657810] (weedbot_vision) StdoutLine: {'line': b'creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/ament_index\n'}
+[25.658602] (weedbot_vision) StdoutLine: {'line': b'creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/ament_index/resource_index\n'}
+[25.659204] (weedbot_vision) StdoutLine: {'line': b'creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/ament_index/resource_index/packages\n'}
+[25.660242] (weedbot_vision) StdoutLine: {'line': b'symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/resource/weedbot_vision -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/ament_index/resource_index/packages\n'}
+[25.660877] (weedbot_vision) StdoutLine: {'line': b'symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/package.xml -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision\n'}
+[25.661570] (weedbot_vision) StdoutLine: {'line': b'creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/launch\n'}
+[25.662042] (weedbot_vision) StdoutLine: {'line': b'symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/launch/vision_launch.py -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/launch\n'}
+[25.662508] (weedbot_vision) StdoutLine: {'line': b'symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/launch/calibration.launch.py -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/launch\n'}
+[25.663070] (weedbot_vision) StdoutLine: {'line': b'creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/config\n'}
+[25.663511] (weedbot_vision) StdoutLine: {'line': b'symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/config/vision_params.yaml -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/config\n'}
+[25.699116] (-) TimerEvent: {}
+[25.735176] (weedbot_vision) CommandEnded: {'returncode': 0}
+[25.754184] (weedbot_vision) JobEnded: {'identifier': 'weedbot_vision', 'rc': 0}
+[25.756200] (-) EventReactorShutdown: {}

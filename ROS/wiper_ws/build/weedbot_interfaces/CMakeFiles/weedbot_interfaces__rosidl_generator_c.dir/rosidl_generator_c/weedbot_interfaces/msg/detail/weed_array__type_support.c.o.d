@@ -29,6 +29,23 @@ CMakeFiles/weedbot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/weedbot
  /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
  /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_generator_c/weedbot_interfaces/msg/detail/weed_detection__struct.h \
  /opt/ros/jazzy/include/sensor_msgs/sensor_msgs/msg/detail/image__struct.h \
+ /opt/ros/jazzy/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
+ /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_generator_c/weedbot_interfaces/msg/detail/weed_array__type_support.h \
+ /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_generator_c/weedbot_interfaces/msg/rosidl_generator_c__visibility_control.h \
+ /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h \
+ /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/type_description/type_description__struct.h \
+ /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/type_description/individual_type_description__struct.h \
+ /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/type_description/field__struct.h \
+ /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/type_description/field_type__struct.h \
+ /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/type_description/type_source__struct.h \
+ /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/type_hash.h \
+ /opt/ros/jazzy/include/rcutils/rcutils/allocator.h \
+ /opt/ros/jazzy/include/rcutils/rcutils/macros.h \
+ /opt/ros/jazzy/include/rcutils/rcutils/types/rcutils_ret.h \
+ /opt/ros/jazzy/include/rcutils/rcutils/visibility_control.h \
+ /opt/ros/jazzy/include/rcutils/rcutils/visibility_control_macros.h \
+ /opt/ros/jazzy/include/rcutils/rcutils/sha256.h \
+ /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
  /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_generator_c/weedbot_interfaces/msg/detail/weed_array__functions.h \
  /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
@@ -57,21 +74,4 @@ CMakeFiles/weedbot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/weedbot
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/action_type_support_struct.h \
- /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h \
- /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/type_description/type_description__struct.h \
- /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/type_description/individual_type_description__struct.h \
- /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/type_description/field__struct.h \
- /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/type_description/field_type__struct.h \
- /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/type_description/type_source__struct.h \
- /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/type_hash.h \
- /opt/ros/jazzy/include/rcutils/rcutils/allocator.h \
- /opt/ros/jazzy/include/rcutils/rcutils/macros.h \
- /opt/ros/jazzy/include/rcutils/rcutils/types/rcutils_ret.h \
- /opt/ros/jazzy/include/rcutils/rcutils/visibility_control.h \
- /opt/ros/jazzy/include/rcutils/rcutils/visibility_control_macros.h \
- /opt/ros/jazzy/include/rcutils/rcutils/sha256.h \
- /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
- /opt/ros/jazzy/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
- /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h \
- /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_generator_c/weedbot_interfaces/msg/rosidl_generator_c__visibility_control.h \
- /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_generator_c/weedbot_interfaces/msg/detail/weed_array__type_support.h
+ /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h

@@ -1,0 +1,4 @@
+[console_scripts]
+laser_controller = weedbot_simulation.laser_controller:main
+tractor_controller = weedbot_simulation.tractor_controller:main
+weed_spawner = weedbot_simulation.weed_spawner:main

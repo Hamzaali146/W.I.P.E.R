@@ -82,6 +82,17 @@ class AsciiShotProtocol:
         state = 1 if armed else 0
         return cls.frame(f"ARM,{state}")
 
+    @classmethod
+    def target(cls, seq: int, dx_px: float, dy_px: float) -> str:
+        """Build a TARGET packet with pixel offsets from camera centre.
+
+        dx_px > 0  → weed is to the RIGHT of centre
+        dy_px > 0  → weed is BELOW centre (image Y axis)
+        STM32 uses these offsets to drive its actuator toward the weed.
+        """
+        payload = f"TARGET,{seq},{dx_px:.2f},{dy_px:.2f}"
+        return cls.frame(payload)
+
 
 class SerialLink:
     """Best-effort serial transport with reconnect logic."""
@@ -286,6 +297,12 @@ class ControlNode(Node):
         self.declare_parameter("min_forward_real_y_m", 0.10)
         self.declare_parameter("max_forward_real_y_m", 2.50)
 
+        # Pixel-mode parameters (Phase 1 — no homography/calibration needed)
+        self.declare_parameter("use_pixel_mode", True)
+        self.declare_parameter("duplicate_radius", 35.0)
+        self.declare_parameter("cam_cx_rw_m", 0.0)
+        self.declare_parameter("cam_cy_rw_m", 0.0)
+
         # Camera and angle model
         self.declare_parameter("camera_width", 1280)
         self.declare_parameter("camera_height", 720)
@@ -332,7 +349,9 @@ class ControlNode(Node):
         self.auto_fire_enabled = bool(self.get_parameter("auto_fire_enabled").value)
         self.min_confidence = float(self.get_parameter("min_confidence").value)
         self.shot_cooldown_ms = float(self.get_parameter("shot_cooldown_ms").value)
-        self.duplicate_radius_px = float(self.get_parameter("duplicate_radius_px").value)
+        # duplicate_radius replaces the old duplicate_radius_px — same unit when
+        # use_pixel_mode is true (pixels), metres when false.
+        self.duplicate_radius_px = float(self.get_parameter("duplicate_radius").value)
         self.duplicate_holdoff_ms = float(
             self.get_parameter("duplicate_holdoff_ms").value
         )
@@ -350,6 +369,11 @@ class ControlNode(Node):
         self.max_forward_real_y_m = float(
             self.get_parameter("max_forward_real_y_m").value
         )
+
+        # Pixel-mode (Phase 1)
+        self.use_pixel_mode = bool(self.get_parameter("use_pixel_mode").value)
+        self.cam_cx_rw_m = float(self.get_parameter("cam_cx_rw_m").value)
+        self.cam_cy_rw_m = float(self.get_parameter("cam_cy_rw_m").value)
 
         # Camera and angle model
         self.camera_width = int(self.get_parameter("camera_width").value)
@@ -401,6 +425,37 @@ class ControlNode(Node):
         packet = AsciiShotProtocol.arm(self.armed)
         self.serial_link.send_line(packet)
 
+    def _send_target_packet(self, target: TargetCandidate) -> None:
+        """Compute pixel offset from camera centre and send a TARGET packet."""
+        cam_cx = self.camera_width / 2.0
+        cam_cy = self.camera_height / 2.0
+
+        # Offset of weed centre from camera centre in pixels.
+        # dx > 0 → weed is right of centre; dy > 0 → weed is below centre.
+        dx_px = target.pixel_x - cam_cx
+        dy_px = target.pixel_y - cam_cy
+
+        seq = self._next_sequence()
+        packet = AsciiShotProtocol.target(seq, dx_px, dy_px)
+
+        sent = self.serial_link.send_line(packet)
+        self._publish_debug(
+            {
+                "event": "target_sent",
+                "seq": seq,
+                "sent": sent,
+                "confidence": round(target.confidence, 4),
+                "weed_px": [round(target.pixel_x, 2), round(target.pixel_y, 2)],
+                "cam_center_px": [cam_cx, cam_cy],
+                "dx_px": round(dx_px, 2),
+                "dy_px": round(dy_px, 2),
+            }
+        )
+        self.get_logger().info(
+            f"TARGET seq={seq} dx={dx_px:.1f}px dy={dy_px:.1f}px "
+            f"conf={target.confidence:.3f} sent={sent}"
+        )
+
     def _detection_callback(self, msg: WeedArray) -> None:
         if not self.auto_fire_enabled:
             return
@@ -409,7 +464,7 @@ class ControlNode(Node):
         if target is None:
             return
 
-        self._issue_shot(target, source="vision")
+        self._send_target_packet(target)
 
     def _manual_command_callback(self, msg: String) -> None:
         try:
@@ -706,4 +761,4 @@ def main(args=None) -> None:
 
 
 if __name__ == "__main__":
-    main()
+    main() 

@@ -1,0 +1,37 @@
+[1.712s] Invoking command in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/build --no-deps symlink_data
+[2.257s] running develop
+[2.603s] running egg_info
+[2.603s] creating weedbot_simulation.egg-info
+[2.649s] writing weedbot_simulation.egg-info/PKG-INFO
+[2.650s] writing dependency_links to weedbot_simulation.egg-info/dependency_links.txt
+[2.650s] writing entry points to weedbot_simulation.egg-info/entry_points.txt
+[2.650s] writing requirements to weedbot_simulation.egg-info/requires.txt
+[2.651s] writing top-level names to weedbot_simulation.egg-info/top_level.txt
+[2.651s] writing manifest file 'weedbot_simulation.egg-info/SOURCES.txt'
+[2.734s] reading manifest file 'weedbot_simulation.egg-info/SOURCES.txt'
+[2.734s] writing manifest file 'weedbot_simulation.egg-info/SOURCES.txt'
+[2.771s] running build_ext
+[2.771s] Creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages/weedbot-simulation.egg-link (link to .)
+[2.772s] Installing laser_controller script to /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/weedbot_simulation
+[2.773s] Installing tractor_controller script to /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/weedbot_simulation
+[2.774s] Installing weed_spawner script to /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/weedbot_simulation
+[2.774s] 
+[2.774s] Installed /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation
+[2.775s] running symlink_data
+[2.775s] creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/ament_index
+[2.775s] creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/ament_index/resource_index
+[2.775s] creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/ament_index/resource_index/packages
+[2.775s] symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/resource/weedbot_simulation -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/ament_index/resource_index/packages
+[2.776s] symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/package.xml -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation
+[2.776s] creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/launch
+[2.777s] symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/launch/full_system_launch.py -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/launch
+[2.777s] symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/launch/simulation_launch.py -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/launch
+[2.777s] creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/worlds
+[2.778s] symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/worlds/farm_field.world -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/worlds
+[2.778s] creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/urdf
+[2.778s] symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/urdf/tractor.urdf.xacro -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/urdf
+[2.779s] creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/models
+[2.779s] creating /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/models/weed
+[2.780s] symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/models/weed/model.config -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/models/weed
+[2.781s] symbolically linking /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/models/weed/model.sdf -> /home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/models/weed
+[2.881s] Invoked command in '/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/build --no-deps symlink_data

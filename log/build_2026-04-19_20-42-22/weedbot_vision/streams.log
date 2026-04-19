@@ -1,0 +1,32 @@
+[4.915s] Invoking command in '/home/fatima/W.I.P.E.R/build/weedbot_vision': AMENT_PREFIX_PATH=/home/fatima/W.I.P.E.R/install/weedbot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/fatima/W.I.P.E.R/install/weedbot_interfaces:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/fatima/W.I.P.E.R/install/weedbot_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/fatima/W.I.P.E.R/build/weedbot_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fatima/W.I.P.E.R/install/weedbot_vision/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/fatima/W.I.P.E.R/build/weedbot_vision/build --no-deps symlink_data
+[6.097s] running develop
+[6.913s] running egg_info
+[6.914s] creating weedbot_vision.egg-info
+[6.973s] writing weedbot_vision.egg-info/PKG-INFO
+[6.973s] writing dependency_links to weedbot_vision.egg-info/dependency_links.txt
+[6.974s] writing entry points to weedbot_vision.egg-info/entry_points.txt
+[6.975s] writing requirements to weedbot_vision.egg-info/requires.txt
+[6.975s] writing top-level names to weedbot_vision.egg-info/top_level.txt
+[6.976s] writing manifest file 'weedbot_vision.egg-info/SOURCES.txt'
+[7.140s] reading manifest file 'weedbot_vision.egg-info/SOURCES.txt'
+[7.142s] writing manifest file 'weedbot_vision.egg-info/SOURCES.txt'
+[7.227s] running build_ext
+[7.228s] Creating /home/fatima/W.I.P.E.R/install/weedbot_vision/lib/python3.12/site-packages/weedbot-vision.egg-link (link to .)
+[7.230s] Installing camera_calibration script to /home/fatima/W.I.P.E.R/install/weedbot_vision/lib/weedbot_vision
+[7.233s] Installing camera_publisher script to /home/fatima/W.I.P.E.R/install/weedbot_vision/lib/weedbot_vision
+[7.234s] Installing detection_monitor script to /home/fatima/W.I.P.E.R/install/weedbot_vision/lib/weedbot_vision
+[7.234s] Installing vision_node script to /home/fatima/W.I.P.E.R/install/weedbot_vision/lib/weedbot_vision
+[7.236s] 
+[7.237s] Installed /home/fatima/W.I.P.E.R/build/weedbot_vision
+[7.237s] running symlink_data
+[7.237s] creating /home/fatima/W.I.P.E.R/install/weedbot_vision/share/ament_index
+[7.238s] creating /home/fatima/W.I.P.E.R/install/weedbot_vision/share/ament_index/resource_index
+[7.239s] creating /home/fatima/W.I.P.E.R/install/weedbot_vision/share/ament_index/resource_index/packages
+[7.240s] symbolically linking /home/fatima/W.I.P.E.R/build/weedbot_vision/resource/weedbot_vision -> /home/fatima/W.I.P.E.R/install/weedbot_vision/share/ament_index/resource_index/packages
+[7.242s] symbolically linking /home/fatima/W.I.P.E.R/build/weedbot_vision/package.xml -> /home/fatima/W.I.P.E.R/install/weedbot_vision/share/weedbot_vision
+[7.242s] creating /home/fatima/W.I.P.E.R/install/weedbot_vision/share/weedbot_vision/launch
+[7.244s] symbolically linking /home/fatima/W.I.P.E.R/build/weedbot_vision/launch/vision_launch.py -> /home/fatima/W.I.P.E.R/install/weedbot_vision/share/weedbot_vision/launch
+[7.245s] symbolically linking /home/fatima/W.I.P.E.R/build/weedbot_vision/launch/calibration.launch.py -> /home/fatima/W.I.P.E.R/install/weedbot_vision/share/weedbot_vision/launch
+[7.247s] creating /home/fatima/W.I.P.E.R/install/weedbot_vision/share/weedbot_vision/config
+[7.249s] symbolically linking /home/fatima/W.I.P.E.R/build/weedbot_vision/config/vision_params.yaml -> /home/fatima/W.I.P.E.R/install/weedbot_vision/share/weedbot_vision/config
+[7.376s] Invoked command in '/home/fatima/W.I.P.E.R/build/weedbot_vision' returned '0': AMENT_PREFIX_PATH=/home/fatima/W.I.P.E.R/install/weedbot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/fatima/W.I.P.E.R/install/weedbot_interfaces:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/fatima/W.I.P.E.R/install/weedbot_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/fatima/W.I.P.E.R/build/weedbot_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/fatima/W.I.P.E.R/install/weedbot_vision/lib/python3.12/site-packages:/home/fatima/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/fatima/W.I.P.E.R/build/weedbot_vision/build --no-deps symlink_data

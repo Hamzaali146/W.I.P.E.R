@@ -1,0 +1,17 @@
+running develop
+running egg_info
+writing weedbot_simulation.egg-info/PKG-INFO
+writing dependency_links to weedbot_simulation.egg-info/dependency_links.txt
+writing entry points to weedbot_simulation.egg-info/entry_points.txt
+writing requirements to weedbot_simulation.egg-info/requires.txt
+writing top-level names to weedbot_simulation.egg-info/top_level.txt
+reading manifest file 'weedbot_simulation.egg-info/SOURCES.txt'
+writing manifest file 'weedbot_simulation.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/fatima/W.I.P.E.R/install/weedbot_simulation/lib/python3.12/site-packages/weedbot-simulation.egg-link (link to .)
+Installing laser_controller script to /home/fatima/W.I.P.E.R/install/weedbot_simulation/lib/weedbot_simulation
+Installing tractor_controller script to /home/fatima/W.I.P.E.R/install/weedbot_simulation/lib/weedbot_simulation
+Installing weed_spawner script to /home/fatima/W.I.P.E.R/install/weedbot_simulation/lib/weedbot_simulation
+
+Installed /home/fatima/W.I.P.E.R/build/weedbot_simulation
+running symlink_data

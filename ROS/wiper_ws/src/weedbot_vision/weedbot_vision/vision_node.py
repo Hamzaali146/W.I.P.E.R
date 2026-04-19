@@ -17,6 +17,7 @@ import yaml
 import os
 from pathlib import Path
 from ament_index_python.packages import get_package_share_directory
+import math
 
 
 class VisionNode(Node):
@@ -64,6 +65,24 @@ class VisionNode(Node):
         self.use_homography = False
         if self.use_homography_param:
             self.load_homography()
+            #change 1
+            self.cam_center_rw_x = 0.0   # metres
+            self.cam_center_rw_y = 0.0   # metres
+            if self.use_homography:
+                # Get the real-world position of the pixel that is exactly at the
+                # centre of the camera frame. This is the "origin" for all distance
+                # measurements sent to the STM32.
+                self.declare_parameter('camera_width',  1280)
+                self.declare_parameter('camera_height', 720)
+                _w = self.get_parameter('camera_width').value
+                _h = self.get_parameter('camera_height').value
+                self.cam_center_rw_x, self.cam_center_rw_y = \
+                    self.pixel_to_real_world(_w // 2, _h // 2)
+                self.get_logger().info(
+                    f'Camera centre real-world: '
+                    f'({self.cam_center_rw_x*1000:.1f} mm, '
+                    f'{self.cam_center_rw_y*1000:.1f} mm)'
+                )
         
         # Load model
         self.model = None
@@ -358,69 +377,169 @@ class VisionNode(Node):
         
         return weed_array
     
+    # def visualize_detections(self, image, detections):
+    #     """Draw bounding boxes and labels on image"""
+    #     viz_image = image.copy()
+    #     h, w = image.shape[:2]
+        
+    #     for det in detections:
+    #         x, y, w_box, h_box = det['bbox']
+    #         conf = det['confidence']
+    #         cls = det['class_id']
+    #         class_name = det['class_name']  # NEW
+            
+    #         # Convert normalized to pixel coordinates
+    #         x1 = int(x * w)
+    #         y1 = int(y * h)
+    #         x2 = int((x + w_box) * w)
+    #         y2 = int((y + h_box) * h)
+            
+    #         # Color based on confidence (green for high, yellow for medium, red for low)
+    #         if conf > 0.7:
+    #             color = (0, 255, 0)  # Green
+    #         elif conf > 0.5:
+    #             color = (0, 255, 255)  # Yellow
+    #         else:
+    #             color = (0, 165, 255)  # Orange
+            
+    #         # Draw bounding box
+    #         cv2.rectangle(viz_image, (x1, y1), (x2, y2), color, 2)
+            
+    #         # Draw center point
+    #         center_x = det['pixel_x']
+    #         center_y = det['pixel_y']
+    #         cv2.circle(viz_image, (center_x, center_y), 5, (0, 0, 255), -1)
+            
+    #         # Label with coordinates and confidence
+    #         if self.use_homography:
+    #             real_x = det['real_world_x']
+    #             real_y = det['real_world_y']
+    #             label = f'Weed ({real_x:.2f}, {real_y:.2f})m {conf:.2f}'
+    #         else:
+    #             label = f'Weed {conf:.2f}'
+            
+    #         label_size, _ = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.5, 2)
+            
+    #         # Draw background for text
+    #         cv2.rectangle(viz_image, 
+    #                      (x1, y1 - label_size[1] - 10),
+    #                      (x1 + label_size[0], y1),
+    #                      color, -1)
+            
+    #         # Draw text
+    #         cv2.putText(viz_image, label, (x1, y1 - 5),
+    #                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2)
+        
+    #     # Draw stats on image
+    #     stats_text = f'Weeds: {len(detections)}'
+    #     cv2.putText(viz_image, stats_text, (10, 30),
+    #                cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+        
+    #     # Add homography status indicator
+    #     if self.use_homography:
+    #         cv2.putText(viz_image, 'Real-World Coords: ON', (10, 60),
+    #                    cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
+        
+    #     return viz_image
+
+    #change 2
     def visualize_detections(self, image, detections):
-        """Draw bounding boxes and labels on image"""
+        """Draw bounding boxes, camera centre, and real-world distances."""
         viz_image = image.copy()
         h, w = image.shape[:2]
-        
-        for det in detections:
-            x, y, w_box, h_box = det['bbox']
-            conf = det['confidence']
-            cls = det['class_id']
-            class_name = det['class_name']  # NEW
-            
-            # Convert normalized to pixel coordinates
-            x1 = int(x * w)
-            y1 = int(y * h)
-            x2 = int((x + w_box) * w)
-            y2 = int((y + h_box) * h)
-            
-            # Color based on confidence (green for high, yellow for medium, red for low)
-            if conf > 0.7:
-                color = (0, 255, 0)  # Green
-            elif conf > 0.5:
-                color = (0, 255, 255)  # Yellow
-            else:
-                color = (0, 165, 255)  # Orange
-            
-            # Draw bounding box
-            cv2.rectangle(viz_image, (x1, y1), (x2, y2), color, 2)
-            
-            # Draw center point
-            center_x = det['pixel_x']
-            center_y = det['pixel_y']
-            cv2.circle(viz_image, (center_x, center_y), 5, (0, 0, 255), -1)
-            
-            # Label with coordinates and confidence
-            if self.use_homography:
-                real_x = det['real_world_x']
-                real_y = det['real_world_y']
-                label = f'Weed ({real_x:.2f}, {real_y:.2f})m {conf:.2f}'
-            else:
-                label = f'Weed {conf:.2f}'
-            
-            label_size, _ = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.5, 2)
-            
-            # Draw background for text
-            cv2.rectangle(viz_image, 
-                         (x1, y1 - label_size[1] - 10),
-                         (x1 + label_size[0], y1),
-                         color, -1)
-            
-            # Draw text
-            cv2.putText(viz_image, label, (x1, y1 - 5),
-                       cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2)
-        
-        # Draw stats on image
-        stats_text = f'Weeds: {len(detections)}'
-        cv2.putText(viz_image, stats_text, (10, 30),
-                   cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
-        
-        # Add homography status indicator
+
+        cam_cx = w // 2
+        cam_cy = h // 2
+
+        # ── Camera centre crosshair (yellow) ────────────────────────────────
+        cross = 22
+        cv2.line(viz_image,
+                (cam_cx - cross, cam_cy), (cam_cx + cross, cam_cy),
+                (0, 255, 255), 2)
+        cv2.line(viz_image,
+                (cam_cx, cam_cy - cross), (cam_cx, cam_cy + cross),
+                (0, 255, 255), 2)
+        cv2.circle(viz_image, (cam_cx, cam_cy), 5, (0, 255, 255), -1)
+
+        cam_label = 'CAM'
         if self.use_homography:
-            cv2.putText(viz_image, 'Real-World Coords: ON', (10, 60),
-                       cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
-        
+            cam_label = (f'CAM  rw=({self.cam_center_rw_x*1000:.0f},'
+                        f'{self.cam_center_rw_y*1000:.0f})mm')
+        cv2.putText(viz_image, cam_label,
+                    (cam_cx + 10, cam_cy - 10),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 255, 255), 1)
+
+        # ── Per-detection overlays ───────────────────────────────────────────
+        for det in detections:
+            x_n, y_n, w_n, h_n = det['bbox']
+            conf       = det['confidence']
+            class_name = det['class_name']
+
+            # Convert normalised bbox to pixel coords
+            x1 = int(x_n * w)
+            y1 = int(y_n * h)
+            x2 = int((x_n + w_n) * w)
+            y2 = int((y_n + h_n) * h)
+
+            # Colour by confidence
+            if conf > 0.7:
+                color = (0, 255, 0)       # green
+            elif conf > 0.5:
+                color = (0, 255, 255)     # yellow
+            else:
+                color = (0, 165, 255)     # orange
+
+            # Bounding box
+            cv2.rectangle(viz_image, (x1, y1), (x2, y2), color, 2)
+
+            # ── Weed bounding-box centre (red dot) ─────────────────────────
+            wx = det['pixel_x']
+            wy = det['pixel_y']
+            cv2.circle(viz_image, (wx, wy), 6, (0, 0, 255), -1)
+            cv2.circle(viz_image, (wx, wy), 6, (255, 255, 255), 1)  # white ring
+
+            # ── Line: camera centre → weed centre (magenta) ─────────────────
+            cv2.line(viz_image, (cam_cx, cam_cy), (wx, wy),
+                    (255, 0, 255), 1, cv2.LINE_AA)
+
+            # ── Distance labels ──────────────────────────────────────────────
+            if self.use_homography:
+                rw_x = det['real_world_x']
+                rw_y = det['real_world_y']
+                delta_x_mm = (rw_x - self.cam_center_rw_x) * 1000.0
+                delta_y_mm = (rw_y - self.cam_center_rw_y) * 1000.0
+
+                # Label at the weed centre: real-world pos and delta from cam
+                line1 = f'rw=({rw_x*1000:.0f},{rw_y*1000:.0f})mm'
+                line2 = f'dx={delta_x_mm:+.0f} dy={delta_y_mm:+.0f} mm'
+
+                # Place label below the bounding box (or above if near bottom)
+                label_y = y2 + 14 if y2 + 40 < h else y1 - 20
+                cv2.putText(viz_image, line1,
+                            (x1, label_y),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.42, color, 1)
+                cv2.putText(viz_image, line2,
+                            (x1, label_y + 14),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.42, (255, 0, 255), 1)
+
+                # Mid-point label on the connecting line so it's easy to read
+                mid_x = (cam_cx + wx) // 2
+                mid_y = (cam_cy + wy) // 2
+                cv2.putText(viz_image,
+                            f'{math.hypot(delta_x_mm, delta_y_mm):.0f}mm',
+                            (mid_x + 4, mid_y - 4),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.38,
+                            (255, 0, 255), 1)
+            else:
+                label = f'{class_name} {conf:.2f}'
+                cv2.putText(viz_image, label,
+                            (x1, y1 - 6),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 1)
+
+        # ── Stats banner ─────────────────────────────────────────────────────
+        cv2.putText(viz_image, f'Weeds: {len(detections)}',
+                    (10, 28), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)
+
         return viz_image
 
 

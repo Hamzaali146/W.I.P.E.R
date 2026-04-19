@@ -3,15 +3,14 @@
     detection_topic: "/weedbot/detections"
     status_topic: "/weedbot/control/status"
     debug_topic: "/weedbot/control/debug"
-    enable_manual_topic: false
+    enable_manual_topic: true
     manual_command_topic: "/weedbot/laser_command"
 
-    # Safety defaults: keep disarmed until field test checklist is complete.
-    armed: false
+    # Set armed: true to actually send SHOT packets (change back to false after comms test).
+    armed: true
     auto_fire_enabled: true
     min_confidence: 0.60
     shot_cooldown_ms: 220.0
-    duplicate_radius_px: 35.0
     duplicate_holdoff_ms: 600.0
     fire_duration_ms: 90.0
     fire_power_percent: 75.0
@@ -41,10 +40,27 @@
     y_center_voltage: 2.50
     y_max_voltage: 4.00
 
-    serial_port: "COM5"
+    # ── NEW: pixel mode (Phase 1 — no calibration needed) ─────────────
+    # true  = send pixel delta to STM32 right now, works without homography
+    # false = send mm delta, requires camera_calibration.py to have been run
+    use_pixel_mode: true
+
+    # Duplicate suppression radius — pixels when use_pixel_mode true,
+    # metres when false. Replaces the old duplicate_radius_px.
+    duplicate_radius: 35.0
+
+    # Camera centre real-world offset — only used when use_pixel_mode: false.
+    # After running camera_calibration.py read startup log and paste here.
+    cam_cx_rw_m: 0.0
+    cam_cy_rw_m: 0.0
+    # ──────────────────────────────────────────────────────────────────
+
+    # WSL: COM5 on Windows = /dev/ttyS5 in WSL
+    # Ubuntu native: /dev/ttyUSB0 or /dev/ttyACM0  — check with: ls /dev/ttyUSB*
+    serial_port: "/dev/ttyUSB0"    # after usbipd attach; check with: ls /dev/ttyUSB*
     serial_baudrate: 115200
     serial_timeout_s: 0.02
     serial_reconnect_s: 2.0
     serial_poll_hz: 50.0
-    dry_run: true
+    dry_run: false        # false = actually write to USB-TTL; true = log only
     send_arm_packet_on_start: true
