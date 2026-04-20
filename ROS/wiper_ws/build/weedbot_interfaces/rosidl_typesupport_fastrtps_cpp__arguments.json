@@ -1,10 +1,10 @@
 {
   "package_name": "weedbot_interfaces",
-  "output_dir": "/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_typesupport_fastrtps_cpp/weedbot_interfaces",
+  "output_dir": "/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_typesupport_fastrtps_cpp/weedbot_interfaces",
   "template_dir": "/opt/ros/jazzy/share/rosidl_typesupport_fastrtps_cpp/resource",
   "idl_tuples": [
-    "/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces:msg/WeedDetection.idl",
-    "/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces:msg/WeedArray.idl"
+    "/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces:msg/WeedDetection.idl",
+    "/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces:msg/WeedArray.idl"
   ],
   "ros_interface_dependencies": [
     "std_msgs:/opt/ros/jazzy/share/std_msgs/msg/Bool.idl",
@@ -110,8 +110,8 @@
     "/opt/ros/jazzy/share/rosidl_typesupport_fastrtps_cpp/resource/msg__type_support.cpp.em",
     "/opt/ros/jazzy/share/rosidl_typesupport_fastrtps_cpp/resource/srv__rosidl_typesupport_fastrtps_cpp.hpp.em",
     "/opt/ros/jazzy/share/rosidl_typesupport_fastrtps_cpp/resource/srv__type_support.cpp.em",
-    "/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces/msg/WeedDetection.idl",
-    "/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces/msg/WeedArray.idl",
+    "/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces/msg/WeedDetection.idl",
+    "/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces/msg/WeedArray.idl",
     "/opt/ros/jazzy/share/std_msgs/msg/Bool.idl",
     "/opt/ros/jazzy/share/std_msgs/msg/Byte.idl",
     "/opt/ros/jazzy/share/std_msgs/msg/ByteMultiArray.idl",

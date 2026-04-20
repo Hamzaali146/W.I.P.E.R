@@ -1,8 +1,8 @@
-# Install script for directory: /home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/weedbot_interfaces__py
+# Install script for directory: /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/weedbot_interfaces__py
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/fatima/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces")
+  set(CMAKE_INSTALL_PREFIX "/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

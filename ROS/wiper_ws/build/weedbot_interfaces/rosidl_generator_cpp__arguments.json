@@ -1,10 +1,10 @@
 {
   "package_name": "weedbot_interfaces",
-  "output_dir": "/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_generator_cpp/weedbot_interfaces",
+  "output_dir": "/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_generator_cpp/weedbot_interfaces",
   "template_dir": "/opt/ros/jazzy/share/rosidl_generator_cpp/cmake/../resource",
   "idl_tuples": [
-    "/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces:msg/WeedDetection.idl",
-    "/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces:msg/WeedArray.idl"
+    "/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces:msg/WeedDetection.idl",
+    "/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces:msg/WeedArray.idl"
   ],
   "ros_interface_dependencies": [
     "std_msgs:/opt/ros/jazzy/share/std_msgs/msg/Bool.idl",
@@ -121,8 +121,8 @@
     "/opt/ros/jazzy/share/rosidl_generator_cpp/cmake/../resource/srv__struct.hpp.em",
     "/opt/ros/jazzy/share/rosidl_generator_cpp/cmake/../resource/srv__traits.hpp.em",
     "/opt/ros/jazzy/share/rosidl_generator_cpp/cmake/../resource/srv__type_support.hpp.em",
-    "/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces/msg/WeedDetection.idl",
-    "/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces/msg/WeedArray.idl",
+    "/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces/msg/WeedDetection.idl",
+    "/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_adapter/weedbot_interfaces/msg/WeedArray.idl",
     "/opt/ros/jazzy/share/std_msgs/msg/Bool.idl",
     "/opt/ros/jazzy/share/std_msgs/msg/Byte.idl",
     "/opt/ros/jazzy/share/std_msgs/msg/ByteMultiArray.idl",
@@ -218,7 +218,7 @@
     "/opt/ros/jazzy/share/service_msgs/msg/ServiceEventInfo.idl"
   ],
   "type_description_tuples": [
-    "msg/WeedDetection.idl:/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_generator_type_description/weedbot_interfaces/msg/WeedDetection.json",
-    "msg/WeedArray.idl:/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_generator_type_description/weedbot_interfaces/msg/WeedArray.json"
+    "msg/WeedDetection.idl:/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_generator_type_description/weedbot_interfaces/msg/WeedDetection.json",
+    "msg/WeedArray.idl:/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_generator_type_description/weedbot_interfaces/msg/WeedArray.json"
   ]
 }

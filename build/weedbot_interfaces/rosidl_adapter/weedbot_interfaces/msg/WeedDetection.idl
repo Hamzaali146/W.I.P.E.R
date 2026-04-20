@@ -1,0 +1,56 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from weedbot_interfaces/msg/WeedDetection.msg
+// generated code does not contain a copyright notice
+
+#include "sensor_msgs/msg/Image.idl"
+#include "std_msgs/msg/Header.idl"
+
+module weedbot_interfaces {
+  module msg {
+    struct WeedDetection {
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "Pixel coordinates (normalized 0-1)" "\n"
+        "Bounding box x coordinates")
+      sequence<float> bbox_x;
+
+      @verbatim (language="comment", text=
+        "Bounding box y coordinates")
+      sequence<float> bbox_y;
+
+      @verbatim (language="comment", text=
+        "Bounding box widths")
+      sequence<float> bbox_w;
+
+      @verbatim (language="comment", text=
+        "Bounding box heights")
+      sequence<float> bbox_h;
+
+      @verbatim (language="comment", text=
+        "Detection confidences")
+      sequence<float> confidences;
+
+      @verbatim (language="comment", text=
+        "Class IDs (if multiple weed types)")
+      sequence<int32> class_ids;
+
+      @verbatim (language="comment", text=
+        "NEW: Real-world coordinates (meters, relative to camera center on ground)" "\n"
+        "X position in meters (+ = right, - = left)")
+      float real_world_x;
+
+      @verbatim (language="comment", text=
+        "Y position in meters (+ = forward, - = backward)")
+      float real_world_y;
+
+      @verbatim (language="comment", text=
+        "Z position in meters (0 = ground plane)")
+      float real_world_z;
+
+      @verbatim (language="comment", text=
+        "Optional segmentation mask")
+      sensor_msgs::msg::Image mask;
+    };
+  };
+};
