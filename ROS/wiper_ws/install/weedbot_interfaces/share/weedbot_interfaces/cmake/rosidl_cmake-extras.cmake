@@ -1,4 +1,1 @@
-# generated from rosidl_cmake/cmake/rosidl_cmake-extras.cmake.in
-
-set(weedbot_interfaces_IDL_FILES "msg/WeedDetection.idl;msg/WeedArray.idl")
-set(weedbot_interfaces_INTERFACE_FILES "msg/WeedDetection.msg;msg/WeedArray.msg")
+/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_interfaces/rosidl_cmake/rosidl_cmake-extras.cmake
