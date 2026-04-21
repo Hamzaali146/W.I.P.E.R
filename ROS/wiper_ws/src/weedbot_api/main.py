@@ -23,6 +23,7 @@ load_dotenv()
 # ROS 2 imports
 import rclpy
 from rclpy.node import Node
+from rclpy.qos import QoSProfile, QoSReliabilityPolicy, QoSHistoryPolicy
 from sensor_msgs.msg import Image
 from std_msgs.msg import String
 from cv_bridge import CvBridge
@@ -197,11 +198,17 @@ class ROSBridge(Node):
         self.create_timer(1.0, self.watchdog_callback)
         
         # Subscribers
+        realsense_qos = QoSProfile(
+         reliability=QoSReliabilityPolicy.BEST_EFFORT,
+         history=QoSHistoryPolicy.KEEP_LAST,
+         depth=1
+        )
+
         self.image_sub = self.create_subscription(
-            Image,
-            '/camera/image_raw',
-            self.image_callback,
-            10
+           Image,
+           '/camera/color/image_raw',
+           self.image_callback,
+           realsense_qos
         )
         
         self.viz_sub = self.create_subscription(
