@@ -1,5 +1,0 @@
-[console_scripts]
-camera_calibration = weedbot_vision.camera_calibration:main
-camera_publisher = weedbot_vision.camera_publisher:main
-detection_monitor = weedbot_vision.detection_monitor:main
-vision_node = weedbot_vision.vision_node:main
