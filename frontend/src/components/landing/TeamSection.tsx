@@ -7,10 +7,10 @@ import teamImg4 from "@/assets/team-placeholder-4.jpg";
 import advisorImg from "@/assets/team-advisor.jpg";
 
 const members = [
-  { name: "Sanya Sajid", role: "Integrations/DB", image: teamImg1, linkedin: "", github: "https://github.com/SanyaSajid" },
-  { name: "Hamza Ali", role: "Computer Vision/AI & ROS2 Integration", image: teamImg2, linkedin: "https://www.linkedin.com/in/hamza-ali-4502189146102032428/", github: "https://github.com/Hamzaali146" },
-  { name: "Fatima Kashif", role: "Full Stack Developer", image: teamImg3, linkedin: "", github: "https://github.com/Fatima-Kashif" },
-  { name: "Farzam Nasir", role: "Embedded Systems Hardware & Firmware", image: teamImg4, linkedin: "https://www.linkedin.com/in/farzam-nasir/", github: "https://github.com/FarzamNasir" },
+  { name: "Member 1", role: "Hardware & Firmware", image: teamImg1 },
+  { name: "Member 2", role: "Computer Vision & AI", image: teamImg2 },
+  { name: "Member 3", role: "ROS2 Integration", image: teamImg3 },
+  { name: "Member 4", role: "Embedded Systems", image: teamImg4 },
 ];
 
 const TeamSection = () => {
@@ -74,16 +74,12 @@ const TeamSection = () => {
               <h3 className="font-semibold text-base mb-1">{member.name}</h3>
               <p className="text-xs text-muted-foreground font-mono">{member.role}</p>
               <div className="flex items-center justify-center gap-3 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                {member.linkedin && (
-                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                    <Linkedin size={14} />
-                  </a>
-                )}
-                {member.github && (
-                  <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                    <Github size={14} />
-                  </a>
-                )}
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Linkedin size={14} />
+                </a>
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Github size={14} />
+                </a>
               </div>
             </motion.div>
           ))}

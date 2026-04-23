@@ -65,10 +65,10 @@ const FooterSection = () => {
                 className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Mail size={16} />
-                hamzaaly105@gmail.com
+                wiper-project@university.edu
               </a>
               <a
-                href="https://github.com/Hamzaali146/W.I.P.E.R/"
+                href="#"
                 className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Github size={16} />
