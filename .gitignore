@@ -5,8 +5,6 @@
 
 /backend
 
-models/
-
 **/env/
 **/venv/
 **/.venv/

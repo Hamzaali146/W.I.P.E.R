@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import wiperLogo from "@/assets/wiper-logo.png";
+import { Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const navItems = ["About", "Features", "How It Works", "Showcase", "Tech Stack", "Contact"];
 
@@ -15,10 +17,29 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const scrollTo = (id: string) => {
-    document.getElementById(id.toLowerCase().replace(/ /g, "-"))?.scrollIntoView({ behavior: "smooth" });
-    setMobileOpen(false);
-  };
+
+const navigate = useNavigate();
+const location = useLocation();
+
+const scrollTo = (id: string) => {
+  const sectionId = id.toLowerCase().replace(/ /g, "-");
+
+  if (location.pathname !== "/") {
+    navigate("/");
+
+    setTimeout(() => {
+      document.getElementById(sectionId)?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 100);
+  } else {
+    document.getElementById(sectionId)?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+
+  setMobileOpen(false);
+};
 
   return (
     <motion.nav
@@ -37,18 +58,23 @@ const Navbar = () => {
         </div>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <button
-              key={item}
-              onClick={() => scrollTo(item)}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {item}
-            </button>
-          ))}
-        </div>
+       <div className="hidden md:flex items-center gap-8">
+  {navItems.map((item) => (
+    <button
+      key={item}
+      onClick={() => scrollTo(item)}
+      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+    >
+      {item}
+    </button>
+  ))}
 
+  <Link to="/auth">
+    <button className="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:opacity-90 transition">
+      Get Started
+    </button>
+  </Link>
+</div>
         {/* Mobile toggle */}
         <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -72,6 +98,14 @@ const Navbar = () => {
                 {item}
               </button>
             ))}
+            <Link to="/auth">
+  <button
+    onClick={() => setMobileOpen(false)}
+    className="bg-primary text-primary-foreground px-4 py-2 rounded-lg w-full"
+  >
+    Get Started
+  </button>
+</Link>
           </div>
         </motion.div>
       )}

@@ -1,0 +1,66 @@
+/weedbot_control_node:
+  ros__parameters:
+    detection_topic: "/weedbot/detections"
+    status_topic: "/weedbot/control/status"
+    debug_topic: "/weedbot/control/debug"
+    enable_manual_topic: true
+    manual_command_topic: "/weedbot/laser_command"
+
+    # Set armed: true to actually send SHOT packets (change back to false after comms test).
+    armed: true
+    auto_fire_enabled: true
+    min_confidence: 0.60
+    shot_cooldown_ms: 220.0
+    duplicate_holdoff_ms: 600.0
+    fire_duration_ms: 90.0
+    fire_power_percent: 75.0
+    galvo_settle_ms: 12.0
+    target_policy: "highest_confidence"
+    use_real_world_gate: false
+    max_abs_real_x_m: 0.80
+    min_forward_real_y_m: 0.10
+    max_forward_real_y_m: 2.50
+
+    camera_width: 1280
+    camera_height: 720
+    camera_fov_x_deg: 80.0
+    camera_fov_y_deg: 50.0
+    invert_x: false
+    invert_y: false
+    galvo_x_max_deg: 20.0
+    galvo_y_max_deg: 20.0
+
+    # Voltage transfer function (must be calibrated on your galvo amp).
+    dac_bits: 16
+    dac_vref: 5.0
+    x_min_voltage: 1.00
+    x_center_voltage: 2.50
+    x_max_voltage: 4.00
+    y_min_voltage: 1.00
+    y_center_voltage: 2.50
+    y_max_voltage: 4.00
+
+    # ── NEW: pixel mode (Phase 1 — no calibration needed) ─────────────
+    # true  = send pixel delta to STM32 right now, works without homography
+    # false = send mm delta, requires camera_calibration.py to have been run
+    use_pixel_mode: true
+
+    # Duplicate suppression radius — pixels when use_pixel_mode true,
+    # metres when false. Replaces the old duplicate_radius_px.
+    duplicate_radius: 35.0
+
+    # Camera centre real-world offset — only used when use_pixel_mode: false.
+    # After running camera_calibration.py read startup log and paste here.
+    cam_cx_rw_m: 0.0
+    cam_cy_rw_m: 0.0
+    # ──────────────────────────────────────────────────────────────────
+
+    # WSL: COM5 on Windows = /dev/ttyS5 in WSL
+    # Ubuntu native: /dev/ttyUSB0 or /dev/ttyACM0  — check with: ls /dev/ttyUSB*
+    serial_port: "/dev/ttyUSB0"    # after usbipd attach; check with: ls /dev/ttyUSB*
+    serial_baudrate: 115200
+    serial_timeout_s: 0.02
+    serial_reconnect_s: 2.0
+    serial_poll_hz: 50.0
+    dry_run: false        # false = actually write to USB-TTL; true = log only
+    send_arm_packet_on_start: true
