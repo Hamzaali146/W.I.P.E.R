@@ -1,0 +1,22 @@
+running egg_info
+writing ../../build/weedbot_simulation/weedbot_simulation.egg-info/PKG-INFO
+writing dependency_links to ../../build/weedbot_simulation/weedbot_simulation.egg-info/dependency_links.txt
+writing entry points to ../../build/weedbot_simulation/weedbot_simulation.egg-info/entry_points.txt
+writing requirements to ../../build/weedbot_simulation/weedbot_simulation.egg-info/requires.txt
+writing top-level names to ../../build/weedbot_simulation/weedbot_simulation.egg-info/top_level.txt
+reading manifest file '../../build/weedbot_simulation/weedbot_simulation.egg-info/SOURCES.txt'
+writing manifest file '../../build/weedbot_simulation/weedbot_simulation.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+copying launch/simulation_launch.py -> /home/hamza/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/launch
+running install_egg_info
+removing '/home/hamza/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages/weedbot_simulation-1.0.0-py3.12.egg-info' (and everything under it)
+Copying ../../build/weedbot_simulation/weedbot_simulation.egg-info to /home/hamza/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages/weedbot_simulation-1.0.0-py3.12.egg-info
+running install_scripts
+Installing laser_controller script to /home/hamza/wiper_ws/install/weedbot_simulation/lib/weedbot_simulation
+Installing tractor_controller script to /home/hamza/wiper_ws/install/weedbot_simulation/lib/weedbot_simulation
+Installing weed_spawner script to /home/hamza/wiper_ws/install/weedbot_simulation/lib/weedbot_simulation
+writing list of installed files to '/home/hamza/wiper_ws/build/weedbot_simulation/install.log'

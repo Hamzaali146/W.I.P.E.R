@@ -1,0 +1,84 @@
+[0.000000] (-) TimerEvent: {}
+[0.000205] (-) JobUnselected: {'identifier': 'weedbot_control'}
+[0.000319] (-) JobUnselected: {'identifier': 'weedbot_interfaces'}
+[0.000365] (-) JobUnselected: {'identifier': 'weedbot_vision'}
+[0.000400] (weedbot_simulation) JobQueued: {'identifier': 'weedbot_simulation', 'dependencies': OrderedDict()}
+[0.000422] (weedbot_simulation) JobStarted: {'identifier': 'weedbot_simulation'}
+[0.098643] (-) TimerEvent: {}
+[0.199017] (-) TimerEvent: {}
+[0.299296] (-) TimerEvent: {}
+[0.399669] (-) TimerEvent: {}
+[0.500017] (-) TimerEvent: {}
+[0.600362] (-) TimerEvent: {}
+[0.700755] (-) TimerEvent: {}
+[0.801377] (-) TimerEvent: {}
+[0.902107] (-) TimerEvent: {}
+[1.002777] (-) TimerEvent: {}
+[1.103386] (-) TimerEvent: {}
+[1.203933] (-) TimerEvent: {}
+[1.304394] (-) TimerEvent: {}
+[1.405036] (-) TimerEvent: {}
+[1.505503] (-) TimerEvent: {}
+[1.606109] (-) TimerEvent: {}
+[1.706622] (-) TimerEvent: {}
+[1.807591] (-) TimerEvent: {}
+[1.908026] (-) TimerEvent: {}
+[2.008461] (-) TimerEvent: {}
+[2.109056] (-) TimerEvent: {}
+[2.122993] (weedbot_simulation) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/weedbot_simulation', 'build', '--build-base', '/home/hamza/wiper_ws/build/weedbot_simulation/build', 'install', '--record', '/home/hamza/wiper_ws/build/weedbot_simulation/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/hamza/wiper_ws/src/weedbot_simulation', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'hamza', 'GIT_ASKPASS': '/home/hamza/.vscode-server/bin/994fd12f8d3a5aa16f17d42c041e5809167e845a/extensions/git/dist/askpass.sh', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/hamza/wiper_ws/install/weedbot_interfaces/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'WT_PROFILE_ID': '{51855cb2-8cce-5362-8f54-464b92b32386}', 'HOME': '/home/hamza', 'OLDPWD': '/home/hamza/wiper_ws', 'TERM_PROGRAM_VERSION': '1.107.1', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-91c2efc3-37d1-471e-b841-42129e22e0c0.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/hamza/.vscode-server/bin/994fd12f8d3a5aa16f17d42c041e5809167e845a/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/hamza/.vscode-server/bin/994fd12f8d3a5aa16f17d42c041e5809167e845a/node', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'WSL_DISTRO_NAME': 'Ubuntu', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/hamza/wiper_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'hamza', 'NAME': 'Code', 'WSL_INTEROP': '/run/WSL/1913_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/home/hamza/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/hamza/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/hamza/.vscode-server/bin/994fd12f8d3a5aa16f17d42c041e5809167e845a/bin/remote-cli:/home/hamza/.local/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs/:/mnt/c/Users/hp/AppData/Local/Programs/Python/Python311/Scripts/:/mnt/c/Users/hp/AppData/Local/Programs/Python/Python311/:/mnt/c/Users/hp/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/hp/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/hp/AppData/Roaming/npm:/snap/bin', 'WT_SESSION': '803c6298-766e-4df3-8f4d-6c2e31e85626', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-0c0283a98c.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/hamza/wiper_ws/install/weedbot_vision:/home/hamza/wiper_ws/install/weedbot_interfaces:/home/hamza/wiper_ws/install/weedbot_control:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/hamza/wiper_ws/build/weedbot_simulation', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/hamza/wiper_ws/build/weedbot_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hamza/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:/home/hamza/wiper_ws/build/weedbot_vision:/home/hamza/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/hamza/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages:/home/hamza/wiper_ws/build/weedbot_control:/home/hamza/wiper_ws/install/weedbot_control/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/home/hamza/wiper_ws/install/weedbot_interfaces:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'WSLENV': 'ELECTRON_RUN_AS_NODE/w:WT_SESSION:WT_PROFILE_ID:'}, 'shell': False}
+[2.209196] (-) TimerEvent: {}
+[2.309573] (-) TimerEvent: {}
+[2.409965] (-) TimerEvent: {}
+[2.510431] (-) TimerEvent: {}
+[2.529796] (weedbot_simulation) StdoutLine: {'line': b'running egg_info\n'}
+[2.530600] (weedbot_simulation) StdoutLine: {'line': b'creating ../../build/weedbot_simulation/weedbot_simulation.egg-info\n'}
+[2.557921] (weedbot_simulation) StdoutLine: {'line': b'writing ../../build/weedbot_simulation/weedbot_simulation.egg-info/PKG-INFO\n'}
+[2.558286] (weedbot_simulation) StdoutLine: {'line': b'writing dependency_links to ../../build/weedbot_simulation/weedbot_simulation.egg-info/dependency_links.txt\n'}
+[2.558638] (weedbot_simulation) StdoutLine: {'line': b'writing entry points to ../../build/weedbot_simulation/weedbot_simulation.egg-info/entry_points.txt\n'}
+[2.559076] (weedbot_simulation) StdoutLine: {'line': b'writing requirements to ../../build/weedbot_simulation/weedbot_simulation.egg-info/requires.txt\n'}
+[2.559304] (weedbot_simulation) StdoutLine: {'line': b'writing top-level names to ../../build/weedbot_simulation/weedbot_simulation.egg-info/top_level.txt\n'}
+[2.559577] (weedbot_simulation) StdoutLine: {'line': b"writing manifest file '../../build/weedbot_simulation/weedbot_simulation.egg-info/SOURCES.txt'\n"}
+[2.610425] (weedbot_simulation) StdoutLine: {'line': b"reading manifest file '../../build/weedbot_simulation/weedbot_simulation.egg-info/SOURCES.txt'\n"}
+[2.610644] (-) TimerEvent: {}
+[2.611381] (weedbot_simulation) StdoutLine: {'line': b"writing manifest file '../../build/weedbot_simulation/weedbot_simulation.egg-info/SOURCES.txt'\n"}
+[2.612240] (weedbot_simulation) StdoutLine: {'line': b'running build\n'}
+[2.612593] (weedbot_simulation) StdoutLine: {'line': b'running build_py\n'}
+[2.613069] (weedbot_simulation) StdoutLine: {'line': b'creating /home/hamza/wiper_ws/build/weedbot_simulation/build\n'}
+[2.613243] (weedbot_simulation) StdoutLine: {'line': b'creating /home/hamza/wiper_ws/build/weedbot_simulation/build/lib\n'}
+[2.613640] (weedbot_simulation) StdoutLine: {'line': b'creating /home/hamza/wiper_ws/build/weedbot_simulation/build/lib/weedbot_simulation\n'}
+[2.614012] (weedbot_simulation) StdoutLine: {'line': b'copying weedbot_simulation/__init__.py -> /home/hamza/wiper_ws/build/weedbot_simulation/build/lib/weedbot_simulation\n'}
+[2.614344] (weedbot_simulation) StdoutLine: {'line': b'running install\n'}
+[2.623484] (weedbot_simulation) StdoutLine: {'line': b'running install_lib\n'}
+[2.656277] (weedbot_simulation) StdoutLine: {'line': b'creating /home/hamza/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages/weedbot_simulation\n'}
+[2.657104] (weedbot_simulation) StdoutLine: {'line': b'copying /home/hamza/wiper_ws/build/weedbot_simulation/build/lib/weedbot_simulation/__init__.py -> /home/hamza/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages/weedbot_simulation\n'}
+[2.657917] (weedbot_simulation) StdoutLine: {'line': b'byte-compiling /home/hamza/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages/weedbot_simulation/__init__.py to __init__.cpython-312.pyc\n'}
+[2.658637] (weedbot_simulation) StdoutLine: {'line': b'running install_data\n'}
+[2.659247] (weedbot_simulation) StdoutLine: {'line': b'creating /home/hamza/wiper_ws/install/weedbot_simulation/share/ament_index\n'}
+[2.659644] (weedbot_simulation) StdoutLine: {'line': b'creating /home/hamza/wiper_ws/install/weedbot_simulation/share/ament_index/resource_index\n'}
+[2.660054] (weedbot_simulation) StdoutLine: {'line': b'creating /home/hamza/wiper_ws/install/weedbot_simulation/share/ament_index/resource_index/packages\n'}
+[2.660668] (weedbot_simulation) StdoutLine: {'line': b'copying resource/weedbot_simulation -> /home/hamza/wiper_ws/install/weedbot_simulation/share/ament_index/resource_index/packages\n'}
+[2.661193] (weedbot_simulation) StdoutLine: {'line': b'copying package.xml -> /home/hamza/wiper_ws/install/weedbot_simulation/share/weedbot_simulation\n'}
+[2.661335] (weedbot_simulation) StdoutLine: {'line': b'creating /home/hamza/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/launch\n'}
+[2.661786] (weedbot_simulation) StdoutLine: {'line': b'copying launch/simulation_launch.py -> /home/hamza/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/launch\n'}
+[2.662296] (weedbot_simulation) StdoutLine: {'line': b'copying launch/full_system_launch.py -> /home/hamza/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/launch\n'}
+[2.662427] (weedbot_simulation) StdoutLine: {'line': b'creating /home/hamza/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/worlds\n'}
+[2.662847] (weedbot_simulation) StdoutLine: {'line': b'copying worlds/farm_field.world -> /home/hamza/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/worlds\n'}
+[2.663295] (weedbot_simulation) StdoutLine: {'line': b'creating /home/hamza/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/urdf\n'}
+[2.663590] (weedbot_simulation) StdoutLine: {'line': b'copying urdf/tractor.urdf.xacro -> /home/hamza/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/urdf\n'}
+[2.663998] (weedbot_simulation) StdoutLine: {'line': b'creating /home/hamza/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/models\n'}
+[2.664258] (weedbot_simulation) StdoutLine: {'line': b'creating /home/hamza/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/models/weed\n'}
+[2.664695] (weedbot_simulation) StdoutLine: {'line': b'copying models/weed/model.config -> /home/hamza/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/models/weed\n'}
+[2.665252] (weedbot_simulation) StdoutLine: {'line': b'copying models/weed/model.sdf -> /home/hamza/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/models/weed\n'}
+[2.665389] (weedbot_simulation) StdoutLine: {'line': b'running install_egg_info\n'}
+[2.692419] (weedbot_simulation) StdoutLine: {'line': b'Copying ../../build/weedbot_simulation/weedbot_simulation.egg-info to /home/hamza/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages/weedbot_simulation-1.0.0-py3.12.egg-info\n'}
+[2.694969] (weedbot_simulation) StdoutLine: {'line': b'running install_scripts\n'}
+[2.710815] (-) TimerEvent: {}
+[2.811163] (-) TimerEvent: {}
+[2.872231] (weedbot_simulation) StdoutLine: {'line': b'Installing laser_controller script to /home/hamza/wiper_ws/install/weedbot_simulation/lib/weedbot_simulation\n'}
+[2.873337] (weedbot_simulation) StdoutLine: {'line': b'Installing tractor_controller script to /home/hamza/wiper_ws/install/weedbot_simulation/lib/weedbot_simulation\n'}
+[2.874264] (weedbot_simulation) StdoutLine: {'line': b'Installing weed_spawner script to /home/hamza/wiper_ws/install/weedbot_simulation/lib/weedbot_simulation\n'}
+[2.874806] (weedbot_simulation) StdoutLine: {'line': b"writing list of installed files to '/home/hamza/wiper_ws/build/weedbot_simulation/install.log'\n"}
+[2.907465] (weedbot_simulation) CommandEnded: {'returncode': 0}
+[2.911450] (-) TimerEvent: {}
+[2.982391] (weedbot_simulation) JobEnded: {'identifier': 'weedbot_simulation', 'rc': 0}
+[2.984525] (-) EventReactorShutdown: {}

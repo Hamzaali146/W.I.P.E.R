@@ -1,0 +1,23 @@
+[1.516s] Invoking command in '/home/hamza/wiper_ws/src/weedbot_control': PYTHONPATH=/home/hamza/wiper_ws/build/weedbot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hamza/wiper_ws/install/weedbot_control/lib/python3.12/site-packages:/home/hamza/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages:/home/hamza/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/hamza/wiper_ws/build/weedbot_simulation:/home/hamza/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:/home/hamza/wiper_ws/install/weedbot_control/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/weedbot_control build --build-base /home/hamza/wiper_ws/build/weedbot_control/build install --record /home/hamza/wiper_ws/build/weedbot_control/install.log --single-version-externally-managed install_data
+[1.888s] running egg_info
+[1.917s] writing ../../build/weedbot_control/weedbot_control.egg-info/PKG-INFO
+[1.918s] writing dependency_links to ../../build/weedbot_control/weedbot_control.egg-info/dependency_links.txt
+[1.919s] writing entry points to ../../build/weedbot_control/weedbot_control.egg-info/entry_points.txt
+[1.919s] writing requirements to ../../build/weedbot_control/weedbot_control.egg-info/requires.txt
+[1.920s] writing top-level names to ../../build/weedbot_control/weedbot_control.egg-info/top_level.txt
+[1.989s] reading manifest file '../../build/weedbot_control/weedbot_control.egg-info/SOURCES.txt'
+[1.990s] writing manifest file '../../build/weedbot_control/weedbot_control.egg-info/SOURCES.txt'
+[1.990s] running build
+[1.990s] running build_py
+[1.991s] running install
+[1.999s] running install_lib
+[2.029s] running install_data
+[2.029s] copying config/control_params.yaml -> /home/hamza/wiper_ws/install/weedbot_control/share/weedbot_control/config
+[2.030s] running install_egg_info
+[2.059s] removing '/home/hamza/wiper_ws/install/weedbot_control/lib/python3.12/site-packages/weedbot_control-1.0.0-py3.12.egg-info' (and everything under it)
+[2.060s] Copying ../../build/weedbot_control/weedbot_control.egg-info to /home/hamza/wiper_ws/install/weedbot_control/lib/python3.12/site-packages/weedbot_control-1.0.0-py3.12.egg-info
+[2.062s] running install_scripts
+[2.243s] Installing control_node script to /home/hamza/wiper_ws/install/weedbot_control/lib/weedbot_control
+[2.243s] Installing laser_test_node script to /home/hamza/wiper_ws/install/weedbot_control/lib/weedbot_control
+[2.243s] writing list of installed files to '/home/hamza/wiper_ws/build/weedbot_control/install.log'
+[2.281s] Invoked command in '/home/hamza/wiper_ws/src/weedbot_control' returned '0': PYTHONPATH=/home/hamza/wiper_ws/build/weedbot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hamza/wiper_ws/install/weedbot_control/lib/python3.12/site-packages:/home/hamza/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages:/home/hamza/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/hamza/wiper_ws/build/weedbot_simulation:/home/hamza/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:/home/hamza/wiper_ws/install/weedbot_control/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/weedbot_control build --build-base /home/hamza/wiper_ws/build/weedbot_control/build install --record /home/hamza/wiper_ws/build/weedbot_control/install.log --single-version-externally-managed install_data

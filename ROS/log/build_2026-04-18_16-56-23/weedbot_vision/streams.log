@@ -1,0 +1,31 @@
+[1.458s] Invoking command in '/home/hamza/wiper_ws/src/weedbot_vision': PYTHONPATH=/home/hamza/wiper_ws/build/weedbot_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hamza/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/hamza/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages:/home/hamza/wiper_ws/build/weedbot_vision:/home/hamza/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/hamza/wiper_ws/build/weedbot_simulation:/home/hamza/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:/home/hamza/wiper_ws/build/weedbot_control:/home/hamza/wiper_ws/install/weedbot_control/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/weedbot_vision build --build-base /home/hamza/wiper_ws/build/weedbot_vision/build install --record /home/hamza/wiper_ws/build/weedbot_vision/install.log --single-version-externally-managed install_data
+[1.874s] running egg_info
+[1.905s] writing ../../build/weedbot_vision/weedbot_vision.egg-info/PKG-INFO
+[1.905s] writing dependency_links to ../../build/weedbot_vision/weedbot_vision.egg-info/dependency_links.txt
+[1.906s] writing entry points to ../../build/weedbot_vision/weedbot_vision.egg-info/entry_points.txt
+[1.906s] writing requirements to ../../build/weedbot_vision/weedbot_vision.egg-info/requires.txt
+[1.906s] writing top-level names to ../../build/weedbot_vision/weedbot_vision.egg-info/top_level.txt
+[1.971s] reading manifest file '../../build/weedbot_vision/weedbot_vision.egg-info/SOURCES.txt'
+[1.972s] writing manifest file '../../build/weedbot_vision/weedbot_vision.egg-info/SOURCES.txt'
+[1.973s] running build
+[1.973s] running build_py
+[1.973s] running install
+[1.982s] running install_lib
+[2.012s] byte-compiling /home/hamza/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages/weedbot_vision/camera_calibration.py to camera_calibration.cpython-312.pyc
+[2.013s]   File "/home/hamza/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages/weedbot_vision/camera_calibration.py", line 31
+[2.013s]     I am particularly interested in applying machine learning to scientific workflows such as event classification, anomaly detection, and pattern discovery in large datasets—areas directly relevant to modern experimental physics. I have hands-on experience with experiment tracking, feature engineering pipelines, and model evaluation under real-time and near-real-time constraints, which aligns closely with trigger systems and online/offline analysis concepts.
+[2.013s]                                                                                                                                                                               ^
+[2.013s] SyntaxError: invalid character '—' (U+2014)
+[2.013s] 
+[2.014s] running install_data
+[2.014s] copying config/vision_params.yaml -> /home/hamza/wiper_ws/install/weedbot_vision/share/weedbot_vision/config
+[2.014s] running install_egg_info
+[2.047s] removing '/home/hamza/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages/weedbot_vision-0.0.1-py3.12.egg-info' (and everything under it)
+[2.047s] Copying ../../build/weedbot_vision/weedbot_vision.egg-info to /home/hamza/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages/weedbot_vision-0.0.1-py3.12.egg-info
+[2.049s] running install_scripts
+[2.244s] Installing camera_calibration script to /home/hamza/wiper_ws/install/weedbot_vision/lib/weedbot_vision
+[2.245s] Installing camera_publisher script to /home/hamza/wiper_ws/install/weedbot_vision/lib/weedbot_vision
+[2.245s] Installing detection_monitor script to /home/hamza/wiper_ws/install/weedbot_vision/lib/weedbot_vision
+[2.245s] Installing vision_node script to /home/hamza/wiper_ws/install/weedbot_vision/lib/weedbot_vision
+[2.245s] writing list of installed files to '/home/hamza/wiper_ws/build/weedbot_vision/install.log'
+[2.277s] Invoked command in '/home/hamza/wiper_ws/src/weedbot_vision' returned '0': PYTHONPATH=/home/hamza/wiper_ws/build/weedbot_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hamza/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/hamza/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages:/home/hamza/wiper_ws/build/weedbot_vision:/home/hamza/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/hamza/wiper_ws/build/weedbot_simulation:/home/hamza/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:/home/hamza/wiper_ws/build/weedbot_control:/home/hamza/wiper_ws/install/weedbot_control/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/weedbot_vision build --build-base /home/hamza/wiper_ws/build/weedbot_vision/build install --record /home/hamza/wiper_ws/build/weedbot_vision/install.log --single-version-externally-managed install_data

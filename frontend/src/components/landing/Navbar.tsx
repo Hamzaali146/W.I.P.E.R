@@ -5,7 +5,7 @@ import wiperLogo from "@/assets/wiper-logo.png";
 import { Link } from "react-router-dom";
 import { useNavigate, useLocation } from "react-router-dom";
 
-const navItems = ["About", "Features", "How It Works", "Tech Stack", "Contact"];
+const navItems = ["About", "Features", "How It Works", "Showcase", "Tech Stack", "Contact"];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);

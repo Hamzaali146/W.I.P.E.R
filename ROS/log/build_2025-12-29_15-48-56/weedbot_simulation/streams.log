@@ -1,0 +1,24 @@
+[1.509s] Invoking command in '/home/hamza/wiper_ws/src/weedbot_simulation': PYTHONPATH=/home/hamza/wiper_ws/build/weedbot_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hamza/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/weedbot_simulation build --build-base /home/hamza/wiper_ws/build/weedbot_simulation/build install --record /home/hamza/wiper_ws/build/weedbot_simulation/install.log --single-version-externally-managed install_data
+[1.952s] running egg_info
+[1.978s] writing ../../build/weedbot_simulation/weedbot_simulation.egg-info/PKG-INFO
+[1.978s] writing dependency_links to ../../build/weedbot_simulation/weedbot_simulation.egg-info/dependency_links.txt
+[1.979s] writing entry points to ../../build/weedbot_simulation/weedbot_simulation.egg-info/entry_points.txt
+[1.980s] writing requirements to ../../build/weedbot_simulation/weedbot_simulation.egg-info/requires.txt
+[1.980s] writing top-level names to ../../build/weedbot_simulation/weedbot_simulation.egg-info/top_level.txt
+[2.037s] reading manifest file '../../build/weedbot_simulation/weedbot_simulation.egg-info/SOURCES.txt'
+[2.038s] writing manifest file '../../build/weedbot_simulation/weedbot_simulation.egg-info/SOURCES.txt'
+[2.039s] running build
+[2.039s] running build_py
+[2.039s] running install
+[2.046s] running install_lib
+[2.073s] running install_data
+[2.074s] copying launch/simulation_launch.py -> /home/hamza/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/launch
+[2.074s] running install_egg_info
+[2.101s] removing '/home/hamza/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages/weedbot_simulation-1.0.0-py3.12.egg-info' (and everything under it)
+[2.102s] Copying ../../build/weedbot_simulation/weedbot_simulation.egg-info to /home/hamza/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages/weedbot_simulation-1.0.0-py3.12.egg-info
+[2.104s] running install_scripts
+[2.340s] Installing laser_controller script to /home/hamza/wiper_ws/install/weedbot_simulation/lib/weedbot_simulation
+[2.340s] Installing tractor_controller script to /home/hamza/wiper_ws/install/weedbot_simulation/lib/weedbot_simulation
+[2.340s] Installing weed_spawner script to /home/hamza/wiper_ws/install/weedbot_simulation/lib/weedbot_simulation
+[2.341s] writing list of installed files to '/home/hamza/wiper_ws/build/weedbot_simulation/install.log'
+[2.384s] Invoked command in '/home/hamza/wiper_ws/src/weedbot_simulation' returned '0': PYTHONPATH=/home/hamza/wiper_ws/build/weedbot_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hamza/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/weedbot_simulation build --build-base /home/hamza/wiper_ws/build/weedbot_simulation/build install --record /home/hamza/wiper_ws/build/weedbot_simulation/install.log --single-version-externally-managed install_data
