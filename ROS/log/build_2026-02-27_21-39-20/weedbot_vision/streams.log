@@ -1,0 +1,20 @@
+[1.283s] Invoking command in '/home/hamza/wiper_ws/build/weedbot_vision': PYTHONPATH=/home/hamza/wiper_ws/build/weedbot_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hamza/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/hamza/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages:/home/hamza/wiper_ws/build/weedbot_vision:/home/hamza/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/hamza/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:/home/hamza/wiper_ws/install/weedbot_control/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/hamza/wiper_ws/build/weedbot_vision/build --no-deps symlink_data
+[1.619s] running develop
+[1.839s] running egg_info
+[1.860s] writing weedbot_vision.egg-info/PKG-INFO
+[1.860s] writing dependency_links to weedbot_vision.egg-info/dependency_links.txt
+[1.860s] writing entry points to weedbot_vision.egg-info/entry_points.txt
+[1.861s] writing requirements to weedbot_vision.egg-info/requires.txt
+[1.861s] writing top-level names to weedbot_vision.egg-info/top_level.txt
+[1.902s] reading manifest file 'weedbot_vision.egg-info/SOURCES.txt'
+[1.904s] writing manifest file 'weedbot_vision.egg-info/SOURCES.txt'
+[1.926s] running build_ext
+[1.927s] Creating /home/hamza/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages/weedbot-vision.egg-link (link to .)
+[1.928s] Installing camera_calibration script to /home/hamza/wiper_ws/install/weedbot_vision/lib/weedbot_vision
+[1.928s] Installing camera_publisher script to /home/hamza/wiper_ws/install/weedbot_vision/lib/weedbot_vision
+[1.928s] Installing detection_monitor script to /home/hamza/wiper_ws/install/weedbot_vision/lib/weedbot_vision
+[1.928s] Installing vision_node script to /home/hamza/wiper_ws/install/weedbot_vision/lib/weedbot_vision
+[1.929s] 
+[1.929s] Installed /home/hamza/wiper_ws/build/weedbot_vision
+[1.929s] running symlink_data
+[1.958s] Invoked command in '/home/hamza/wiper_ws/build/weedbot_vision' returned '0': PYTHONPATH=/home/hamza/wiper_ws/build/weedbot_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hamza/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/hamza/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages:/home/hamza/wiper_ws/build/weedbot_vision:/home/hamza/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/hamza/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:/home/hamza/wiper_ws/install/weedbot_control/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/hamza/wiper_ws/build/weedbot_vision/build --no-deps symlink_data

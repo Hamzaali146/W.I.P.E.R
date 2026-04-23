@@ -3,6 +3,7 @@ import HeroSection from "@/components/landing/HeroSection";
 import AboutSection from "@/components/landing/AboutSection";
 import FeaturesSection from "@/components/landing/FeaturesSection";
 import HowItWorksSection from "@/components/landing/HowItWorksSection";
+import ShowcaseSection from "@/components/landing/ShowcaseSection";
 import TechStackSection from "@/components/landing/TechStackSection";
 import TeamSection from "@/components/landing/TeamSection";
 import FooterSection from "@/components/landing/FooterSection";
@@ -15,6 +16,7 @@ const LandingPage = () => {
       <AboutSection />
       <FeaturesSection />
       <HowItWorksSection />
+      <ShowcaseSection />
       <TechStackSection />
       <TeamSection />
       <FooterSection />

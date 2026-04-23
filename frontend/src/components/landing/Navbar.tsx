@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import wiperLogo from "@/assets/wiper-logo.png";
 
-const navItems = ["About", "Features", "How It Works", "Tech Stack", "Contact"];
+const navItems = ["About", "Features", "How It Works", "Showcase", "Tech Stack", "Contact"];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
