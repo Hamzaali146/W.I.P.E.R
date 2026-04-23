@@ -1,8 +1,0 @@
-Metadata-Version: 2.1
-Name: weedbot-control
-Version: 1.0.0
-Summary: Laser control node for weedbot field hardware (vision to STM32).
-Maintainer: hamza
-Maintainer-email: hamzaaly105@gmail.com
-License: MIT
-Provides-Extra: test

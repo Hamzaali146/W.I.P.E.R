@@ -1,5 +1,0 @@
-  File "/home/hamza/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages/weedbot_vision/camera_calibration.py", line 31
-    I am particularly interested in applying machine learning to scientific workflows such as event classification, anomaly detection, and pattern discovery in large datasets—areas directly relevant to modern experimental physics. I have hands-on experience with experiment tracking, feature engineering pipelines, and model evaluation under real-time and near-real-time constraints, which aligns closely with trigger systems and online/offline analysis concepts.
-                                                                                                                                                                              ^
-SyntaxError: invalid character '—' (U+2014)
-
