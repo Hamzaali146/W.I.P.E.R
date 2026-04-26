@@ -12,7 +12,7 @@ from typing import List, Optional
 import asyncio
 import json
 import cv2
-from datetime import datetime
+from datetime import datetime, timedelta
 import threading
 import time
 from collections import deque
@@ -23,6 +23,7 @@ load_dotenv()
 # ROS 2 imports
 import rclpy
 from rclpy.node import Node
+from rclpy.qos import QoSProfile, QoSReliabilityPolicy, QoSHistoryPolicy
 from sensor_msgs.msg import Image
 from std_msgs.msg import String
 from cv_bridge import CvBridge
@@ -59,7 +60,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Change to specific domain in production
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -191,17 +192,24 @@ class ROSBridge(Node):
         # Session DB tracking
         # session_saved: prevents saving the same session twice (watchdog + shutdown fallback)
         self.session_saved = False
+        self.total_weeds_killed = 0
 
         # Watchdog timer: fires every second to check if the vision node is still alive.
         # Uses count_publishers() — an exact ROS 2 signal — instead of a timeout guess.
         self.create_timer(1.0, self.watchdog_callback)
-        
+
         # Subscribers
+        realsense_qos = QoSProfile(
+         reliability=QoSReliabilityPolicy.BEST_EFFORT,
+         history=QoSHistoryPolicy.KEEP_LAST,
+         depth=1
+        )
+
         self.image_sub = self.create_subscription(
-            Image,
-            '/camera/image_raw',
-            self.image_callback,
-            10
+           Image,
+           '/camera/color/image_raw',
+           self.image_callback,
+           realsense_qos
         )
         
         self.viz_sub = self.create_subscription(
@@ -218,6 +226,13 @@ class ROSBridge(Node):
             10
         )
         
+        self.control_status_sub = self.create_subscription(
+            String,
+            '/weedbot/control/status',
+            self._control_status_callback,
+            10
+        )
+
         # Publishers
         self.laser_pub = self.create_publisher(
             String,
@@ -245,6 +260,15 @@ class ROSBridge(Node):
         except Exception as e:
             self.get_logger().error(f"Viz conversion error: {e}")
     
+    def _control_status_callback(self, msg):
+        """Track weeds killed (shots_sent) from the control node."""
+        try:
+            data = json.loads(msg.data)
+            with self.state_lock:
+                self.total_weeds_killed = int(data.get("shots_sent", 0))
+        except Exception:
+            pass
+
     def detection_callback(self, msg):
         """Process weed detections from the vision node"""
         global session_start_time
@@ -362,15 +386,20 @@ class ROSBridge(Node):
 
         with self.state_lock:
             total_weeds_detected = self.total_detections
+            total_weeds_killed = self.total_weeds_killed
+
+        efficiency = round(
+            (total_weeds_killed / total_weeds_detected * 100), 2
+        ) if total_weeds_detected > 0 else 0.0
 
         session_record = {
             "start_time":           session_start_time.strftime("%H:%M:%S"),
             "end_time":             session_end_time.strftime("%H:%M:%S"),
             "date":                 session_start_time.strftime("%Y-%m-%d"),
             "total_weeds_detected": total_weeds_detected,
-            "total_weeds_killed":   0,    # control node not finalized yet
-            "area_covered":         0.0,  # not tracked yet
-            "efficiency":           0.0,  # 0 until weeds_killed is available
+            "total_weeds_killed":   total_weeds_killed,
+            "area_covered":         0.0,
+            "efficiency":           efficiency,
             "duration":             round(duration_seconds, 2),
         }
 
@@ -380,11 +409,61 @@ class ROSBridge(Node):
                 self.get_logger().info(f"[DB] Session saved: {session_record}")
             except Exception as e:
                 self.get_logger().error(f"[DB] Failed to save session: {e}")
+
+            self._save_performance(session_start_time, efficiency)
         else:
             self.get_logger().warn("[DB] Supabase not enabled — session not saved.")
 
         # Reset so the next vision node startup creates a new session
         session_start_time = None
+        self.total_weeds_killed = 0
+
+    def _compute_weekly_efficiency(self, session_date: datetime) -> float:
+        """
+        Average efficiency of all sessions in the same ISO week (Mon–Sun).
+        The current session is already inserted into `session` before this runs.
+        """
+        monday = session_date - timedelta(days=session_date.weekday())
+        sunday = monday + timedelta(days=6)
+        try:
+            result = (
+                supabase.table("session")
+                .select("efficiency")
+                .gte("date", monday.strftime("%Y-%m-%d"))
+                .lte("date", sunday.strftime("%Y-%m-%d"))
+                .execute()
+            )
+            efficiencies = [
+                row["efficiency"]
+                for row in result.data
+                if row.get("efficiency") is not None
+            ]
+            return round(sum(efficiencies) / len(efficiencies), 2) if efficiencies else 0.0
+        except Exception as e:
+            self.get_logger().error(f"[DB] Failed to compute weekly efficiency: {e}")
+            return 0.0
+
+    def _save_performance(self, session_start: datetime, hourly_efficiency: float):
+        """
+        Insert one row into `performance` for this session.
+        weekly_efficiency is the running average for the whole ISO week.
+        """
+        date_str = session_start.strftime("%Y-%m-%d")
+        hour_str = session_start.strftime("%H:%M:%S")
+        weekly_efficiency = self._compute_weekly_efficiency(session_start)
+        try:
+            supabase.table("performance").upsert({
+                "date": date_str,
+                "hour": hour_str,
+                "hourly_efficiency": hourly_efficiency,
+                "weekly_efficiency": weekly_efficiency,
+            }).execute()
+            self.get_logger().info(
+                f"[DB] Performance saved: date={date_str} hour={hour_str} "
+                f"hourly={hourly_efficiency}% weekly={weekly_efficiency}%"
+            )
+        except Exception as e:
+            self.get_logger().error(f"[DB] Failed to save performance: {e}")
 
     def get_latest_image_bytes(self, use_visualization=True):
         """Get latest image as JPEG bytes"""
@@ -453,7 +532,6 @@ async def startup_event():
     ros_thread = threading.Thread(target=ros_spin_thread, daemon=True, name="ros2-spin")
     ros_thread.start()
     await asyncio.sleep(2)  # Give ROS time to initialize
-    # session_start_time is set on first detection — see detection_callback in ROSBridge
 
 
 @app.on_event("shutdown")
@@ -670,10 +748,10 @@ async def fire_laser(command: LaserCommand):
     )
     
     return {
-        "status": "success",
-        "message": "Laser command sent",
-        "command": command.dict()
-    }
+    "status": "success",
+    "message": "Laser command sent",
+    "command": command.model_dump()   
+}
 
 
 @app.post("/api/laser/fire-at-weed/{weed_id}")
@@ -753,6 +831,122 @@ async def get_statistics():
         "average_weeds_per_frame": round(avg_weeds_per_frame, 2),
         "uptime_seconds": (datetime.now() - ros_bridge.start_time).total_seconds()
     }
+
+
+# ==================== Database Query Endpoints ====================
+
+@app.get("/api/sessions")
+async def get_sessions():
+    """Return all sessions from Supabase for the history tab."""
+    if not SUPABASE_ENABLED:
+        return {"sessions": []}
+    try:
+        result = (
+            supabase.table("session")
+            .select("*")
+            .order("date", desc=True)
+            .order("start_time", desc=True)
+            .execute()
+        )
+        sessions = []
+        for row in result.data:
+            # Format duration from seconds to "Xh Ym"
+            dur_sec = int(row.get("duration") or 0)
+            h, m = divmod(dur_sec // 60, 60)
+            duration_str = f"{h}h {m:02d}m" if h else f"{m}m"
+
+            sessions.append({
+                "id":               row.get("session_id"),
+                "date":             row.get("date", ""),
+                "time":             row.get("start_time", ""),
+                "duration":         duration_str,
+                "weedsDetected":    row.get("total_weeds_detected", 0),
+                "weedsEliminated":  row.get("total_weeds_killed", 0),
+                "areaCovered":      row.get("area_covered", 0),
+                "efficiency":       row.get("efficiency", 0),
+            })
+        return {"sessions": sessions}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/analytics/hourly")
+async def get_hourly_analytics():
+    """Return per-hour aggregated stats from the session table for the hourly chart."""
+    if not SUPABASE_ENABLED:
+        return {"data": []}
+    try:
+        result = (
+            supabase.table("session")
+            .select("start_time,total_weeds_detected,total_weeds_killed,efficiency")
+            .execute()
+        )
+        from collections import defaultdict
+        by_hour: dict = defaultdict(lambda: {"weeds_detected": 0, "weeds_killed": 0, "efficiencies": []})
+        for row in result.data:
+            t = str(row.get("start_time") or "00:00:00")
+            h = int(t.split(":")[0])
+            by_hour[h]["weeds_detected"] += int(row.get("total_weeds_detected") or 0)
+            by_hour[h]["weeds_killed"] += int(row.get("total_weeds_killed") or 0)
+            eff = row.get("efficiency")
+            if eff is not None:
+                by_hour[h]["efficiencies"].append(float(eff))
+
+        data = []
+        for h in sorted(by_hour.keys()):
+            effs = by_hour[h]["efficiencies"]
+            data.append({
+                "time":          f"{h}:00",
+                "weedsDetected": by_hour[h]["weeds_detected"],
+                "weedsKilled":   by_hour[h]["weeds_killed"],
+                "efficiency":    round(sum(effs) / len(effs), 1) if effs else 0,
+            })
+        return {"data": data}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/analytics/weekly")
+async def get_weekly_analytics():
+    """Return per-week aggregated stats from the session table for the weekly chart."""
+    if not SUPABASE_ENABLED:
+        return {"data": []}
+    try:
+        result = (
+            supabase.table("session")
+            .select("date,total_weeds_detected,total_weeds_killed,efficiency")
+            .execute()
+        )
+        from collections import defaultdict
+        from datetime import date as date_type
+        import datetime as dt_module
+
+        by_week: dict = defaultdict(lambda: {"weeds_detected": 0, "weeds_killed": 0, "efficiencies": [], "label": ""})
+        for row in result.data:
+            raw_date = row.get("date")
+            if not raw_date:
+                continue
+            d = dt_module.date.fromisoformat(str(raw_date))
+            iso_year, iso_week, _ = d.isocalendar()
+            key = (iso_year, iso_week)
+            by_week[key]["label"] = f"Wk {iso_week}/{iso_year}"
+            by_week[key]["weeds_detected"] += int(row.get("total_weeds_detected") or 0)
+            by_week[key]["weeds_killed"] += int(row.get("total_weeds_killed") or 0)
+            eff = row.get("efficiency")
+            if eff is not None:
+                by_week[key]["efficiencies"].append(float(eff))
+
+        data = []
+        for key in sorted(by_week.keys()):
+            effs = by_week[key]["efficiencies"]
+            data.append({
+                "week":      by_week[key]["label"],
+                "weeds":     by_week[key]["weeds_killed"],
+                "efficiency": round(sum(effs) / len(effs), 1) if effs else 0,
+            })
+        return {"data": data}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 if __name__ == "__main__":

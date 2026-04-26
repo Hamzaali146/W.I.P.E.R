@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
+const API_BASE = import.meta.env.VITE_API_AUTH_URL || "http://127.0.0.1:8002";
 
 export async function signupUser(payload) {
   const res = await fetch(`${API_BASE}/auth/signup`, {
@@ -56,5 +56,18 @@ export function logoutUser() {
 }
 
 export function isLoggedIn() {
-  return !!getToken();
+  const token = getToken();
+  if (!token) return false;
+
+  try {
+    const payload = JSON.parse(atob(token.split(".")[1]));
+    if (payload.exp && Date.now() >= payload.exp * 1000) {
+      logoutUser();
+      return false;
+    }
+    return true;
+  } catch {
+    logoutUser();
+    return false;
+  }
 }

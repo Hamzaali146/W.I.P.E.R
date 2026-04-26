@@ -1,1 +1,0 @@
-/home/fatima/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/protocol.md

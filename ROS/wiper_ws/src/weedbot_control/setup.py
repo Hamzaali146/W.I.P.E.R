@@ -14,9 +14,9 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share', package_name, 'launch'), glob('launch/*.py')),
-        (os.path.join('share', package_name, 'config'), glob('config/*.yaml')),
-        (os.path.join('share', package_name, 'firmware'), glob('firmware/*.c')),
-        (os.path.join('share', package_name), ['README.md', 'protocol.md']),
+        (os.path.join('share', package_name, 'config'),
+            glob('config/*.yaml') + glob('config/*.csv')),
+        (os.path.join('share', package_name), ['README.md']),
     ],
     install_requires=['setuptools', 'pyserial'],
     zip_safe=True,
@@ -32,6 +32,7 @@ setup(
     entry_points={
         'console_scripts': [
             'control_node = weedbot_control.control_node:main',
+            'laser_test_node = weedbot_control.laser_test_node:main',
         ],
     },
 )

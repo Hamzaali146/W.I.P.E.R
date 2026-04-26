@@ -24,6 +24,9 @@ export default function Dashboard({user,onLogout,isAdmin}) {
   const [summaryStats, setSummaryStats] = useState(null);
   const [latestDetections, setLatestDetections] = useState([]);
   const [alerts, setAlerts] = useState([]);
+  const [sessions, setSessions] = useState([]);
+  const [hourlyData, setHourlyData] = useState([]);
+  const [weeklyData, setWeeklyData] = useState([]);
   const unreadCount = useMemo(
     () => alerts.filter((a) => !a.read).length,
     [alerts],
@@ -114,6 +117,54 @@ export default function Dashboard({user,onLogout,isAdmin}) {
       isMounted = false;
       clearInterval(intervalId);
     };
+  }, [apiBaseUrl]);
+
+  // Fetch session history
+  useEffect(() => {
+    let mounted = true;
+    const fetchSessions = async () => {
+      try {
+        const res = await fetch(`${apiBaseUrl}/api/sessions`);
+        if (!res.ok) return;
+        const data = await res.json();
+        if (mounted) setSessions(Array.isArray(data.sessions) ? data.sessions : []);
+      } catch {}
+    };
+    fetchSessions();
+    const t = setInterval(fetchSessions, 30000);
+    return () => { mounted = false; clearInterval(t); };
+  }, [apiBaseUrl]);
+
+  // Fetch hourly analytics
+  useEffect(() => {
+    let mounted = true;
+    const fetchHourly = async () => {
+      try {
+        const res = await fetch(`${apiBaseUrl}/api/analytics/hourly`);
+        if (!res.ok) return;
+        const data = await res.json();
+        if (mounted) setHourlyData(Array.isArray(data.data) ? data.data : []);
+      } catch {}
+    };
+    fetchHourly();
+    const t = setInterval(fetchHourly, 60000);
+    return () => { mounted = false; clearInterval(t); };
+  }, [apiBaseUrl]);
+
+  // Fetch weekly analytics
+  useEffect(() => {
+    let mounted = true;
+    const fetchWeekly = async () => {
+      try {
+        const res = await fetch(`${apiBaseUrl}/api/analytics/weekly`);
+        if (!res.ok) return;
+        const data = await res.json();
+        if (mounted) setWeeklyData(Array.isArray(data.data) ? data.data : []);
+      } catch {}
+    };
+    fetchWeekly();
+    const t = setInterval(fetchWeekly, 60000);
+    return () => { mounted = false; clearInterval(t); };
   }, [apiBaseUrl]);
 
   useEffect(() => {
@@ -209,9 +260,16 @@ export default function Dashboard({user,onLogout,isAdmin}) {
     return `ROS WS: ${wsStatus} | Camera: ${cameraActive} | Last detection: ${lastDetection}`;
   }, [systemStatus, wsStatus]);
 
+  const todayKilled = useMemo(() => {
+    const today = new Date().toISOString().split("T")[0];
+    return sessions
+      .filter((s) => s.date === today)
+      .reduce((sum, s) => sum + (s.weedsEliminated || 0), 0);
+  }, [sessions]);
+
   const liveDeviceData = useMemo(
     () => ({
-      weedCount: summaryStats?.total_weeds_detected || 0,
+      weedCount: todayKilled || summaryStats?.total_weeds_detected || 0,
       areaCovered: "N/A",
       battery: "N/A",
       connection: wsStatus,
@@ -329,7 +387,7 @@ export default function Dashboard({user,onLogout,isAdmin}) {
        defaultValue="dashboard"
   className="space-y-4 sm:space-y-6 app-enter"
 >
-  <TabsList className={`modern-tabs-list grid w-full max-w-3xl h-10 sm:h-12 text-xs sm:text-sm ${isAdmin ? 'grid-cols-4' : 'grid-cols-4'}`}>
+  <TabsList className={`modern-tabs-list grid w-full max-w-3xl h-10 sm:h-12 text-xs sm:text-sm ${isAdmin ? 'grid-cols-4' : 'grid-cols-3'}`}>
     {isAdmin ? (
       <>
         
@@ -359,7 +417,7 @@ export default function Dashboard({user,onLogout,isAdmin}) {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 stagger-children">
           <div className="lg:col-span-2 space-y-4 sm:space-y-6">
             <QuickActions />
-            <EfficiencyMetrics />
+            <EfficiencyMetrics data={hourlyData} />
           </div>
           <div className="space-y-4 sm:space-y-6">
             <AlertsPanel alerts={alerts} onMarkRead={markAlertRead} onMarkAllRead={markAllAlertsRead} />
@@ -369,10 +427,10 @@ export default function Dashboard({user,onLogout,isAdmin}) {
       </TabsContent>
       <TabsContent value="analytics" className="space-y-4 sm:space-y-6 stagger-children">
         <EfficiencyMetrics />
-        <PerformanceComparison />
+        <PerformanceComparison data={weeklyData} />
       </TabsContent>
       <TabsContent value="history" className="space-y-4 sm:space-y-6">
-        <SessionHistoryEnhanced />
+        <SessionHistoryEnhanced data={sessions} />
       </TabsContent>
     </>
   )}
@@ -384,7 +442,7 @@ export default function Dashboard({user,onLogout,isAdmin}) {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 stagger-children">
           <div className="lg:col-span-2 space-y-4 sm:space-y-6">
             <QuickActions />
-            <EfficiencyMetrics />
+            <EfficiencyMetrics data={hourlyData} />
           </div>
           <div className="space-y-4 sm:space-y-6">
             <AlertsPanel alerts={alerts} onMarkRead={markAlertRead} onMarkAllRead={markAllAlertsRead} />
