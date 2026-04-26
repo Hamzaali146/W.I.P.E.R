@@ -33,7 +33,7 @@ export default function Dashboard({user,onLogout,isAdmin}) {
 
   const apiBaseUrl = useMemo(() => {
     const configuredUrl =
-      import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+      import.meta.env.VITE_API_BASE_URL || "http://localhost:8082";
     return configuredUrl.replace(/\/+$/, "");
   }, []);
 
@@ -329,7 +329,7 @@ export default function Dashboard({user,onLogout,isAdmin}) {
        defaultValue="dashboard"
   className="space-y-4 sm:space-y-6 app-enter"
 >
-  <TabsList className={`modern-tabs-list grid w-full max-w-3xl h-10 sm:h-12 text-xs sm:text-sm ${isAdmin ? 'grid-cols-4' : 'grid-cols-4'}`}>
+  <TabsList className={`modern-tabs-list grid w-full max-w-3xl h-10 sm:h-12 text-xs sm:text-sm ${isAdmin ? 'grid-cols-4' : 'grid-cols-3'}`}>
     {isAdmin ? (
       <>
         

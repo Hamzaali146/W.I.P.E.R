@@ -7,6 +7,14 @@ import { Auth } from "./components/Auth";
 
 import { getUser, isLoggedIn, logoutUser } from "./services/auth";
 
+// ProtectedRoute: re-checks token validity on every navigation
+function ProtectedRoute({ authenticated, children }) {
+  if (!authenticated || !isLoggedIn()) {
+    return <Navigate to="/auth" replace />;
+  }
+  return children;
+}
+
 export default function App() {
 
   const [authenticated, setAuthenticated] = useState(isLoggedIn());
@@ -39,11 +47,9 @@ export default function App() {
         <Route
           path="/dashboard"
           element={
-            authenticated ? (
+            <ProtectedRoute authenticated={authenticated}>
               <Dashboard user={user} onLogout={handleLogout} isAdmin={isAdmin}/>
-            ) : (
-              <Navigate to="/auth" />
-            )
+            </ProtectedRoute>
           }
         />
 

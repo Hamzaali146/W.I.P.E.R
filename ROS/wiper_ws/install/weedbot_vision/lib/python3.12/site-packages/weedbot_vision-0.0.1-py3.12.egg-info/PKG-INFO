@@ -1,7 +1,0 @@
-Metadata-Version: 2.1
-Name: weedbot-vision
-Version: 0.0.1
-Summary: Weed detection vision system for weedbot with YOLO and homography calibration
-Maintainer: Hamza Ali
-Maintainer-email: hamzaaly105@gmail.com
-License: MIT

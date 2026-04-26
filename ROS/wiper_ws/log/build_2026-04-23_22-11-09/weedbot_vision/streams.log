@@ -1,0 +1,32 @@
+[1.113s] Invoking command in '/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages:/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision:/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control:/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages:/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation:/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/build --no-deps symlink_data
+[1.453s] running develop
+[1.667s] running egg_info
+[1.667s] creating weedbot_vision.egg-info
+[1.693s] writing weedbot_vision.egg-info/PKG-INFO
+[1.693s] writing dependency_links to weedbot_vision.egg-info/dependency_links.txt
+[1.694s] writing entry points to weedbot_vision.egg-info/entry_points.txt
+[1.694s] writing requirements to weedbot_vision.egg-info/requires.txt
+[1.694s] writing top-level names to weedbot_vision.egg-info/top_level.txt
+[1.694s] writing manifest file 'weedbot_vision.egg-info/SOURCES.txt'
+[1.735s] reading manifest file 'weedbot_vision.egg-info/SOURCES.txt'
+[1.736s] writing manifest file 'weedbot_vision.egg-info/SOURCES.txt'
+[1.759s] running build_ext
+[1.759s] Creating /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages/weedbot-vision.egg-link (link to .)
+[1.760s] Installing camera_calibration script to /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/weedbot_vision
+[1.760s] Installing camera_publisher script to /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/weedbot_vision
+[1.761s] Installing detection_monitor script to /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/weedbot_vision
+[1.761s] Installing vision_node script to /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/weedbot_vision
+[1.761s] 
+[1.762s] Installed /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision
+[1.762s] running symlink_data
+[1.762s] creating /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/ament_index
+[1.762s] creating /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/ament_index/resource_index
+[1.762s] creating /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/ament_index/resource_index/packages
+[1.762s] symbolically linking /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/resource/weedbot_vision -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/ament_index/resource_index/packages
+[1.762s] symbolically linking /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/package.xml -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision
+[1.762s] creating /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/launch
+[1.762s] symbolically linking /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/launch/calibration.launch.py -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/launch
+[1.763s] symbolically linking /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/launch/vision_launch.py -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/launch
+[1.763s] creating /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/config
+[1.763s] symbolically linking /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/config/vision_params.yaml -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/share/weedbot_vision/config
+[1.838s] Invoked command in '/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_interfaces/lib/python3.12/site-packages:/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision:/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_vision/lib/python3.12/site-packages:/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control:/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages:/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation:/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/build --no-deps symlink_data

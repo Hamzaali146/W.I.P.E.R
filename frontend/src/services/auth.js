@@ -56,5 +56,18 @@ export function logoutUser() {
 }
 
 export function isLoggedIn() {
-  return !!getToken();
+  const token = getToken();
+  if (!token) return false;
+
+  try {
+    const payload = JSON.parse(atob(token.split(".")[1]));
+    if (payload.exp && Date.now() >= payload.exp * 1000) {
+      logoutUser();
+      return false;
+    }
+    return true;
+  } catch {
+    logoutUser();
+    return false;
+  }
 }
