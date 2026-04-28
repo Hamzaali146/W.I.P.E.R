@@ -1,0 +1,37 @@
+[0.867s] Invoking command in '/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/build --no-deps symlink_data
+[1.155s] running develop
+[1.347s] running egg_info
+[1.348s] creating weedbot_simulation.egg-info
+[1.367s] writing weedbot_simulation.egg-info/PKG-INFO
+[1.368s] writing dependency_links to weedbot_simulation.egg-info/dependency_links.txt
+[1.368s] writing entry points to weedbot_simulation.egg-info/entry_points.txt
+[1.368s] writing requirements to weedbot_simulation.egg-info/requires.txt
+[1.368s] writing top-level names to weedbot_simulation.egg-info/top_level.txt
+[1.368s] writing manifest file 'weedbot_simulation.egg-info/SOURCES.txt'
+[1.407s] reading manifest file 'weedbot_simulation.egg-info/SOURCES.txt'
+[1.407s] writing manifest file 'weedbot_simulation.egg-info/SOURCES.txt'
+[1.427s] running build_ext
+[1.428s] Creating /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages/weedbot-simulation.egg-link (link to .)
+[1.428s] Installing laser_controller script to /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/weedbot_simulation
+[1.428s] Installing tractor_controller script to /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/weedbot_simulation
+[1.428s] Installing weed_spawner script to /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/weedbot_simulation
+[1.428s] 
+[1.428s] Installed /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation
+[1.428s] running symlink_data
+[1.429s] creating /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/ament_index
+[1.429s] creating /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/ament_index/resource_index
+[1.429s] creating /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/ament_index/resource_index/packages
+[1.429s] symbolically linking /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/resource/weedbot_simulation -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/ament_index/resource_index/packages
+[1.429s] symbolically linking /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/package.xml -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation
+[1.429s] creating /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/launch
+[1.429s] symbolically linking /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/launch/simulation_launch.py -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/launch
+[1.429s] symbolically linking /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/launch/full_system_launch.py -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/launch
+[1.429s] creating /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/worlds
+[1.429s] symbolically linking /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/worlds/farm_field.world -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/worlds
+[1.429s] creating /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/urdf
+[1.429s] symbolically linking /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/urdf/tractor.urdf.xacro -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/urdf
+[1.429s] creating /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/models
+[1.429s] creating /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/models/weed
+[1.430s] symbolically linking /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/models/weed/model.sdf -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/models/weed
+[1.430s] symbolically linking /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/models/weed/model.config -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/models/weed
+[1.461s] Invoked command in '/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/build --no-deps symlink_data
