@@ -1,1 +1,0 @@
-/home/sanya/fyp/W.I.P.E.R/build/weedbot_simulation/launch/full_system_launch.py

@@ -1,1 +1,37 @@
-/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_vision/config/vision_params.yaml
+/weedbot_vision_node:
+  ros__parameters:
+    #camera_topic: '/camera/image_raw'
+    camera_topic: '/camera/camera/color/image_raw'
+    model_path: '/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/src/weedbot_vision/models/weights.pt'
+    confidence_threshold: 0.15
+    iou_threshold: 0.4
+    input_size: 640
+    device: 'cpu'
+    max_det: 300
+    publish_viz: true
+    viz_topic: '/weedbot/visualization'
+
+/camera_publisher:
+  ros__parameters:
+    # camera_source: "0"  
+    publish_rate: 30.0
+    image_topic: '/camera/image_raw'
+    camera_info_topic: '/camera/camera_info'
+    frame_id: 'camera_link'
+    compressed: false
+    width: 1280
+    height: 720
+    flip_horizontal: false
+    flip_vertical: false
+    reconnect_interval: 5.0
+    frame_rate: 30.0
+    camera_source: "realsense"
+
+
+/detection_monitor:
+  ros__parameters:
+    detection_topic: '/weedbot/detections'
+    log_interval: 5.0
+    verbose: true
+
+

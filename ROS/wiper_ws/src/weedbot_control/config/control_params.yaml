@@ -10,7 +10,7 @@
     armed: false                    # MUST be true before any $FIRE is sent
     auto_fire_enabled: true
 
-    min_confidence: 0.4
+    min_confidence: 0.2
     target_policy: "highest_confidence"  # or "nearest_center"
     shot_cooldown_ms: 220.0
     duplicate_radius_mm: 15.0
@@ -30,8 +30,8 @@
     # Camera-to-galvo physical offset. Applied by the FIRMWARE via $OFFSET
     # at session start; the control node only uses these for pre-bounds
     # checking so we don't ping the MCU with unreachable targets.
-    cam_to_galvo_offset_x_mm: -2.0
-    cam_to_galvo_offset_y_mm: 19.0
+    cam_to_galvo_offset_x_mm: -31.0
+    cam_to_galvo_offset_y_mm: 27.0
 
     # Reachable envelope — measured ~+/-265 mm symmetric at 17" galvo height.
     # Keep a 15 mm safety margin from the calibration edge.

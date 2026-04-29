@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/sanya/fyp/W.I.P.E.R/build/weedbot_interfaces/rosidl_generator_py/weedbot_interfaces/weedbot_interfaces_s__rosidl_typesupport_c.so" "TARGETS" "weedbot_interfaces_s__rosidl_typesupport_c" "DESTINATION" "lib/python3.12/site-packages/weedbot_interfaces")

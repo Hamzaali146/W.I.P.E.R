@@ -1,1 +1,0 @@
-/home/sanya/fyp/W.I.P.E.R/build/weedbot_interfaces/rosidl_generator_rs/weedbot_interfaces/rust/src/msg/rmw.rs

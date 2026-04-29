@@ -1,0 +1,37 @@
+running develop
+Removing /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages/weedbot-simulation.egg-link (link to .)
+running egg_info
+writing ../../build/weedbot_simulation/weedbot_simulation.egg-info/PKG-INFO
+writing dependency_links to ../../build/weedbot_simulation/weedbot_simulation.egg-info/dependency_links.txt
+writing entry points to ../../build/weedbot_simulation/weedbot_simulation.egg-info/entry_points.txt
+writing requirements to ../../build/weedbot_simulation/weedbot_simulation.egg-info/requires.txt
+writing top-level names to ../../build/weedbot_simulation/weedbot_simulation.egg-info/top_level.txt
+reading manifest file '../../build/weedbot_simulation/weedbot_simulation.egg-info/SOURCES.txt'
+writing manifest file '../../build/weedbot_simulation/weedbot_simulation.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/build
+creating /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/build/lib
+creating /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/build/lib/weedbot_simulation
+copying weedbot_simulation/__init__.py -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/build/lib/weedbot_simulation
+running install
+running install_lib
+creating /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages/weedbot_simulation
+copying /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/build/lib/weedbot_simulation/__init__.py -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages/weedbot_simulation
+byte-compiling /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages/weedbot_simulation/__init__.py to __init__.cpython-312.pyc
+running install_data
+copying resource/weedbot_simulation -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/ament_index/resource_index/packages
+copying package.xml -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation
+copying launch/simulation_launch.py -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/launch
+copying launch/full_system_launch.py -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/launch
+copying worlds/farm_field.world -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/worlds
+copying urdf/tractor.urdf.xacro -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/urdf
+copying models/weed/model.sdf -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/models/weed
+copying models/weed/model.config -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/share/weedbot_simulation/models/weed
+running install_egg_info
+Copying ../../build/weedbot_simulation/weedbot_simulation.egg-info to /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/python3.12/site-packages/weedbot_simulation-1.0.0-py3.12.egg-info
+running install_scripts
+Installing laser_controller script to /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/weedbot_simulation
+Installing tractor_controller script to /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/weedbot_simulation
+Installing weed_spawner script to /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_simulation/lib/weedbot_simulation
+writing list of installed files to '/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/install.log'

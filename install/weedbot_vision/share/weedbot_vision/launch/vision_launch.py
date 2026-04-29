@@ -1,1 +1,0 @@
-/home/sanya/fyp/W.I.P.E.R/build/weedbot_vision/launch/vision_launch.py

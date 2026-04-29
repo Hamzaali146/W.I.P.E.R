@@ -1,1 +1,63 @@
-/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/config/control_params.yaml
+/weedbot_control_node:
+  ros__parameters:
+    detection_topic: "/weedbot/detections"
+    status_topic: "/weedbot/control/status"
+    debug_topic: "/weedbot/control/debug"
+
+    # DRY_RUN logs every $FIRE packet (with checksum) and skips serial I/O.
+    # LIVE opens the serial port and sends $ARM,1 + $OFFSET on startup.
+    mode: "LIVE"
+    armed: false                    # MUST be true before any $FIRE is sent
+    auto_fire_enabled: true
+
+    min_confidence: 0.2
+    target_policy: "highest_confidence"  # or "nearest_center"
+    shot_cooldown_ms: 220.0
+    duplicate_radius_mm: 15.0
+    duplicate_holdoff_ms: 600.0
+
+    # Firing parameters sent in every $FIRE packet
+    dwell_ms: 500                   # 0..5000, laser on-time after galvo settles
+    power_permille: 750             # 0..1000, 750 = 75% power
+
+    # Coordinate frame — vision homography outputs +right/+toward-operator in
+    # meters; firmware expects +left/+forward in millimeters. Both flip by
+    # default. If physical testing shows a direction is wrong, set the flag
+    # for that axis to false.
+    sign_flip_x: true
+    sign_flip_y: true
+
+    # Camera-to-galvo physical offset. Applied by the FIRMWARE via $OFFSET
+    # at session start; the control node only uses these for pre-bounds
+    # checking so we don't ping the MCU with unreachable targets.
+    cam_to_galvo_offset_x_mm: -31.0
+    cam_to_galvo_offset_y_mm: 27.0
+
+    # Reachable envelope — measured ~+/-265 mm symmetric at 17" galvo height.
+    # Keep a 15 mm safety margin from the calibration edge.
+    bounds_x_min_mm: -250.0
+    bounds_x_max_mm:  250.0
+    bounds_y_min_mm: -250.0
+    bounds_y_max_mm:  250.0
+
+    # Firmware queue is 16 shots deep; pause sending before we hit it so we
+    # never get QUEUE_FULL. ACKs arrive AFTER the shot completes, not at
+    # enqueue, so a long dwell delays ACK by that amount — keep the timeout
+    # generous.
+    queue_max_outstanding: 14
+    ack_timeout_ms: 10000
+
+    serial_port: "/dev/ttyUSB0"
+    serial_baudrate: 115200
+    serial_read_timeout_s: 0.02
+    serial_reconnect_s: 2.0
+    serial_poll_hz: 50.0
+
+/weedbot_laser_test_node:
+  ros__parameters:
+    detection_topic: "/weedbot/detections"
+    # Absolute path is usually set by the launch file; this default is the
+    # installed copy.
+    shots_csv: ""
+    publish_rate_hz: 1.0
+    loop: true

@@ -1,1 +1,0 @@
-/home/sanya/fyp/W.I.P.E.R/build/weedbot_control/launch/control_launch.py

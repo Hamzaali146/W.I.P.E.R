@@ -1,1 +1,0 @@
-/home/sanya/fyp/W.I.P.E.R/build/weedbot_interfaces/rosidl_generator_cpp/weedbot_interfaces/msg/detail/weed_detection__traits.hpp

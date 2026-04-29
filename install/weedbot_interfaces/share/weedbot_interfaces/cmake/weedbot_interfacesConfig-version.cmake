@@ -1,1 +1,0 @@
-/home/sanya/fyp/W.I.P.E.R/build/weedbot_interfaces/ament_cmake_core/weedbot_interfacesConfig-version.cmake

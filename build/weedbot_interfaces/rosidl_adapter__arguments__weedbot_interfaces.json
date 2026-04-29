@@ -1,7 +1,0 @@
-{
-  "package_name": "weedbot_interfaces",
-  "non_idl_tuples": [
-    "/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/src/weedbot_interfaces:msg/WeedDetection.msg",
-    "/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/src/weedbot_interfaces:msg/WeedArray.msg"
-  ]
-}

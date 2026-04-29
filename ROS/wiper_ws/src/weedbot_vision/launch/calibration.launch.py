@@ -3,7 +3,6 @@
 Launch file for camera homography calibration
 This is a one-time setup process to map pixel coordinates to real-world meters
 """
-
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, LogInfo
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
@@ -12,14 +11,7 @@ from launch_ros.substitutions import FindPackageShare
 
 
 def generate_launch_description():
-    
-    # Declare launch arguments
-    camera_source_arg = DeclareLaunchArgument(
-        'camera_source',
-        default_value='0',
-        description='Camera source (0 for webcam, URL for IP camera)'
-    )
-    
+
     config_file_arg = DeclareLaunchArgument(
         'config_file',
         default_value=PathJoinSubstitution([
@@ -29,23 +21,21 @@ def generate_launch_description():
         ]),
         description='Path to config file'
     )
-    
-    # Get launch configurations
-    camera_source = LaunchConfiguration('camera_source')
+
     config_file = LaunchConfiguration('config_file')
-    
+
     # Camera publisher node
+    # camera_source is NOT overridden here — vision_params.yaml already sets it
+    # to "realsense". Overriding it via LaunchConfiguration caused a type error
+    # (string arg was being passed as integer 0).
     camera_node = Node(
         package='weedbot_vision',
         executable='camera_publisher',
         name='camera_publisher',
-        parameters=[
-            config_file,
-            {'camera_source': camera_source}
-        ],
+        parameters=[config_file],
         output='screen'
     )
-    
+
     # Calibration node
     calibration_node = Node(
         package='weedbot_vision',
@@ -53,9 +43,8 @@ def generate_launch_description():
         name='camera_calibration',
         output='screen'
     )
-    
+
     return LaunchDescription([
-        camera_source_arg,
         config_file_arg,
         LogInfo(msg=['==========================================']),
         LogInfo(msg=['WEEDBOT HOMOGRAPHY CALIBRATION']),
