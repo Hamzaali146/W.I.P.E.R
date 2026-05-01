@@ -99,8 +99,8 @@ export function PerformanceComparison({ data }) {
         <BarChart data={weeklyTrends}>
           <CartesianGrid strokeDasharray="3 3" stroke="hsl(150, 30%, 85%)" />
           <XAxis dataKey="week" stroke="hsl(148, 13%, 35%)" />
-          <YAxis yAxisId="left" stroke="hsl(148, 13%, 35%)" />
-          <YAxis yAxisId="right" orientation="right" stroke="hsl(148, 13%, 35%)" domain={[90, 100]} />
+          <YAxis yAxisId="left" stroke="hsl(148, 13%, 35%)" allowDecimals={false} />
+          <YAxis yAxisId="right" orientation="right" stroke="hsl(148, 13%, 35%)" domain={[0, 100]} />
           <Tooltip
             contentStyle={{
               backgroundColor: "rgba(255, 255, 255, 0.94)",

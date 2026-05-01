@@ -10,16 +10,25 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const dummyHourlyData = [
-  { time: "6:00", weedsPerHour: 40, efficiency: 96 },
-  { time: "7:00", weedsPerHour: 85, efficiency: 97 },
-  { time: "8:00", weedsPerHour: 90, efficiency: 98 },
-  { time: "9:00", weedsPerHour: 35, efficiency: 98 },
-  { time: "10:00", weedsPerHour: 15, efficiency: 97 },
-];
+const buildDummyHourly = () => {
+  const now = new Date();
+  const out = [];
+  for (let offset = 5; offset >= 0; offset--) {
+    const h = now.getHours() - offset;
+    if (h < 0) continue;
+    out.push({
+      time: `${String(h).padStart(2, "0")}:00`,
+      weedsPerHour: 0,
+      efficiency: 0,
+    });
+  }
+  return out;
+};
 
 export function EfficiencyMetrics({ data }) {
-  const [hourlyData, setHourlyData] = useState(data && data.length ? data : dummyHourlyData);
+  const [hourlyData, setHourlyData] = useState(
+    data && data.length ? data : buildDummyHourly()
+  );
 
   useEffect(() => {
     if (Array.isArray(data) && data.length) {
@@ -27,22 +36,18 @@ export function EfficiencyMetrics({ data }) {
     }
   }, [data]);
 
-  const loadHourlyData = async () => {
-    // const res = await fetch("/your-api");
-    // const json = await res.json();
-    // setHourlyData(json.data);
-
-    setHourlyData(dummyHourlyData);
+  const reload = () => {
+    setHourlyData(buildDummyHourly());
   };
 
   return (
     <div className="space-y-6">
       <Card className="p-6 surface-card">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="section-title">Hourly Performance</h2>
+          <h2 className="section-title">Per-Hour Performance</h2>
 
           <button
-            onClick={loadHourlyData}
+            onClick={reload}
             className="text-sm px-3 py-1 rounded-lg transition-colors chip-cyan text-primary"
           >
             Reload
@@ -53,8 +58,8 @@ export function EfficiencyMetrics({ data }) {
           <LineChart data={hourlyData}>
             <CartesianGrid strokeDasharray="3 3" stroke="hsl(150, 30%, 85%)" />
             <XAxis dataKey="time" stroke="hsl(148, 13%, 35%)" />
-            <YAxis yAxisId="left" stroke="hsl(148, 13%, 35%)" />
-            <YAxis yAxisId="right" orientation="right" stroke="hsl(148, 13%, 35%)" domain={[90, 100]} />
+            <YAxis yAxisId="left" stroke="hsl(148, 13%, 35%)" allowDecimals={false} />
+            <YAxis yAxisId="right" orientation="right" stroke="hsl(148, 13%, 35%)" domain={[0, 100]} />
             <Tooltip
               contentStyle={{
                 backgroundColor: "rgba(255, 255, 255, 0.94)",
@@ -70,7 +75,7 @@ export function EfficiencyMetrics({ data }) {
               dataKey="weedsPerHour"
               stroke="hsl(174, 78%, 26%)"
               strokeWidth={3}
-              name="Weeds/Hour"
+              name="Weeds Eliminated / Hour"
               dot={{ fill: "hsl(25, 95%, 53%)", r: 4 }}
               activeDot={{ r: 6, fill: "hsl(174, 78%, 26%)" }}
             />

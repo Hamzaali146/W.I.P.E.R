@@ -30,8 +30,8 @@
     # Camera-to-galvo physical offset. Applied by the FIRMWARE via $OFFSET
     # at session start; the control node only uses these for pre-bounds
     # checking so we don't ping the MCU with unreachable targets.
-    cam_to_galvo_offset_x_mm: -31.0
-    cam_to_galvo_offset_y_mm: 27.0
+    cam_to_galvo_offset_x_mm: -62.0
+    cam_to_galvo_offset_y_mm: -153.0
 
     # Reachable envelope — measured ~+/-265 mm symmetric at 17" galvo height.
     # Keep a 15 mm safety margin from the calibration edge.

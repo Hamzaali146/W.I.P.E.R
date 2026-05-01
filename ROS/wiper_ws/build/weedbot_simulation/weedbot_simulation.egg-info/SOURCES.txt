@@ -13,9 +13,13 @@ launch/simulation_launch.py
 models/weed/model.config
 models/weed/model.sdf
 resource/weedbot_simulation
-test/test_copyright.py
-test/test_flake8.py
-test/test_pep257.py
 urdf/tractor.urdf.xacro
 weedbot_simulation/__init__.py
+weedbot_simulation.egg-info/PKG-INFO
+weedbot_simulation.egg-info/SOURCES.txt
+weedbot_simulation.egg-info/dependency_links.txt
+weedbot_simulation.egg-info/entry_points.txt
+weedbot_simulation.egg-info/requires.txt
+weedbot_simulation.egg-info/top_level.txt
+weedbot_simulation.egg-info/zip-safe
 worlds/farm_field.world

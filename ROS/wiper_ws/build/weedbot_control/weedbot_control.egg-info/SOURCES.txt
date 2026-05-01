@@ -14,10 +14,14 @@ config/test_shots.csv
 launch/control_launch.py
 launch/laser_dry_run.launch.py
 resource/weedbot_control
-test/test_copyright.py
-test/test_flake8.py
-test/test_pep257.py
 weedbot_control/__init__.py
 weedbot_control/control_node.py
 weedbot_control/laser_test_node.py
 weedbot_control/serial_manager.py
+weedbot_control.egg-info/PKG-INFO
+weedbot_control.egg-info/SOURCES.txt
+weedbot_control.egg-info/dependency_links.txt
+weedbot_control.egg-info/entry_points.txt
+weedbot_control.egg-info/requires.txt
+weedbot_control.egg-info/top_level.txt
+weedbot_control.egg-info/zip-safe

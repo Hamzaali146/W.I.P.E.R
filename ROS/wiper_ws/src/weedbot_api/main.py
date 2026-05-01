@@ -398,7 +398,7 @@ class ROSBridge(Node):
             "date":                 session_start_time.strftime("%Y-%m-%d"),
             "total_weeds_detected": total_weeds_detected,
             "total_weeds_killed":   total_weeds_killed,
-            "area_covered":         0.0,
+            "area_covered":         2.5,
             "efficiency":           efficiency,
             "duration":             round(duration_seconds, 2),
         }
@@ -872,20 +872,31 @@ async def get_sessions():
 
 @app.get("/api/analytics/hourly")
 async def get_hourly_analytics():
-    """Return per-hour aggregated stats from the session table for the hourly chart."""
+    """
+    Per-hour aggregation of today's sessions.
+    Returns 6 buckets: current hour + 5 previous hours of the same day.
+    Hours with no session are padded with 0.
+    """
     if not SUPABASE_ENABLED:
         return {"data": []}
     try:
+        now = datetime.now()
+        today_str = now.strftime("%Y-%m-%d")
         result = (
             supabase.table("session")
             .select("start_time,total_weeds_detected,total_weeds_killed,efficiency")
+            .eq("date", today_str)
             .execute()
         )
         from collections import defaultdict
         by_hour: dict = defaultdict(lambda: {"weeds_detected": 0, "weeds_killed": 0, "efficiencies": []})
         for row in result.data:
             t = str(row.get("start_time") or "00:00:00")
-            h = int(t.split(":")[0])
+            parts = t.split(":")
+            try:
+                h = int(parts[0])
+            except (ValueError, IndexError):
+                continue
             by_hour[h]["weeds_detected"] += int(row.get("total_weeds_detected") or 0)
             by_hour[h]["weeds_killed"] += int(row.get("total_weeds_killed") or 0)
             eff = row.get("efficiency")
@@ -893,12 +904,19 @@ async def get_hourly_analytics():
                 by_hour[h]["efficiencies"].append(float(eff))
 
         data = []
-        for h in sorted(by_hour.keys()):
-            effs = by_hour[h]["efficiencies"]
+        current_hour = now.hour
+        # 5 previous hours, then current — chronological order on the chart
+        for offset in range(5, -1, -1):
+            h = current_hour - offset
+            if h < 0:
+                # Skip pre-midnight slots so the chart stays within today.
+                continue
+            bucket = by_hour.get(h, {"weeds_detected": 0, "weeds_killed": 0, "efficiencies": []})
+            effs = bucket["efficiencies"]
             data.append({
-                "time":          f"{h}:00",
-                "weedsDetected": by_hour[h]["weeds_detected"],
-                "weedsKilled":   by_hour[h]["weeds_killed"],
+                "time":          f"{h:02d}:00",
+                "weedsDetected": bucket["weeds_detected"],
+                "weedsPerHour":  bucket["weeds_killed"],
                 "efficiency":    round(sum(effs) / len(effs), 1) if effs else 0,
             })
         return {"data": data}
@@ -908,20 +926,37 @@ async def get_hourly_analytics():
 
 @app.get("/api/analytics/weekly")
 async def get_weekly_analytics():
-    """Return per-week aggregated stats from the session table for the weekly chart."""
+    """
+    Per-week aggregation. Returns 4 buckets: current ISO week + 3 previous weeks.
+    Weeks with no sessions are padded with 0 so the chart always renders the
+    same span.
+    """
     if not SUPABASE_ENABLED:
         return {"data": []}
     try:
+        from collections import defaultdict
+        import datetime as dt_module
+
+        today = dt_module.date.today()
+        # Build the 4 most recent ISO weeks (oldest -> newest)
+        weeks_to_show = []
+        for w in range(3, -1, -1):
+            ref_date = today - dt_module.timedelta(weeks=w)
+            iso_year, iso_week, _ = ref_date.isocalendar()
+            weeks_to_show.append((iso_year, iso_week))
+
+        # Earliest Monday across the 4 weeks bounds the DB query.
+        earliest_ref = today - dt_module.timedelta(weeks=3)
+        earliest_monday = earliest_ref - dt_module.timedelta(days=earliest_ref.weekday())
+
         result = (
             supabase.table("session")
             .select("date,total_weeds_detected,total_weeds_killed,efficiency")
+            .gte("date", earliest_monday.strftime("%Y-%m-%d"))
             .execute()
         )
-        from collections import defaultdict
-        from datetime import date as date_type
-        import datetime as dt_module
 
-        by_week: dict = defaultdict(lambda: {"weeds_detected": 0, "weeds_killed": 0, "efficiencies": [], "label": ""})
+        by_week: dict = defaultdict(lambda: {"weeds_detected": 0, "weeds_killed": 0, "efficiencies": []})
         for row in result.data:
             raw_date = row.get("date")
             if not raw_date:
@@ -929,7 +964,6 @@ async def get_weekly_analytics():
             d = dt_module.date.fromisoformat(str(raw_date))
             iso_year, iso_week, _ = d.isocalendar()
             key = (iso_year, iso_week)
-            by_week[key]["label"] = f"Wk {iso_week}/{iso_year}"
             by_week[key]["weeds_detected"] += int(row.get("total_weeds_detected") or 0)
             by_week[key]["weeds_killed"] += int(row.get("total_weeds_killed") or 0)
             eff = row.get("efficiency")
@@ -937,11 +971,15 @@ async def get_weekly_analytics():
                 by_week[key]["efficiencies"].append(float(eff))
 
         data = []
-        for key in sorted(by_week.keys()):
-            effs = by_week[key]["efficiencies"]
+        for (iso_year, iso_week) in weeks_to_show:
+            bucket = by_week.get(
+                (iso_year, iso_week),
+                {"weeds_detected": 0, "weeds_killed": 0, "efficiencies": []},
+            )
+            effs = bucket["efficiencies"]
             data.append({
-                "week":      by_week[key]["label"],
-                "weeds":     by_week[key]["weeds_killed"],
+                "week":       f"Wk {iso_week}",
+                "weeds":      bucket["weeds_killed"],
                 "efficiency": round(sum(effs) / len(effs), 1) if effs else 0,
             })
         return {"data": data}

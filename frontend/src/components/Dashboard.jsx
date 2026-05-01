@@ -134,7 +134,7 @@ const apiBaseUrl = useMemo(() => {
     return () => { mounted = false; clearInterval(t); };
   }, [apiBaseUrl]);
 
-  // Fetch hourly analytics
+  // Fetch per-hour analytics
   useEffect(() => {
     let mounted = true;
     const fetchHourly = async () => {
@@ -146,7 +146,7 @@ const apiBaseUrl = useMemo(() => {
       } catch {}
     };
     fetchHourly();
-    const t = setInterval(fetchHourly, 60000);
+    const t = setInterval(fetchHourly, 30000);
     return () => { mounted = false; clearInterval(t); };
   }, [apiBaseUrl]);
 
@@ -259,12 +259,52 @@ const apiBaseUrl = useMemo(() => {
     return `ROS WS: ${wsStatus} | Camera: ${cameraActive} | Last detection: ${lastDetection}`;
   }, [systemStatus, wsStatus]);
 
-  const todayKilled = useMemo(() => {
+  const todaySessions = useMemo(() => {
     const today = new Date().toISOString().split("T")[0];
-    return sessions
-      .filter((s) => s.date === today)
-      .reduce((sum, s) => sum + (s.weedsEliminated || 0), 0);
+    return sessions.filter((s) => s.date === today);
   }, [sessions]);
+
+  const todayKilled = useMemo(
+    () => todaySessions.reduce((sum, s) => sum + (s.weedsEliminated || 0), 0),
+    [todaySessions],
+  );
+
+  const todaySummary = useMemo(() => {
+    const totalArea = todaySessions.reduce(
+      (sum, s) => sum + (Number(s.areaCovered) || 0),
+      0,
+    );
+
+    const parseDurationToMinutes = (str) => {
+      if (!str) return 0;
+      const h = /([0-9]+)h/.exec(str);
+      const m = /([0-9]+)m/.exec(str);
+      return (h ? parseInt(h[1], 10) * 60 : 0) + (m ? parseInt(m[1], 10) : 0);
+    };
+    const totalMinutes = todaySessions.reduce(
+      (sum, s) => sum + parseDurationToMinutes(s.duration),
+      0,
+    );
+    const hh = Math.floor(totalMinutes / 60);
+    const mm = totalMinutes % 60;
+    const activeTime = hh
+      ? `${hh}h ${String(mm).padStart(2, "0")}m`
+      : `${mm}m`;
+
+    const effs = todaySessions
+      .map((s) => Number(s.efficiency))
+      .filter((v) => Number.isFinite(v));
+    const avgEff = effs.length
+      ? (effs.reduce((a, b) => a + b, 0) / effs.length).toFixed(1)
+      : "0.0";
+
+    return {
+      weedsEliminated: todayKilled.toLocaleString(),
+      areaCovered: `${totalArea.toFixed(1)} sq ft`,
+      activeTime,
+      efficiency: `${avgEff}%`,
+    };
+  }, [todaySessions, todayKilled]);
 
   const liveDeviceData = useMemo(
     () => ({
@@ -415,7 +455,7 @@ const apiBaseUrl = useMemo(() => {
      <TabsContent value="dashboard" className="space-y-4 sm:space-y-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 stagger-children">
           <div className="lg:col-span-2 space-y-4 sm:space-y-6">
-            <QuickActions />
+            <QuickActions summary={todaySummary} />
             <EfficiencyMetrics data={hourlyData} />
           </div>
           <div className="space-y-4 sm:space-y-6">
@@ -425,7 +465,7 @@ const apiBaseUrl = useMemo(() => {
         </div>
       </TabsContent>
       <TabsContent value="analytics" className="space-y-4 sm:space-y-6 stagger-children">
-        <EfficiencyMetrics />
+        <EfficiencyMetrics data={hourlyData} />
         <PerformanceComparison data={weeklyData} />
       </TabsContent>
       <TabsContent value="history" className="space-y-4 sm:space-y-6">
@@ -440,7 +480,7 @@ const apiBaseUrl = useMemo(() => {
       <TabsContent value="dashboard" className="space-y-4 sm:space-y-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 stagger-children">
           <div className="lg:col-span-2 space-y-4 sm:space-y-6">
-            <QuickActions />
+            <QuickActions summary={todaySummary} />
             <EfficiencyMetrics data={hourlyData} />
           </div>
           <div className="space-y-4 sm:space-y-6">
