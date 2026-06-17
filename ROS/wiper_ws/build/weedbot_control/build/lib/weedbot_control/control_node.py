@@ -107,6 +107,8 @@ class ControlNode(Node):
         self._shots_blocked_rate = 0
         self._shots_blocked_bounds = 0
         self._shots_blocked_queue = 0
+        self._shots_blocked_workarea = 0
+        self._last_workarea_warn_at = 0.0
         self._serial_lines_rx = 0
         self._last_ack_seq: Optional[int] = None
         self._last_err: Optional[str] = None
@@ -164,6 +166,11 @@ class ControlNode(Node):
         self.declare_parameter("bounds_y_min_mm", -250.0)
         self.declare_parameter("bounds_y_max_mm", 250.0)
 
+        # Homography working area (vision frame, centered on (0,0))
+        self.declare_parameter("working_area_x_half_mm", 171.5)
+        self.declare_parameter("working_area_y_half_mm", 158.75)
+        self.declare_parameter("working_area_safety_margin_mm", 5.0)
+
         # Queue management
         self.declare_parameter("queue_max_outstanding", 14)
         self.declare_parameter("ack_timeout_ms", 10000)
@@ -208,6 +215,12 @@ class ControlNode(Node):
         self.bounds_x_max_mm = float(p("bounds_x_max_mm").value)
         self.bounds_y_min_mm = float(p("bounds_y_min_mm").value)
         self.bounds_y_max_mm = float(p("bounds_y_max_mm").value)
+
+        self.working_area_x_half_mm = float(p("working_area_x_half_mm").value)
+        self.working_area_y_half_mm = float(p("working_area_y_half_mm").value)
+        self.working_area_safety_margin_mm = float(
+            p("working_area_safety_margin_mm").value
+        )
 
         self.queue_max_outstanding = int(p("queue_max_outstanding").value)
         self.ack_timeout_ms = int(p("ack_timeout_ms").value)
@@ -295,6 +308,21 @@ class ControlNode(Node):
 
         mm_x_vision = real_x_m * 1000.0
         mm_y_vision = real_y_m * 1000.0
+
+        # Working-area gate. Done in vision frame (pre-sign-flip) because the
+        # rectangle was defined there during homography calibration.
+        x_limit = self.working_area_x_half_mm - self.working_area_safety_margin_mm
+        y_limit = self.working_area_y_half_mm - self.working_area_safety_margin_mm
+        if abs(mm_x_vision) > x_limit or abs(mm_y_vision) > y_limit:
+            self._shots_blocked_workarea += 1
+            now = time.monotonic()
+            if now - self._last_workarea_warn_at > 2.0:
+                self.get_logger().warn(
+                    f"target ({mm_x_vision:.1f},{mm_y_vision:.1f}) mm rejected: "
+                    f"outside working area +/-({x_limit:.1f},{y_limit:.1f}) mm"
+                )
+                self._last_workarea_warn_at = now
+            return None
 
         mm_x = -mm_x_vision if self.sign_flip_x else mm_x_vision
         mm_y = -mm_y_vision if self.sign_flip_y else mm_y_vision
@@ -415,6 +443,7 @@ class ControlNode(Node):
             "blocked_rate": self._shots_blocked_rate,
             "blocked_bounds": self._shots_blocked_bounds,
             "blocked_queue": self._shots_blocked_queue,
+            "blocked_workarea": self._shots_blocked_workarea,
             "serial_lines_rx": self._serial_lines_rx,
             "last_ack_seq": self._last_ack_seq,
             "last_err": self._last_err,

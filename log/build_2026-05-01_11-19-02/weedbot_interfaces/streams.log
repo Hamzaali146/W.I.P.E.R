@@ -1,0 +1,240 @@
+[0.029s] Invoking command in '/home/sanya/fyp/W.I.P.E.R/build/weedbot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/src/weedbot_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces
+[0.261s] -- The C compiler identification is GNU 13.3.0
+[0.436s] -- The CXX compiler identification is GNU 13.3.0
+[0.472s] -- Detecting C compiler ABI info
+[0.640s] -- Detecting C compiler ABI info - done
+[0.658s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.658s] -- Detecting C compile features
+[0.659s] -- Detecting C compile features - done
+[0.677s] -- Detecting CXX compiler ABI info
+[0.855s] -- Detecting CXX compiler ABI info - done
+[0.870s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.871s] -- Detecting CXX compile features
+[0.872s] -- Detecting CXX compile features - done
+[0.879s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.140s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.278s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.361s] -- Found std_msgs: 5.3.7 (/opt/ros/jazzy/share/std_msgs/cmake)
+[1.455s] -- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[1.484s] -- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[1.527s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.579s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.668s] -- Found sensor_msgs: 5.3.7 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[1.791s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[1.838s] -- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[3.170s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[4.820s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[5.439s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[5.445s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[5.671s] -- Found PythonExtra: /usr/bin/python3  
+[6.517s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[6.770s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[6.800s] -- Configuring done (6.7s)
+[6.893s] -- Generating done (0.1s)
+[6.917s] -- Build files have been written to: /home/sanya/fyp/W.I.P.E.R/build/weedbot_interfaces
+[6.937s] Invoked command in '/home/sanya/fyp/W.I.P.E.R/build/weedbot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/src/weedbot_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces
+[6.938s] Invoking command in '/home/sanya/fyp/W.I.P.E.R/build/weedbot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/sanya/fyp/W.I.P.E.R/build/weedbot_interfaces -- -j12 -l12
+[7.025s] [  2%] [34m[1mGenerating Rust code for ROS interfaces[0m
+[7.029s] [  4%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[7.043s] [  4%] Built target ament_cmake_python_symlink_weedbot_interfaces
+[7.461s] running egg_info
+[7.463s] creating weedbot_interfaces.egg-info
+[7.504s] writing weedbot_interfaces.egg-info/PKG-INFO
+[7.505s] writing dependency_links to weedbot_interfaces.egg-info/dependency_links.txt
+[7.505s] writing top-level names to weedbot_interfaces.egg-info/top_level.txt
+[7.505s] writing manifest file 'weedbot_interfaces.egg-info/SOURCES.txt'
+[7.515s] [  4%] Built target weedbot_interfaces__rosidl_generator_type_description
+[7.534s] [  6%] [34m[1mGenerating C code for ROS interfaces[0m
+[7.549s] [  6%] Built target weedbot_interfaces__rs
+[7.554s] [  8%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[7.640s] reading manifest file 'weedbot_interfaces.egg-info/SOURCES.txt'
+[7.641s] writing manifest file 'weedbot_interfaces.egg-info/SOURCES.txt'
+[7.687s] [  8%] Built target ament_cmake_python_build_weedbot_interfaces_egg
+[8.128s] [  8%] Built target weedbot_interfaces__cpp
+[8.199s] [ 15%] [32mBuilding C object CMakeFiles/weedbot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/weedbot_interfaces/msg/detail/weed_detection__description.c.o[0m
+[8.199s] [ 15%] [32mBuilding C object CMakeFiles/weedbot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/weedbot_interfaces/msg/detail/weed_detection__functions.c.o[0m
+[8.200s] [ 15%] [32mBuilding C object CMakeFiles/weedbot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/weedbot_interfaces/msg/detail/weed_detection__type_support.c.o[0m
+[8.200s] [ 17%] [32mBuilding C object CMakeFiles/weedbot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/weedbot_interfaces/msg/detail/weed_array__description.c.o[0m
+[8.200s] [ 20%] [32mBuilding C object CMakeFiles/weedbot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/weedbot_interfaces/msg/detail/weed_array__functions.c.o[0m
+[8.200s] [ 22%] [32mBuilding C object CMakeFiles/weedbot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/weedbot_interfaces/msg/detail/weed_array__type_support.c.o[0m
+[8.312s] [ 24%] [32m[1mLinking C shared library libweedbot_interfaces__rosidl_generator_c.so[0m
+[8.387s] [ 24%] Built target weedbot_interfaces__rosidl_generator_c
+[8.405s] [ 33%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[8.405s] [ 33%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[8.405s] [ 33%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[8.406s] [ 33%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[8.406s] [ 35%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[8.406s] [ 37%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[8.890s] [ 42%] [32mBuilding CXX object CMakeFiles/weedbot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/weedbot_interfaces/msg/weed_detection__type_support.cpp.o[0m
+[8.890s] [ 42%] [32mBuilding CXX object CMakeFiles/weedbot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/weedbot_interfaces/msg/weed_array__type_support.cpp.o[0m
+[8.891s] [ 44%] [32mBuilding CXX object CMakeFiles/weedbot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/weedbot_interfaces/msg/weed_array__type_support.cpp.o[0m
+[8.892s] [ 46%] [32mBuilding CXX object CMakeFiles/weedbot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/weedbot_interfaces/msg/weed_detection__type_support.cpp.o[0m
+[8.918s] [ 48%] [32mBuilding CXX object CMakeFiles/weedbot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/weedbot_interfaces/msg/detail/weed_detection__type_support.cpp.o[0m
+[8.919s] [ 51%] [32mBuilding CXX object CMakeFiles/weedbot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/weedbot_interfaces/msg/detail/weed_array__type_support.cpp.o[0m
+[8.924s] [ 55%] [32mBuilding C object CMakeFiles/weedbot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/weedbot_interfaces/msg/detail/weed_detection__type_support.c.o[0m
+[8.924s] [ 55%] [32mBuilding C object CMakeFiles/weedbot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/weedbot_interfaces/msg/detail/weed_array__type_support.c.o[0m
+[8.985s] [ 57%] [32m[1mLinking CXX shared library libweedbot_interfaces__rosidl_typesupport_c.so[0m
+[8.987s] [ 60%] [32mBuilding CXX object CMakeFiles/weedbot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/weedbot_interfaces/msg/detail/dds_fastrtps/weed_detection__type_support.cpp.o[0m
+[8.987s] [ 62%] [32mBuilding CXX object CMakeFiles/weedbot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/weedbot_interfaces/msg/detail/dds_fastrtps/weed_array__type_support.cpp.o[0m
+[9.001s] [ 64%] [32mBuilding CXX object CMakeFiles/weedbot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/weedbot_interfaces/msg/detail/weed_detection__type_support_c.cpp.o[0m
+[9.001s] [ 66%] [32mBuilding CXX object CMakeFiles/weedbot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/weedbot_interfaces/msg/detail/weed_array__type_support_c.cpp.o[0m
+[9.021s] [ 68%] [32m[1mLinking C shared library libweedbot_interfaces__rosidl_typesupport_introspection_c.so[0m
+[9.078s] [ 68%] Built target weedbot_interfaces__rosidl_typesupport_c
+[9.087s] [ 68%] Built target weedbot_interfaces__rosidl_typesupport_introspection_c
+[9.441s] [ 71%] [32m[1mLinking CXX shared library libweedbot_interfaces__rosidl_typesupport_cpp.so[0m
+[9.506s] [ 71%] Built target weedbot_interfaces__rosidl_typesupport_cpp
+[9.639s] [ 73%] [32m[1mLinking CXX shared library libweedbot_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[9.710s] [ 75%] [32m[1mLinking CXX shared library libweedbot_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[9.727s] [ 75%] Built target weedbot_interfaces__rosidl_typesupport_introspection_cpp
+[9.752s] [ 77%] [32m[1mLinking CXX shared library libweedbot_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[9.795s] [ 77%] Built target weedbot_interfaces__rosidl_typesupport_fastrtps_c
+[9.871s] [ 77%] Built target weedbot_interfaces__rosidl_typesupport_fastrtps_cpp
+[9.891s] [ 77%] Built target weedbot_interfaces
+[9.911s] [ 80%] [34m[1mGenerating Python code for ROS interfaces[0m
+[10.333s] [ 80%] Built target weedbot_interfaces__py
+[10.358s] [ 82%] [32mBuilding C object CMakeFiles/weedbot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/weedbot_interfaces/msg/_weed_detection_s.c.o[0m
+[10.358s] [ 84%] [32mBuilding C object CMakeFiles/weedbot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/weedbot_interfaces/msg/_weed_array_s.c.o[0m
+[10.561s] [ 86%] [32m[1mLinking C shared library libweedbot_interfaces__rosidl_generator_py.so[0m
+[10.608s] [ 86%] Built target weedbot_interfaces__rosidl_generator_py
+[10.627s] [ 93%] [32mBuilding C object CMakeFiles/weedbot_interfaces_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/weedbot_interfaces/_weedbot_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[10.627s] [ 93%] [32mBuilding C object CMakeFiles/weedbot_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/weedbot_interfaces/_weedbot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[10.627s] [ 93%] [32mBuilding C object CMakeFiles/weedbot_interfaces_s__rosidl_typesupport_c.dir/rosidl_generator_py/weedbot_interfaces/_weedbot_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[10.730s] [ 97%] [32m[1mLinking C shared module rosidl_generator_py/weedbot_interfaces/weedbot_interfaces_s__rosidl_typesupport_c.so[0m
+[10.730s] [ 97%] [32m[1mLinking C shared module rosidl_generator_py/weedbot_interfaces/weedbot_interfaces_s__rosidl_typesupport_introspection_c.so[0m
+[10.732s] [100%] [32m[1mLinking C shared module rosidl_generator_py/weedbot_interfaces/weedbot_interfaces_s__rosidl_typesupport_fastrtps_c.so[0m
+[10.768s] [100%] Built target weedbot_interfaces_s__rosidl_typesupport_c
+[10.768s] [100%] Built target weedbot_interfaces_s__rosidl_typesupport_introspection_c
+[10.769s] [100%] Built target weedbot_interfaces_s__rosidl_typesupport_fastrtps_c
+[10.780s] Invoked command in '/home/sanya/fyp/W.I.P.E.R/build/weedbot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/sanya/fyp/W.I.P.E.R/build/weedbot_interfaces -- -j12 -l12
+[10.789s] Invoking command in '/home/sanya/fyp/W.I.P.E.R/build/weedbot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/sanya/fyp/W.I.P.E.R/build/weedbot_interfaces
+[10.796s] -- Install configuration: ""
+[10.797s] -- Execute custom install script
+[10.797s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/ament_index/resource_index/rosidl_interfaces/weedbot_interfaces
+[10.805s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/msg/WeedDetection.json
+[10.813s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/msg/WeedArray.json
+[10.820s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__functions.h
+[10.828s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__struct.h
+[10.838s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__type_support.h
+[10.848s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__functions.h
+[10.856s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__struct.h
+[10.864s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__type_support.h
+[10.871s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/rosidl_generator_c__visibility_control.h
+[10.878s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/weed_array.h
+[10.886s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/weed_detection.h
+[10.894s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/environment/library_path.sh
+[10.901s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/environment/library_path.dsv
+[10.909s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__rosidl_typesupport_fastrtps_c.h
+[10.916s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__rosidl_typesupport_fastrtps_c.h
+[10.922s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[10.929s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__builder.hpp
+[10.940s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__struct.hpp
+[10.949s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__traits.hpp
+[10.958s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__type_support.hpp
+[10.966s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__builder.hpp
+[10.972s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__struct.hpp
+[10.979s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__traits.hpp
+[10.986s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__type_support.hpp
+[10.993s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[11.000s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/weed_array.hpp
+[11.007s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/weed_detection.hpp
+[11.014s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__rosidl_typesupport_fastrtps_cpp.hpp
+[11.022s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__rosidl_typesupport_fastrtps_cpp.hpp
+[11.029s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[11.041s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__rosidl_typesupport_introspection_c.h
+[11.049s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__rosidl_typesupport_introspection_c.h
+[11.057s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[11.064s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_array__rosidl_typesupport_introspection_cpp.hpp
+[11.071s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/include/weedbot_interfaces/weedbot_interfaces/msg/detail/weed_detection__rosidl_typesupport_introspection_cpp.hpp
+[11.079s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/environment/pythonpath.sh
+[11.086s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/environment/pythonpath.dsv
+[11.093s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces-0.0.1-py3.12.egg-info/PKG-INFO
+[11.101s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces-0.0.1-py3.12.egg-info/SOURCES.txt
+[11.108s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces-0.0.1-py3.12.egg-info/dependency_links.txt
+[11.116s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces-0.0.1-py3.12.egg-info/top_level.txt
+[11.126s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/__init__.py
+[11.136s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/_weedbot_interfaces_s.ep.rosidl_typesupport_c.c
+[11.146s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/_weedbot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[11.154s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/_weedbot_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[11.162s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/msg/__init__.py
+[11.168s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/msg/_weed_array.py
+[11.175s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/msg/_weed_array_s.c
+[11.182s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/msg/_weed_detection.py
+[11.189s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/msg/_weed_detection_s.c
+[11.196s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/weedbot_interfaces_s__rosidl_typesupport_c.so
+[11.204s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/weedbot_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[11.213s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/weedbot_interfaces_s__rosidl_typesupport_introspection_c.so
+[11.221s] -- Up-to-date symlink: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/weedbot_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[11.221s] -- Up-to-date symlink: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/weedbot_interfaces_s__rosidl_typesupport_introspection_c.so
+[11.221s] -- Up-to-date symlink: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/weedbot_interfaces_s__rosidl_typesupport_c.so
+[11.222s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/ament_index/resource_index/rust_packages/weedbot_interfaces
+[11.230s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/rust/Cargo.toml
+[11.242s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/rust/build.rs
+[11.250s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/rust/src/lib.rs
+[11.258s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/rust/src/msg.rs
+[11.266s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/rust/src/msg/rmw.rs
+[11.274s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/msg/WeedDetection.idl
+[11.281s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/msg/WeedArray.idl
+[11.289s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/msg/WeedDetection.msg
+[11.296s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/msg/WeedArray.msg
+[11.304s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/ament_index/resource_index/package_run_dependencies/weedbot_interfaces
+[11.312s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/ament_index/resource_index/parent_prefix_path/weedbot_interfaces
+[11.318s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/environment/ament_prefix_path.sh
+[11.327s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/environment/ament_prefix_path.dsv
+[11.337s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/environment/path.sh
+[11.347s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/environment/path.dsv
+[11.355s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/local_setup.bash
+[11.362s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/local_setup.sh
+[11.369s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/local_setup.zsh
+[11.376s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/local_setup.dsv
+[11.383s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/package.dsv
+[11.390s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/ament_index/resource_index/packages/weedbot_interfaces
+[11.397s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/rosidl_cmake-extras.cmake
+[11.405s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[11.412s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[11.419s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[11.426s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[11.434s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[11.446s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[11.454s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/weedbot_interfacesConfig.cmake
+[11.462s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/weedbot_interfacesConfig-version.cmake
+[11.469s] -- Symlinking: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/package.xml
+[11.478s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_generator_c.so
+[11.478s] -- Set non-toolchain portion of runtime path of "/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_generator_c.so" to ""
+[11.478s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_fastrtps_c.so
+[11.479s] -- Set non-toolchain portion of runtime path of "/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[11.479s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[11.479s] -- Set non-toolchain portion of runtime path of "/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[11.479s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_introspection_c.so
+[11.480s] -- Set non-toolchain portion of runtime path of "/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[11.480s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_c.so
+[11.480s] -- Set non-toolchain portion of runtime path of "/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_c.so" to ""
+[11.480s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_introspection_cpp.so
+[11.481s] -- Set non-toolchain portion of runtime path of "/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[11.481s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_cpp.so
+[11.481s] -- Set non-toolchain portion of runtime path of "/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_typesupport_cpp.so" to ""
+[11.517s] Listing '/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces'...
+[11.517s] Compiling '/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/__init__.py'...
+[11.517s] Listing '/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/msg'...
+[11.517s] Compiling '/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/msg/__init__.py'...
+[11.517s] Compiling '/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/msg/_weed_array.py'...
+[11.517s] Compiling '/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages/weedbot_interfaces/msg/_weed_detection.py'...
+[11.522s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_generator_py.so
+[11.522s] -- Set non-toolchain portion of runtime path of "/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/libweedbot_interfaces__rosidl_generator_py.so" to ""
+[11.522s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/export_weedbot_interfaces__rosidl_generator_cExport.cmake
+[11.523s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/export_weedbot_interfaces__rosidl_generator_cExport-noconfig.cmake
+[11.523s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/export_weedbot_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[11.523s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/export_weedbot_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[11.523s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/export_weedbot_interfaces__rosidl_generator_cppExport.cmake
+[11.523s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/export_weedbot_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[11.524s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/export_weedbot_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[11.524s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/weedbot_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[11.524s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/weedbot_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[11.524s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/weedbot_interfaces__rosidl_typesupport_cExport.cmake
+[11.524s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/weedbot_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[11.524s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/weedbot_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[11.525s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/weedbot_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[11.525s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/weedbot_interfaces__rosidl_typesupport_cppExport.cmake
+[11.525s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/weedbot_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[11.525s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/export_weedbot_interfaces__rosidl_generator_pyExport.cmake
+[11.525s] -- Installing: /home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/share/weedbot_interfaces/cmake/export_weedbot_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[11.528s] Invoked command in '/home/sanya/fyp/W.I.P.E.R/build/weedbot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/sanya/fyp/W.I.P.E.R/build/weedbot_interfaces

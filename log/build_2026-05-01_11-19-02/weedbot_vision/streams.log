@@ -1,0 +1,32 @@
+[1.180s] Invoking command in '/home/sanya/fyp/W.I.P.E.R/build/weedbot_vision': AMENT_PREFIX_PATH=/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/sanya/fyp/W.I.P.E.R/build/weedbot_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sanya/fyp/W.I.P.E.R/install/weedbot_vision/lib/python3.12/site-packages:/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sanya/fyp/W.I.P.E.R/build/weedbot_vision/build --no-deps symlink_data
+[1.586s] running develop
+[1.878s] running egg_info
+[1.878s] creating weedbot_vision.egg-info
+[1.909s] writing weedbot_vision.egg-info/PKG-INFO
+[1.909s] writing dependency_links to weedbot_vision.egg-info/dependency_links.txt
+[1.910s] writing entry points to weedbot_vision.egg-info/entry_points.txt
+[1.910s] writing requirements to weedbot_vision.egg-info/requires.txt
+[1.910s] writing top-level names to weedbot_vision.egg-info/top_level.txt
+[1.910s] writing manifest file 'weedbot_vision.egg-info/SOURCES.txt'
+[1.962s] reading manifest file 'weedbot_vision.egg-info/SOURCES.txt'
+[1.962s] writing manifest file 'weedbot_vision.egg-info/SOURCES.txt'
+[1.988s] running build_ext
+[1.988s] Creating /home/sanya/fyp/W.I.P.E.R/install/weedbot_vision/lib/python3.12/site-packages/weedbot-vision.egg-link (link to .)
+[1.989s] Installing camera_calibration script to /home/sanya/fyp/W.I.P.E.R/install/weedbot_vision/lib/weedbot_vision
+[1.990s] Installing camera_publisher script to /home/sanya/fyp/W.I.P.E.R/install/weedbot_vision/lib/weedbot_vision
+[1.990s] Installing detection_monitor script to /home/sanya/fyp/W.I.P.E.R/install/weedbot_vision/lib/weedbot_vision
+[1.990s] Installing vision_node script to /home/sanya/fyp/W.I.P.E.R/install/weedbot_vision/lib/weedbot_vision
+[1.992s] 
+[1.992s] Installed /home/sanya/fyp/W.I.P.E.R/build/weedbot_vision
+[1.993s] running symlink_data
+[1.993s] creating /home/sanya/fyp/W.I.P.E.R/install/weedbot_vision/share/ament_index
+[1.993s] creating /home/sanya/fyp/W.I.P.E.R/install/weedbot_vision/share/ament_index/resource_index
+[1.993s] creating /home/sanya/fyp/W.I.P.E.R/install/weedbot_vision/share/ament_index/resource_index/packages
+[1.993s] symbolically linking /home/sanya/fyp/W.I.P.E.R/build/weedbot_vision/resource/weedbot_vision -> /home/sanya/fyp/W.I.P.E.R/install/weedbot_vision/share/ament_index/resource_index/packages
+[1.993s] symbolically linking /home/sanya/fyp/W.I.P.E.R/build/weedbot_vision/package.xml -> /home/sanya/fyp/W.I.P.E.R/install/weedbot_vision/share/weedbot_vision
+[1.993s] creating /home/sanya/fyp/W.I.P.E.R/install/weedbot_vision/share/weedbot_vision/launch
+[1.993s] symbolically linking /home/sanya/fyp/W.I.P.E.R/build/weedbot_vision/launch/calibration.launch.py -> /home/sanya/fyp/W.I.P.E.R/install/weedbot_vision/share/weedbot_vision/launch
+[1.994s] symbolically linking /home/sanya/fyp/W.I.P.E.R/build/weedbot_vision/launch/vision_launch.py -> /home/sanya/fyp/W.I.P.E.R/install/weedbot_vision/share/weedbot_vision/launch
+[1.994s] creating /home/sanya/fyp/W.I.P.E.R/install/weedbot_vision/share/weedbot_vision/config
+[1.994s] symbolically linking /home/sanya/fyp/W.I.P.E.R/build/weedbot_vision/config/vision_params.yaml -> /home/sanya/fyp/W.I.P.E.R/install/weedbot_vision/share/weedbot_vision/config
+[2.044s] Invoked command in '/home/sanya/fyp/W.I.P.E.R/build/weedbot_vision' returned '0': AMENT_PREFIX_PATH=/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/sanya/fyp/W.I.P.E.R/build/weedbot_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sanya/fyp/W.I.P.E.R/install/weedbot_vision/lib/python3.12/site-packages:/home/sanya/fyp/W.I.P.E.R/install/weedbot_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sanya/fyp/W.I.P.E.R/build/weedbot_vision/build --no-deps symlink_data

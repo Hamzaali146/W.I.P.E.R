@@ -1,0 +1,3 @@
+[console_scripts]
+control_node = weedbot_control.control_node:main
+laser_test_node = weedbot_control.laser_test_node:main

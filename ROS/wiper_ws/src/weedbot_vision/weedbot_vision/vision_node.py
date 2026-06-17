@@ -40,6 +40,12 @@ class VisionNode(Node):
         self.declare_parameter('max_det', 300)
         self.declare_parameter('use_homography', True)
         self.declare_parameter('verbose_inference', True)  # NEW: Control YOLO verbosity
+
+        # Working area (homography frame, mm). Keep in sync with control_params.yaml;
+        # the control node is the authoritative gate, this is only for viz + warnings.
+        self.declare_parameter('working_area_x_half_mm', 171.5)
+        self.declare_parameter('working_area_y_half_mm', 158.75)
+        self.declare_parameter('working_area_safety_margin_mm', 5.0)
         
         # Get parameters
         self.camera_topic = self.get_parameter('camera_topic').value
@@ -53,6 +59,14 @@ class VisionNode(Node):
         self.max_det = self.get_parameter('max_det').value
         self.use_homography_param = self.get_parameter('use_homography').value
         self.verbose_inference = self.get_parameter('verbose_inference').value
+
+        self.working_area_x_half_mm = float(
+            self.get_parameter('working_area_x_half_mm').value)
+        self.working_area_y_half_mm = float(
+            self.get_parameter('working_area_y_half_mm').value)
+        self.working_area_safety_margin_mm = float(
+            self.get_parameter('working_area_safety_margin_mm').value)
+        self._last_workarea_warn_at = 0.0
         
         # Initialize CV Bridge
         self.bridge = CvBridge()
@@ -62,7 +76,10 @@ class VisionNode(Node):
         
         # Load homography matrix
         self.homography_matrix = None
+        self.homography_inv = None
         self.use_homography = False
+        self._workarea_outer_pixels = None
+        self._workarea_inner_pixels = None
         if self.use_homography_param:
             self.load_homography()
             #change 1
@@ -83,6 +100,16 @@ class VisionNode(Node):
                     f'({self.cam_center_rw_x*1000:.1f} mm, '
                     f'{self.cam_center_rw_y*1000:.1f} mm)'
                 )
+
+                ok, h_inv = cv2.invert(self.homography_matrix)
+                if ok:
+                    self.homography_inv = h_inv
+                    self._workarea_outer_pixels, self._workarea_inner_pixels = \
+                        self._project_workarea_corners()
+                else:
+                    self.get_logger().warn(
+                        'Could not invert homography matrix; '
+                        'working-area overlay disabled.')
         
         # Load model
         self.model = None
@@ -161,6 +188,31 @@ class VisionNode(Node):
             self.get_logger().error(f"Failed to load homography: {e}")
             self.use_homography = False
     
+    def _project_workarea_corners(self):
+        """Project the working-area rectangle corners (homography frame, in
+        meters) back to pixel coords using H^-1. Returns (outer_pts, inner_pts)
+        as int32 arrays of shape (4, 2), or (None, None) if unavailable.
+        """
+        if self.homography_inv is None:
+            return None, None
+
+        outer_w = self.working_area_x_half_mm / 1000.0
+        outer_h = self.working_area_y_half_mm / 1000.0
+        margin = self.working_area_safety_margin_mm / 1000.0
+        inner_w = outer_w - margin
+        inner_h = outer_h - margin
+
+        def project(corners_world):
+            pts = np.array([corners_world], dtype=np.float32)
+            pixel = cv2.perspectiveTransform(pts, self.homography_inv)
+            return pixel[0].astype(np.int32)
+
+        outer = project([(-outer_w, +outer_h), (+outer_w, +outer_h),
+                         (+outer_w, -outer_h), (-outer_w, -outer_h)])
+        inner = project([(-inner_w, +inner_h), (+inner_w, +inner_h),
+                         (+inner_w, -inner_h), (-inner_w, -inner_h)])
+        return outer, inner
+
     def pixel_to_real_world(self, pixel_x, pixel_y):
         """
         Transform pixel coordinates to real-world meters using homography
@@ -328,7 +380,26 @@ class VisionNode(Node):
                         
                         # Transform to real-world coordinates
                         real_x, real_y = self.pixel_to_real_world(center_x_pixel, center_y_pixel)
-                        
+
+                        # Working-area check (advisory only — vision still
+                        # publishes; control node is the authoritative gate).
+                        in_workarea = True
+                        if self.use_homography:
+                            x_lim = (self.working_area_x_half_mm
+                                     - self.working_area_safety_margin_mm) / 1000.0
+                            y_lim = (self.working_area_y_half_mm
+                                     - self.working_area_safety_margin_mm) / 1000.0
+                            in_workarea = (abs(real_x) <= x_lim
+                                           and abs(real_y) <= y_lim)
+                            if not in_workarea:
+                                now_t = time.time()
+                                if now_t - self._last_workarea_warn_at > 2.0:
+                                    self.get_logger().warn(
+                                        f'weed at ({real_x*1000:.1f},'
+                                        f'{real_y*1000:.1f}) mm outside '
+                                        f'working area (will not fire)')
+                                    self._last_workarea_warn_at = now_t
+
                         # Normalize coordinates (0-1)
                         detection = {
                             'bbox': [x1/w, y1/h, (x2-x1)/w, (y2-y1)/h],
@@ -341,7 +412,8 @@ class VisionNode(Node):
                             'pixel_y': center_y_pixel,
                             'real_world_x': real_x,
                             'real_world_y': real_y,
-                            'real_world_z': 0.0
+                            'real_world_z': 0.0,
+                            'in_workarea': in_workarea,
                         }
                         detections.append(detection)
             
@@ -451,6 +523,20 @@ class VisionNode(Node):
         cam_cx = w // 2
         cam_cy = h // 2
 
+        # ── Working-area rectangle (homography frame, projected to pixels) ──
+        # Outer: calibrated rectangle. Inner: accept zone after safety margin.
+        if self._workarea_outer_pixels is not None:
+            cv2.polylines(viz_image, [self._workarea_outer_pixels],
+                          isClosed=True, color=(255, 255, 255),
+                          thickness=1, lineType=cv2.LINE_AA)
+            cv2.polylines(viz_image, [self._workarea_inner_pixels],
+                          isClosed=True, color=(0, 255, 0),
+                          thickness=2, lineType=cv2.LINE_AA)
+            tl = self._workarea_inner_pixels[0]
+            cv2.putText(viz_image, 'WORK AREA',
+                        (int(tl[0]) + 4, int(tl[1]) + 16),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 255, 0), 1)
+
         # ── Camera centre crosshair (yellow) ────────────────────────────────
         cross = 22
         cv2.line(viz_image,
@@ -481,8 +567,10 @@ class VisionNode(Node):
             x2 = int((x_n + w_n) * w)
             y2 = int((y_n + h_n) * h)
 
-            # Colour by confidence
-            if conf > 0.7:
+            # Colour by confidence, override to red if outside working area
+            if not det.get('in_workarea', True):
+                color = (0, 0, 255)       # red — will not fire
+            elif conf > 0.7:
                 color = (0, 255, 0)       # green
             elif conf > 0.5:
                 color = (0, 255, 255)     # yellow

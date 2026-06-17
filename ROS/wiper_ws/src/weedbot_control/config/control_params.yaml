@@ -40,6 +40,17 @@
     bounds_y_min_mm: -250.0
     bounds_y_max_mm:  250.0
 
+    # Homography working area — the calibrated rectangle the camera was mapped
+    # against. Outside this rectangle the homography extrapolates and the
+    # mapping degrades quickly, so we reject targets that fall outside.
+    # Half-extents are centered on the homography origin (0,0). For the
+    # 13.5" x 12.5" calibration board that's 171.5 x 158.75 mm half-extents.
+    # The safety margin shrinks the accepted area inward from the rectangle
+    # edges where reprojection error is largest.
+    working_area_x_half_mm: 171.5
+    working_area_y_half_mm: 158.75
+    working_area_safety_margin_mm: 5.0
+
     # Firmware queue is 16 shots deep; pause sending before we hit it so we
     # never get QUEUE_FULL. ACKs arrive AFTER the shot completes, not at
     # enqueue, so a long dwell delays ACK by that amount — keep the timeout

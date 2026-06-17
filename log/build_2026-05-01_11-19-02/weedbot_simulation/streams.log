@@ -1,0 +1,37 @@
+[2.027s] Invoking command in '/home/sanya/fyp/W.I.P.E.R/build/weedbot_simulation': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/sanya/fyp/W.I.P.E.R/build/weedbot_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sanya/fyp/W.I.P.E.R/build/weedbot_simulation/build --no-deps symlink_data
+[2.842s] running develop
+[3.328s] running egg_info
+[3.328s] creating weedbot_simulation.egg-info
+[3.378s] writing weedbot_simulation.egg-info/PKG-INFO
+[3.379s] writing dependency_links to weedbot_simulation.egg-info/dependency_links.txt
+[3.379s] writing entry points to weedbot_simulation.egg-info/entry_points.txt
+[3.379s] writing requirements to weedbot_simulation.egg-info/requires.txt
+[3.379s] writing top-level names to weedbot_simulation.egg-info/top_level.txt
+[3.379s] writing manifest file 'weedbot_simulation.egg-info/SOURCES.txt'
+[3.480s] reading manifest file 'weedbot_simulation.egg-info/SOURCES.txt'
+[3.481s] writing manifest file 'weedbot_simulation.egg-info/SOURCES.txt'
+[3.537s] running build_ext
+[3.537s] Creating /home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/lib/python3.12/site-packages/weedbot-simulation.egg-link (link to .)
+[3.538s] Installing laser_controller script to /home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/lib/weedbot_simulation
+[3.539s] Installing tractor_controller script to /home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/lib/weedbot_simulation
+[3.539s] Installing weed_spawner script to /home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/lib/weedbot_simulation
+[3.539s] 
+[3.540s] Installed /home/sanya/fyp/W.I.P.E.R/build/weedbot_simulation
+[3.540s] running symlink_data
+[3.540s] creating /home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/share/ament_index
+[3.540s] creating /home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/share/ament_index/resource_index
+[3.540s] creating /home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/share/ament_index/resource_index/packages
+[3.540s] symbolically linking /home/sanya/fyp/W.I.P.E.R/build/weedbot_simulation/resource/weedbot_simulation -> /home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/share/ament_index/resource_index/packages
+[3.541s] symbolically linking /home/sanya/fyp/W.I.P.E.R/build/weedbot_simulation/package.xml -> /home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/share/weedbot_simulation
+[3.541s] creating /home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/share/weedbot_simulation/launch
+[3.541s] symbolically linking /home/sanya/fyp/W.I.P.E.R/build/weedbot_simulation/launch/simulation_launch.py -> /home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/share/weedbot_simulation/launch
+[3.541s] symbolically linking /home/sanya/fyp/W.I.P.E.R/build/weedbot_simulation/launch/full_system_launch.py -> /home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/share/weedbot_simulation/launch
+[3.541s] creating /home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/share/weedbot_simulation/worlds
+[3.541s] symbolically linking /home/sanya/fyp/W.I.P.E.R/build/weedbot_simulation/worlds/farm_field.world -> /home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/share/weedbot_simulation/worlds
+[3.541s] creating /home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/share/weedbot_simulation/urdf
+[3.542s] symbolically linking /home/sanya/fyp/W.I.P.E.R/build/weedbot_simulation/urdf/tractor.urdf.xacro -> /home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/share/weedbot_simulation/urdf
+[3.542s] creating /home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/share/weedbot_simulation/models
+[3.542s] creating /home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/share/weedbot_simulation/models/weed
+[3.542s] symbolically linking /home/sanya/fyp/W.I.P.E.R/build/weedbot_simulation/models/weed/model.sdf -> /home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/share/weedbot_simulation/models/weed
+[3.542s] symbolically linking /home/sanya/fyp/W.I.P.E.R/build/weedbot_simulation/models/weed/model.config -> /home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/share/weedbot_simulation/models/weed
+[3.603s] Invoked command in '/home/sanya/fyp/W.I.P.E.R/build/weedbot_simulation' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/sanya/fyp/W.I.P.E.R/build/weedbot_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sanya/fyp/W.I.P.E.R/install/weedbot_simulation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sanya/fyp/W.I.P.E.R/build/weedbot_simulation/build --no-deps symlink_data

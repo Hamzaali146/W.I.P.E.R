@@ -1,0 +1,38 @@
+running develop
+Removing /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages/weedbot-control.egg-link (link to .)
+running egg_info
+writing ../../build/weedbot_control/weedbot_control.egg-info/PKG-INFO
+writing dependency_links to ../../build/weedbot_control/weedbot_control.egg-info/dependency_links.txt
+writing entry points to ../../build/weedbot_control/weedbot_control.egg-info/entry_points.txt
+writing requirements to ../../build/weedbot_control/weedbot_control.egg-info/requires.txt
+writing top-level names to ../../build/weedbot_control/weedbot_control.egg-info/top_level.txt
+reading manifest file '../../build/weedbot_control/weedbot_control.egg-info/SOURCES.txt'
+writing manifest file '../../build/weedbot_control/weedbot_control.egg-info/SOURCES.txt'
+running build
+running build_py
+copying weedbot_control/control_node.py -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/build/lib/weedbot_control
+running install
+running install_lib
+creating /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages/weedbot_control
+copying /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/build/lib/weedbot_control/control_node.py -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages/weedbot_control
+copying /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/build/lib/weedbot_control/laser_test_node.py -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages/weedbot_control
+copying /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/build/lib/weedbot_control/serial_manager.py -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages/weedbot_control
+copying /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/build/lib/weedbot_control/__init__.py -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages/weedbot_control
+byte-compiling /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages/weedbot_control/control_node.py to control_node.cpython-312.pyc
+byte-compiling /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages/weedbot_control/laser_test_node.py to laser_test_node.cpython-312.pyc
+byte-compiling /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages/weedbot_control/serial_manager.py to serial_manager.cpython-312.pyc
+byte-compiling /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages/weedbot_control/__init__.py to __init__.cpython-312.pyc
+running install_data
+copying resource/weedbot_control -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/ament_index/resource_index/packages
+copying package.xml -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control
+copying launch/laser_dry_run.launch.py -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control/launch
+copying launch/control_launch.py -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control/launch
+copying config/control_params.yaml -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control/config
+copying config/test_shots.csv -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control/config
+copying README.md -> /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/share/weedbot_control
+running install_egg_info
+Copying ../../build/weedbot_control/weedbot_control.egg-info to /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/python3.12/site-packages/weedbot_control-1.0.0-py3.12.egg-info
+running install_scripts
+Installing control_node script to /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/weedbot_control
+Installing laser_test_node script to /home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/install/weedbot_control/lib/weedbot_control
+writing list of installed files to '/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_control/install.log'

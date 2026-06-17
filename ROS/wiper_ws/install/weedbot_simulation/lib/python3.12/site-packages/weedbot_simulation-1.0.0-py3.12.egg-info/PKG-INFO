@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: weedbot-simulation
+Version: 1.0.0
+Summary: Gazebo simulation for weedbot laser weeding system
+Maintainer: Hamza Ali
+Maintainer-email: hamzaaly105@gmail.com
+License: MIT

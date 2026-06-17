@@ -1,1 +1,42 @@
-/home/sanya/fyp/W.I.P.E.R/ROS/wiper_ws/build/weedbot_simulation/models/weed/model.sdf
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="weed">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.15</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.1 0.6 0.1 1</ambient>
+          <diffuse>0.1 0.8 0.1 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+      <!-- Top leaves -->
+      <visual name="leaves">
+        <pose>0 0 0.1 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.08</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>0.0 0.5 0.0 1</ambient>
+          <diffuse>0.0 0.7 0.0 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
